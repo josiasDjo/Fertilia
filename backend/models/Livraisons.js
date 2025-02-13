@@ -3,8 +3,8 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('./index');
 const Utilisateur = require('./Utilisateurs');
 
-const Livraison = sequelize.define('table_livraison', {
-    id_livraison: { type: DataType.INTEGER, allowNull: false },
+const Livraison = sequelize.define('table_livraisons', {
+    id_livraison: { type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true },
     utilisateur_id: { type: DataTypes.INTEGER, allowNull: false },	
     acheteur: { type: DataTypes.INTEGER, allowNull: false },	
     produit: { type: DataTypes.STRING, allowNull: false },	

@@ -1,4 +1,4 @@
-const Utilisateur = require('../models/Utilisateur');
+const Utilisateur = require('../models/Utilisateurs');
 
 exports.createUtilisateur = async (req, res) => {
     try {
@@ -6,7 +6,8 @@ exports.createUtilisateur = async (req, res) => {
         const nouvelUtilisateur = await Utilisateur.create({ nom, email, mot_de_passe, role });
         res.status(201).json(nouvelUtilisateur);
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la création de l’utilisateur' });
+        console.log(`Erreur lors de la création de l\'utilisateur, ${err}`)
+        res.status(500).json({ error: 'Erreur lors de la création de l\'utilisateur' });
     }
 };
 
@@ -16,7 +17,8 @@ exports.getUtilisateur = async (req, res) => {
         if (!utilisateur) return res.status(404).json({ error: 'Utilisateur non trouvé' });
         res.json(utilisateur);
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la récupération de l’utilisateur' });
+        console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
+        res.status(500).json({ error: 'Erreur lors de la récupération de l\'utilisateur', err });
     }
 };
 
@@ -40,6 +42,6 @@ exports.deleteUtilisateur = async (req, res) => {
         await utilisateur.destroy();
         res.json({ message: 'Utilisateur supprimé avec succès' });
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la suppression de l’utilisateur' });
+        res.status(500).json({ error: 'Erreur lors de la suppression de l\'utilisateur' });
     }
 };
