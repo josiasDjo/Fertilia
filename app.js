@@ -21,7 +21,14 @@ const previsions = require('./backend/models/Previsions');
 
 //importer les routes
 const indexRouter = require('./backend/routes/index');
-const usersRouter = require('./backend/routes/users');
+const CapteursRouter = require('./backend/routes/CapteursRoutes');
+const ChampsRouter = require('./backend/routes/CapteursRoutes');
+const LivraisonRouter = require('./backend/routes/CapteursRoutes');
+const PrevisionsRouter = require('./backend/routes/CapteursRoutes');
+const RolesRouter = require('./backend/routes/CapteursRoutes');
+const StocksRouter = require('./backend/routes/CapteursRoutes');
+const UtilisateursRoutes = require('./backend/routes/CapteursRoutes');
+
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -57,7 +64,13 @@ app.use(session({
 }));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/utilisateurs', UtilisateursRoutes);
+app.use('/api/capteurs', CapteursRouter);
+app.use('/api/champs', ChampsRouter);
+app.use('/api/livraison', LivraisonRouter);
+app.use('/api/prevision', PrevisionsRouter);
+app.use('/api/role/users', RolesRouter);
+app.use('/api/user/stock', StocksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
