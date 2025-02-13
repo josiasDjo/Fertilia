@@ -1,23 +1,50 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const session= require('express-session');
 
-var app = express();
+const db = require('./backend/config/db');
+const indexRouter = require('./backend/routes/index');
+const usersRouter = require('./backend/routes/users');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const app = express();
+const port = process.env.PORT || 5001;
 
+// Configuration du moteur de vues
+app.set('views', [
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'views/clients'),
+  path.join(__dirname, 'views/modals'),
+  path.join(__dirname, 'views/agriculteurs'),
+  path.join(__dirname, 'includes'),
+]);
+app.set('view engine', 'ejs');
+
+// Middlewares globaux
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.use(bodyParser.json());
+
+// configuration de la session
+app.use(session({
+  secret: process.env.SECRET_SESSION,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: false, 
+    maxAge: 1000 * 60 * 60 * 24 * 30 // 30 jours
+  }
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -38,4 +65,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(port,() => {
+  console.log(`✅ App is listening on port ${port}`)
+})
 module.exports = app;
