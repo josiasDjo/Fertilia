@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const sequelize = require('./backend/models/index'); 
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,7 +10,16 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const session= require('express-session');
 
-const db = require('./backend/config/db');
+//importer les modèles
+const Utilisateurs = require('./backend/models/Utilisateurs');
+const Champs = require('./backend/models/Champs');
+const Stocks = require('./backend/models/Stock');
+const Livraisons = require('./backend/models/Livraisons');
+const Capteurs = require('./backend/models/Capteurs');
+const roles = require('./backend/models/Roles');
+const previsions = require('./backend/models/Previsions');
+
+//importer les routes
 const indexRouter = require('./backend/routes/index');
 const usersRouter = require('./backend/routes/users');
 
@@ -68,4 +78,10 @@ app.use(function(err, req, res, next) {
 app.listen(port,() => {
   console.log(`✅ App is listening on port ${port}`)
 })
+
+// Synchronisation avec MySQL
+sequelize.sync({ force: false })
+    .then(() => console.log('✅ Base de données synchronisée avec Sequelize !'))
+    .catch(err => console.error('❌ Erreur de synchronisation de la BDD :', err));
+
 module.exports = app;
