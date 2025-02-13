@@ -1,31 +1,36 @@
+const { Sequelize } = require('sequelize');
 require('dotenv').config();
-const mysql = require('mysql2/promise');
 
-// Configuration du pool de connexions
-const db = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    waitForConnections: true,
-    connectionLimit: 10,  // limete des connexions en simultanées
-    queueLimit: 0
-});
+// Création de l'instance Sequelize
+const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+        host: process.env.DB_HOST,
+        dialect: 'mysql', // Indique que l'on utilise MySQL
+        logging: false, // Désactive les logs SQL dans la console
+        pool: {
+            max: 10,  // Nombre maximum de connexions simultanées
+            min: 0,   // Nombre minimum de connexions
+            acquire: 30000, // Temps max pour obtenir une connexion
+            idle: 10000  // Temps max d'inactivité avant de fermer une connexion
+        }
+    }
+);
 
 // Vérifier la connexion
 async function checkDatabaseConnection() {
     try {
-        const connection = await db.getConnection(); // Obtenir une connexion du pool
-        console.log('✅ Connecté à la base de données MySQL');
-        connection.release(); // Libérer la connexion
+        await sequelize.authenticate();
+        console.log('✅ Connecté à la base de données MySQL avec Sequelize');
     } catch (err) {
-        console.error('Erreur de connexion à MySQL :', err);
-        process.exit(1); // Arrête l'application en cas d'erreur critique
+        console.error('❌ Erreur de connexion à MySQL :', err);
+        process.exit(1);
     }
 }
 
 // Vérification au démarrage
 checkDatabaseConnection();
 
-// Exporter la connexion
-module.exports = db;
+module.exports = sequelize;
