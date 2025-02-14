@@ -69,7 +69,7 @@ app.use('/api/utilisateurs', UtilisateursRoutes);
 // app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
-// app.use('/api/role/users', RolesRouter);
+app.use('/api/role/users', RolesRouter);
 // app.use('/api/user/stock', StocksRouter);
 
 // catch 404 and forward to error handler
