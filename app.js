@@ -1,26 +1,76 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const sequelize = require('./backend/models/index'); 
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const session= require('express-session');
 
-var app = express();
+//importer les modèles
+const Utilisateurs = require('./backend/models/Utilisateurs');
+const Champs = require('./backend/models/Champs');
+const Stocks = require('./backend/models/Stock');
+const Livraisons = require('./backend/models/Livraisons');
+const Capteurs = require('./backend/models/Capteurs');
+const roles = require('./backend/models/Roles');
+const previsions = require('./backend/models/Previsions');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//importer les routes
+const indexRouter = require('./backend/routes/index');
+const CapteursRouter = require('./backend/routes/CapteursRoutes');
+const ChampsRouter = require('./backend/routes/ChampsRoutes');
+const LivraisonRouter = require('./backend/routes/LivraisonsRoutes');
+const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
+const RolesRouter = require('./backend/routes/RolesRoutes');
+const StocksRouter = require('./backend/routes/StocksRoutes');
+const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 
+
+const app = express();
+const port = process.env.PORT || 5001;
+
+// Configuration du moteur de vues
+app.set('views', [
+  path.join(__dirname, 'views'),
+  path.join(__dirname, 'views/clients'),
+  path.join(__dirname, 'views/modals'),
+  path.join(__dirname, 'views/agriculteurs'),
+  path.join(__dirname, 'includes'),
+]);
+app.set('view engine', 'ejs');
+
+// Middlewares globaux
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.use(bodyParser.json());
+
+// configuration de la session
+app.use(session({
+  secret: process.env.SECRET_SESSION,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { 
+    secure: false, 
+    maxAge: 1000 * 60 * 60 * 24 * 30 // 30 jours
+  }
+}));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/utilisateurs', UtilisateursRoutes);
+// app.use('/api/capteurs', CapteursRouter);
+// app.use('/api/champs', ChampsRouter);
+// app.use('/api/livraison', LivraisonRouter);
+// app.use('/api/prevision', PrevisionsRouter);
+app.use('/api/role/users', RolesRouter);
+// app.use('/api/user/stock', StocksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,5 +87,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(port,() => {
+  console.log(`✅ App is listening on port ${port}`)
+})
+
+// Synchronisation avec MySQL
+sequelize.sync({ force: false })
+    .then(() => console.log('✅ Base de données synchronisée avec Sequelize !'))
+    .catch(err => console.error('❌ Erreur de synchronisation de la BDD :', err));
 
 module.exports = app;
