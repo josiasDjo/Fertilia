@@ -23,5 +23,10 @@
     "passport-google-oauth20": "^2.0.0",
     "sequelize": "^6.37.5",
     "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.6"
   }
 }

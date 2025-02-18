@@ -1,3 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'multicontroller';
+  src: url('/customer/fonts/Multicontroller.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
 
 #header {
   height: 30rem;
@@ -6,3 +17,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.backgroud_btn_h{
+  background-color: rgb(255, 181, 42);
+} 
+.backgroud_text_h{
+  color: rgb(255, 181, 42);
+} 
