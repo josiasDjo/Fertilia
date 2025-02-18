@@ -1,6 +1,6 @@
 // système de notation
 
-const stars = document.querySelectorAll('.star');
+const stars = document.querySelectorAll('.stars');
 
     // Ajout des écouteurs d'événements sur chaque étoile
     stars.forEach(star => {
