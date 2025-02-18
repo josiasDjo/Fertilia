@@ -3,42 +3,72 @@
 <%- include('head') %>
 <body>
   <section class="relative" id="hero-header">
-    <nav class="flex flex-row px-10 py-4 h-28 text-center items-center bg-black bg-opacity-90 text-white relative ">
-      <ul class="w-42 items-center relative pb-3">
+    <nav class="flex flex-row px-10 py-4 h-28 text-center items-center justify-center bg-black bg-opacity-90 text-white relative ">
+      <ul class="w-42 items-center pb-3 absolute left-0 mx-10">
         <img class="h-auto w-44 object-contain" src="/images/logo&name.png" alt="Logo de Fertilia">
       </ul>
-      <ul class="flex flex-row absolute right-0 px-10 text-lg text-medium text-center items-center">
+      <ul class="flex flex-row justify-center self-center relative content-center px-10 text-lg text-medium text-center items-center">
         <a href="#">
-          <li class="pr-4">Accueil</li>
+          <li class="pr-4 text-center flex justify-center items-center content-center">
+            <li class=""><i class="fa-solid fa-house"></i></li>
+            <li class="mr-6">Accueil</li>
+          </li>
         </a>
         <a href="#">
-          <li class="pr-4">Fonctionnalités</li>
+          <li class="pr-4 relative">
+            <li><i class="fa-solid fa-chart-simple"></i></li>
+            <li class="mr-6">Fonctionnalités</li>
+          </li>
         </a>        
         <a href="#">
-          <li class="pr-4">A propos</li>
+          <li class="pr-4">
+            <li><i class="fa-solid fa-circle-info"></i></li>
+            <li class="mr-6">A propos</li>
+          </li>
         </a>        
         <a href="#">
-          <li class="pr-4">Contacts</li>
+          <li class="pr-4">
+          
+            <li><i class="fa-solid fa-phone-volume"></i></li>
+            <li class="mr-6">Contacts</li>
+          </li>
         </a>
 
-        <button class="pr-4">Se connecter</button>
+      </ul>   
+      <ul class="flex flex-row absolute right-0 px-10 text-lg text-medium text-center items-center">
+        <button class="pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
       </ul>
     </nav>
 
     <div class="text-right px-20 py-6 flex flex-row relative" id="header">
+      <!-- <img src="/images/ecotechnologie.jpg" alt="echotechnologie" class="absolute rounded-full w-24 h-auto object-contain left-1/3 top-1/3 z-20"> -->
       <div class="w-5/12"></div>
       <div class="w-7/12 flex flex-col">
-        <div class="relative place-items-end w-full mb-7">
-          <img class="h-auto w-24 object-contain" src="/images/logo_only.png" alt="">
+        <div class="relative place-items-end w-full mb-5">
+          <img class="h-auto w-24 object-contain" src="/images/logo_only.png" alt="logo de Fertilia">
         </div>
-        <h1 class="font-multicontroller text-4xl text-white mb-5">La technologie au service de<span class="backgroud_text_h bg-opacity-60"> votre terre</span></h1>
+        <h1 class="font_header text-5xl text-white mb-5 text-left">La technologie au service de<span class="backgroud_text_h bg-opacity-60"> votre terre</span></h1>
         <p class="text-white text-xl font-light bg-black bg-opacity-30 p-2"> <span class="text-xl">“</span> Transformez votre exploitation 
-          grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. surveillez en 
+          grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
           temps réel vos cultures et optimisez l'irrigation. <span class="backgroud_text_h font-medium">Maximisez vos rendements</span> et bâtissez un avenir durable, 
           le tout en simplifiant la gestion quotidienne de vos ressources. Découvrez 
-          comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-xl">”</span>
+          comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-xl">”</span><br>
+          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button>
         </p>
       </div>
+    </div>
+  </section>
+
+  <section id="avantages" class="p-20">
+    <h3 class="font_header text-3xl text-center">Avantages</h3>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+      
     </div>
   </section>
 </body>

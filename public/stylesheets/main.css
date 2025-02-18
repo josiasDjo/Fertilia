@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'multicontroller';
   src: url('/customer/fonts/Multicontroller.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
+}
+
+.font_header {
+  font-family: shader-inline, monospace;
+  font-style: normal;
+  font-weight: 100
+}
+
+.font_header {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
 #header {
@@ -23,4 +39,4 @@
 } 
 .backgroud_text_h{
   color: rgb(255, 181, 42);
-} 
+}
