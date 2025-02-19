@@ -1,3 +1,50 @@
+// Navbar show & hidden
+
+function navbarSet(option) {
+    let show = document.getElementById('show');
+    let hiddenBox = document.getElementById('hiddenBox');
+    let navbar = document.getElementById('navbar'); 
+    let nav_part2 = document.getElementById('nav_part2')
+    let nav_part3 = document.getElementById('nav_part3')
+
+    if (option === 'open') {
+        show.classList.remove('block');
+        show.classList.add('hidden');
+        hiddenBox.classList.remove('hidden');
+        hiddenBox.classList.add('block');
+
+        navbar.classList.remove('h-24');
+        navbar.classList.remove('relative');
+        navbar.classList.add('h-96');
+        navbar.classList.add('absolute');
+        navbar.classList.add('top-0');
+
+        nav_part2.classList.remove('hidden');
+        nav_part2.classList.add('flex');
+        nav_part3.classList.remove('hidden');
+        nav_part3.classList.add('flex');
+
+        console.log('Nav Show', option);
+    } else {
+        show.classList.remove('hidden');
+        show.classList.add('block');
+        hiddenBox.classList.remove('block');
+        hiddenBox.classList.add('hidden');
+
+        navbar.classList.remove('h-96');
+        navbar.classList.remove('absolute');
+        navbar.classList.remove('top-0');
+        navbar.classList.add('h-24');
+        navbar.classList.add('relative');
+
+        nav_part2.classList.remove('flex');
+        nav_part2.classList.add('hidden');
+        nav_part3.classList.remove('flex');
+        nav_part3.classList.add('hidden');
+
+        console.log('Nav hidden', option);
+    }
+}
 // système de notation
 
 const stars = document.querySelectorAll('.stars');

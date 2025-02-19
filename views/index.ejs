@@ -2,44 +2,54 @@
 <html lang="en">
 <%- include('head') %>
 <body>
-  <section class="relative" id="hero-header">
-    <nav class="w-full flex flex-col px-10 py-2 h-96 bg-black bg-opacity-90 text-white absolute lg:text-center lg:items-center lg:justify-center
-    lg:w-full lg:h-28 lg:flex lg:flex-row lg:px-10
-    ">
-      <ul class="w-42 items-center pb-3 relative lg:left-0 lg:mx-10 lg:absolute ">
+  <section class="relative w-full" id="hero-header">
+    <nav id="navbar" class="w-full flex flex-col px-10 py-2 h-24 relaitve bg-black bg-opacity-90 text-white 
+    lg:text-center lg:items-center lg:justify-center lg:w-full lg:h-28 lg:flex lg:flex-row lg:px-10 z-10">
+
+      <button onclick="navbarSet('close');" id="hiddenBox" class="hidden p-2 w-24 h-24 absolute top-0 right-7 z-10">
+        <li class="list-none text-4xl">
+          <i class="fa-solid fa-xmark"></i>
+        </li>
+      </button>
+      <button onclick="navbarSet('open');" id="show" class="block p-2 w-24 h-24 absolute top-0 right-7 z-10">
+        <li class="list-none text-4xl lg:hidden">
+          <i class="fa-solid fa-bars"></i>
+        </li>
+      </button>
+
+      <ul class="w-42 items-center pb-3 relative lg:left-0 lg:mx-10 lg:absolute">
         <img class="h-auto w-36 lg:w-44 object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia">
       </ul>
-      <ul class="flex relative text-lg text-medium flex-col
+      <ul id="nav_part2" class="relative text-lg text-medium flex-col hidden lg:flex
       lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:px-10
       ">
-        <a href="#">
-          <li class="pr-4 text-center flex justify-center items-center content-center">
-            <li class=""><i class="fa-solid fa-house"></i></li>
-            <li class="mr-6">Accueil</li>
-          </li>
+        <a href="#" class="my-2 p-2">
+          <ul class="flex flex-row w-full lg:flex-col lg:pr-4">
+            <li class="mr-6"><i class="fa-solid fa-house"></i></li>
+            <li class="mr-6">Accueil</li>              
+          </ul>
         </a>
-        <a href="#">
-          <li class="pr-4 relative">
-            <li><i class="fa-solid fa-chart-simple"></i></li>
+        <a href="#" class="my-2 p-2">
+          <ul class="lg:pr-4 flex flex-row w-full lg:flex-col">
+            <li class="mr-6"><i class="fa-solid fa-chart-simple"></i></li>
             <li class="mr-6">Fonctionnalités</li>
-          </li>
+          </ul>
         </a>        
-        <a href="#">
-          <li class="pr-4">
-            <li><i class="fa-solid fa-circle-info"></i></li>
+        <a href="#" class="my-2 p-2">
+          <ul class="pr-4 flex flex-row w-full lg:flex-col">
+            <li class="mr-6"><i class="fa-solid fa-circle-info"></i></li>
             <li class="mr-6">A propos</li>
-          </li>
+          </ul>
         </a>        
-        <a href="#">
-          <li class="pr-4">
-          
-            <li><i class="fa-solid fa-phone-volume"></i></li>
+        <a href="#" class="my-2 p-2">
+          <ul class="pr-4 flex flex-row w-full lg:flex-col">       
+            <li class="mr-6"><i class="fa-solid fa-phone-volume"></i></li>
             <li class="mr-6">Contacts</li>
-          </li>
+          </ul>
         </a>
 
       </ul>   
-      <ul class="flex flex-row absolute right-0 px-10 text-lg text-medium text-center items-center">
+      <ul id="nav_part3" class="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
         <button class="pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
       </ul>
     </nav>
@@ -64,8 +74,8 @@
   </section>
 
   <main>
-    <section id="avantages" class="p-20">
-      <h3 class="text-3xl text-center font-bold">Avantages</h3>
+    <section id="avantages" class="p-7 w-full lg:p-20">
+      <h3 class="text-2xl font-bold lg:text-3xl lg:text-center">Avantages</h3>
   
       <div class="w-full flex flex-wrap items-center justify-center my-10">
         <div class="w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
