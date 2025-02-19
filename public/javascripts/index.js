@@ -13,7 +13,7 @@ function navbarSet(option) {
         hiddenBox.classList.remove('hidden');
         hiddenBox.classList.add('block');
 
-        navbar.classList.remove('h-24');
+        navbar.classList.remove('h-16');
         navbar.classList.remove('relative');
         navbar.classList.add('h-96');
         navbar.classList.add('absolute');
@@ -24,17 +24,18 @@ function navbarSet(option) {
         nav_part3.classList.remove('hidden');
         nav_part3.classList.add('flex');
 
+
         console.log('Nav Show', option);
     } else {
         show.classList.remove('hidden');
-        show.classList.add('block');
-        hiddenBox.classList.remove('block');
+        show.classList.add('flex');
+        hiddenBox.classList.remove('flex');
         hiddenBox.classList.add('hidden');
 
         navbar.classList.remove('h-96');
         navbar.classList.remove('absolute');
         navbar.classList.remove('top-0');
-        navbar.classList.add('h-24');
+        navbar.classList.add('h-16');
         navbar.classList.add('relative');
 
         nav_part2.classList.remove('flex');
