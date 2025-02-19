@@ -48,3 +48,7 @@
 .backgroud_text_h{
   color: rgb(255, 181, 42);
 }
+
+.taille_conn {
+  height: 35rem;  
+} 
