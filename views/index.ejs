@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <%- include('head') %>
 <body>
   <section class="relative w-full" id="hero-header">
@@ -19,23 +19,24 @@
 
       <ul class="w-42 items-center pb-3 relative lg:left-0 lg:mx-10 lg:absolute">
         <img class="h-auto w-36 lg:w-44 object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia">
+        <img class="h-auto w-36 lg:w-44 object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia">
       </ul>
       <ul id="nav_part2" class="relative text-lg text-medium flex-col hidden lg:flex
       lg:text-center lg:items-center lg:flex-row lg:justify-center lg:self-center lg:content-center lg:px-10
       ">
-        <a href="#" class="my-2 p-2">
+        <a href="#header" class="my-2 p-2">
           <ul class="flex flex-row w-full lg:flex-col lg:pr-4">
             <li class="mr-6"><i class="fa-solid fa-house"></i></li>
             <li class="mr-6">Accueil</li>              
           </ul>
         </a>
-        <a href="#" class="my-2 p-2">
+        <a href="#avantages" class="my-2 p-2">
           <ul class="lg:pr-4 flex flex-row w-full lg:flex-col">
             <li class="mr-6"><i class="fa-solid fa-chart-simple"></i></li>
             <li class="mr-6">Fonctionnalités</li>
           </ul>
         </a>        
-        <a href="#" class="my-2 p-2">
+        <a href="#avis" class="my-2 p-2">
           <ul class="pr-4 flex flex-row w-full lg:flex-col">
             <li class="mr-6"><i class="fa-solid fa-circle-info"></i></li>
             <li class="mr-6">A propos</li>
@@ -61,27 +62,26 @@
         <div class="absolute top-2 right-2 w-16 place-items-end lg:w-full lg:mb-5 lg:relative">
           <img class="h-auto w-16 lg:w-24 object-contain" src="/images/logo_only.webp" alt="logo de Fertilia">
         </div>
-        <h1 class="font_header mt-8 text-3xl text-left z-10 lg:text-5xl text-white lg:mb-3 ">La technologie au service de<span class="backgroud_text_h bg-opacity-60"> votre terre</span></h1>
+        <h1 class="font_header mt-8 text-4xl text-left z-10 lg:text-5xl text-white lg:mb-3 ">La technologie au service de<span class="backgroud_text_h bg-opacity-60"> votre terre</span></h1>
         
-        <div class="bg-black bg-opacity-30 p-2 overflow-y-scroll relative">
+        <div class="bg-black bg-opacity-30 p-2 overflow-y-scroll relative lg:overflow-hidden">
           <p class="text-white text-xl font-light"> <span class="text-lg"><i class="fas fa-quote-left"></i></span> Transformez votre exploitation 
               grâce à <span class="backgroud_text_h font-medium">notre plateforme innovante</span>. Surveillez en 
-              temps réel vos cultures et optimisez l'irrigation. <span class="backgroud_text_h font-medium">Maximisez vos rendements</span> et bâtissez un avenir durable, 
-              le tout en simplifiant la gestion quotidienne de vos ressources. Découvrez 
+              temps réel vos cultures et optimisez l'irrigation. Découvrez 
               comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br>
           </p>
+          <button class="w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
         </div>
-        <button class="w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
       </div>
     </div>
   </section>
 
   <main>
     <section id="avantages" class="p-2 lg:p-7 w-full lg:p-20">
-      <h3 class="text-2xl font-bold lg:text-3xl lg:text-center">Avantages</h3>
+      <h3 class="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</h3>
   
       <div class="w-full flex flex-wrap items-center justify-center my:2 lg:my-10">
-        <div class="w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        <div class="w-96 lg:w-80 h-auto bg-white m-2 lg:m-5 rounded-lg shadow-xl p-2">
           <div id="" class="w-full h-48">
             <img src="/images/gestion_culture/image1.webp" alt="Femmes cultuvant ensemble" class="object-cover h-48 w-full">
           </div>
@@ -90,9 +90,9 @@
             cultures en temps réel et recevez des recommandations personnalisées pour adapter vos pratiques 
             agricoles et améliorer vos rendements.
           </p>
-          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-square-plus"></i></button>
+          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
         </div>
-        <div class="w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        <div class="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
           <div id="" class="w-full h-48">
             <img src="/images/irrigations/irrigation.webp" alt="irrigation automatique" class="object-cover h-48 w-full">
           </div>
@@ -102,9 +102,9 @@
             Les capteurs mesurent l'humidité du sol et activent l'irrigation au moment optimal, garantissant une 
             utilisation efficace de l'eau et favorisant une croissance optimale des cultures.
           </p>
-          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-square-plus"></i></button>
+          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
         </div>
-        <div class="w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
+        <div class="w-96 lg:w-80 h-auto bg-white m-5 rounded-lg shadow-xl p-2">
           <div id="" class="w-full h-48">
             <img src="/images/image2.webp" alt="Personnes analysant les courbes de croissance" class="object-cover h-48 w-full">
           </div>
@@ -114,18 +114,18 @@
             Visualisez l'évolution de vos récoltes, identifiez les tendances et ajustez vos stratégies pour 
             maximiser vos profits et pérenniser la performance de votre exploitation.
           </p>
-          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-square-plus"></i></button>
+          <button class="pr-4 backgroud_btn_h mt-2 px-3 py-2 rounded-lg text-lg text-white font-bold w-full">Voir Plus   <i class="fa-solid fa-circle-plus"></i></button>
         </div>
       </div>
       
     </section>
 
-    <section id="avis" class="w-full p-20">
-      <h3 class="text-3xl text-center font-bold m-5">Avis et Notation</h3>
-      <div id="" class="items-center justify-center flex flex-wrap relative">
+    <section id="avis" class="w-full p-10 my-2 lg:p-20 text-center items-center justify-center flex flex-col ">
+      <h3 class="text-2xl lg:text-3xl text-center font-bold m-5">Avis et Notations</h3>
+      <div id="" class="w-full items-center justify-center content-center flex flex-wrap relative lg:w-9/12">
         <!-- template notation -->
-        <div class="w-96 m-3 bg-gray-200 h-auto relative p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
-          <div id="ratings" class="flex space-x-1 w-2/4">
+        <div class="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto mb-5 relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+          <div id="ratings" class="w-full flex relative space-x-1 lg:w-2/4">
             <svg class="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
             </svg>
@@ -159,10 +159,9 @@
           </div>
         </div>
 
-
         <!-- template notation -->
-        <div class="w-96 m-3 bg-gray-200 h-auto relative p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
-          <div id="ratings" class="flex space-x-1 w-2/4">
+        <div class="w-full lg:w-96 lg:m-3 bg-gray-200 h-auto relative p-3 text-left lg:p-5 rounded-tl-3xl rounded-br-3xl border-b-2 border-double border-yellow-500">
+          <div id="ratings" class="w-full flex relative space-x-1 lg:w-2/4">
             <svg class="star w-10 h-10 cursor-pointer text-gray-300 transition-colors duration-200" data-value="1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 15l-5.878 3.09 1.122-6.545L.488 7.91l6.564-.955L10 1l2.948 5.955 6.564.955-4.756 3.635 1.122 6.545z"/>
             </svg>
@@ -195,7 +194,6 @@
             </div>
           </div>
         </div>
-
 
       </div>
     </section>

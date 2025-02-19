@@ -47,7 +47,7 @@ function navbarSet(option) {
 }
 // système de notation
 
-const stars = document.querySelectorAll('.stars');
+const stars = document.querySelectorAll('.star');
 
     // Ajout des écouteurs d'événements sur chaque étoile
     stars.forEach(star => {
