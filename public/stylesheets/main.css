@@ -52,3 +52,7 @@
 .taille_conn {
   height: 35rem;  
 } 
+
+hr {
+  width: 40%;
+}
