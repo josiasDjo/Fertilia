@@ -76,17 +76,16 @@ function OpenModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
-    let bodySelect = document.querySelector('body');
 
     if (valeur === 'signin' && signin && signup && parent) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         signin.classList.remove('hidden');
         signin.classList.add('flex');
-        signin.classList.add("backdrop-blur-md")
+        signin.classList.add("backdrop-blur-xl")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        bodySelect.body.classList.add('backdrop-blur');
+        // parent.classList.add("backdrop-blur-md");
 
         console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
@@ -96,7 +95,8 @@ function OpenModalSign(valeur) {
         signup.classList.add('flex');
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        bodySelect.body.classList.add('backdrop-blur');
+        // parent.classList.add("backdrop-blur-md");
+
 
         console.log('Sign up found Open button');
     } else {

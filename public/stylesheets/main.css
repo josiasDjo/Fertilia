@@ -52,7 +52,9 @@
 .taille_conn {
   height: 35rem;  
 } 
-
+.backdrop-blur {
+  backdrop-filter: blur(5px); 
+}
 hr {
   width: 40%;
 }
