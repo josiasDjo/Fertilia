@@ -51,7 +51,7 @@ function navbarSet(option) {
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
-    const parent = document.getElementById('modals-show');
+    const parent = document.getElementById('modalsShow');
 
     if (valeur === 'signin' && signin && parent) {
         signin.classList.remove('flex');
@@ -59,14 +59,14 @@ function closeModalSign(valeur) {
         parent.classList.remove('flex');
         parent.classList.add('hidden');
 
-        console.log('Sign in found close button');
+        console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
 
-        console.log('Sign up found close button');
+        console.log('Sign up found Close button');
     }  else {
         console.log('Valeurs d\'entrée incorrectes');
     }
@@ -75,7 +75,7 @@ function closeModalSign(valeur) {
 function OpenModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
-    const parent = document.getElementById('modals-show');
+    const parent = document.getElementById('modalsShow');
 
     if (valeur === 'signin' && signin && signup && parent) {
         signup.classList.remove('flex');
@@ -85,16 +85,16 @@ function OpenModalSign(valeur) {
         parent.classList.remove('hidden');
         parent.classList.add('flex');
 
-        console.log('Sign in found close button');
+        console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
         signup.classList.remove('hidden');
         signup.classList.add('flex');
-        parent.classList.remove('flex');
-        parent.classList.add('hidden');
+        parent.classList.remove('hidden');
+        parent.classList.add('flex');
 
-        console.log('Sign up found close button');
+        console.log('Sign up found Open button');
     } else {
         console.log('Valeurs d\'entrée incorrectes');
     }
