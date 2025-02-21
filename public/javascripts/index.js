@@ -49,7 +49,15 @@ function navbarSet(option) {
 
 // sign in & sign up pages set hidden or flex
 function closeModalSign(valeur) {
-    
+    const signin = document.getElementById('signin');
+    const signup = document.getElementById('signup');
+    const parent = document.getElementById('modals-show');
+
+    if (valeur === 'signin' && signin && parent) {
+        console.log('Sign in found close button');
+    } else if (valeur === 'signup' && signup && parent) {
+        console.log('Sign up found close button');
+    }
 }
 // système de notation
 
