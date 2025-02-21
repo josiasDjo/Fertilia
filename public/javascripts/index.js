@@ -46,6 +46,11 @@ function navbarSet(option) {
         console.log('Nav hidden', option);
     }
 }
+
+// sign in & sign up pages set hidden or flex
+function closeModalSign(valeur) {
+    
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
