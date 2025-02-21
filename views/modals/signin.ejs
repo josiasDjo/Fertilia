@@ -17,8 +17,8 @@
                 <!-- <hr>  -->
             </ul>
             <ul class="flex flex-col my-3 w-full">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="password" id="password">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email_signin">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="password" id="password_signin">
             </ul>
             <ul class="flex flex-col w-full text-right hover:border-2 hover:border-solid hover:border-blue-500">
                 <a href="#" class="text-sm hover:text-blue-500">Mot de passe oublié</a>
@@ -26,7 +26,7 @@
     
             <ul class="flex flex-col w-full">
                 <button class="backgroud_btn_h text-white rounded-3xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</button>
-                <p>Vous n'avez pas un compte ? <button id="btn_signin" class="text-blue-500 font-medium" onclick="OpenModalSign('signup');">S'inscrire</button></p>
+                <p>Vous n'avez pas un compte ? <button type="button" id="btn_signup" class="text-blue-500 font-medium" onclick="OpenModalSign('signup');">S'inscrire</button></p>
             </ul>            
         </form>
 
