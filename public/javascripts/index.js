@@ -58,9 +58,36 @@ function closeModalSign(valeur) {
         signin.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-        
+
         console.log('Sign in found close button');
     } else if (valeur === 'signup' && signup && parent) {
+        signup.classList.remove('flex');
+        signup.classList.add('hidden');
+        parent.classList.remove('flex');
+        parent.classList.add('hidden');
+
+        console.log('Sign up found close button');
+    }
+}
+
+function OpenModalSign(valeur) {
+    const signin = document.getElementById('signin');
+    const signup = document.getElementById('signup');
+    const parent = document.getElementById('modals-show');
+
+    if (valeur === 'signin' && signin && parent) {
+        signin.classList.remove('flex');
+        signin.classList.add('hidden');
+        parent.classList.remove('flex');
+        parent.classList.add('hidden');
+
+        console.log('Sign in found close button');
+    } else if (valeur === 'signup' && signup && parent) {
+        signup.classList.remove('flex');
+        signup.classList.add('hidden');
+        parent.classList.remove('flex');
+        parent.classList.add('hidden');
+
         console.log('Sign up found close button');
     }
 }
