@@ -67,6 +67,8 @@ function closeModalSign(valeur) {
         parent.classList.add('hidden');
 
         console.log('Sign up found close button');
+    }  else {
+        console.log('Valeurs d\'entrée incorrectes');
     }
 }
 
@@ -78,8 +80,8 @@ function OpenModalSign(valeur) {
     if (valeur === 'signin' && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
-        parent.classList.remove('flex');
-        parent.classList.add('hidden');
+        parent.classList.remove('hidden');
+        parent.classList.add('flex');
 
         console.log('Sign in found close button');
     } else if (valeur === 'signup' && signup && parent) {
@@ -89,6 +91,8 @@ function OpenModalSign(valeur) {
         parent.classList.add('hidden');
 
         console.log('Sign up found close button');
+    } else {
+        console.log('Valeurs d\'entrée incorrectes');
     }
 }
 // système de notation
