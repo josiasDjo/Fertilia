@@ -1,3 +1,35 @@
-<div class="hidden">
+<div id="signin" class="flex taille_conn backdrop-blur-md bg-white rounded-3xl lg:p-3 lg:w-9/12 lg:flex-row relative">
+    <div class="flex flex-col lg:w-7/12 lg:px-24 py-10 justify-center items-center relative">
+        <h4 class="font_header text-center text-3xl font-bold">Ravie de vous revoir</h4>
+        <form action="#" method="post" class="lg:w-11/12 items-center relative justify-center flex flex-col lg:p-5">
+            <ul class="flex flex-col w-full text-center">
+                <span class="font-medium">Entrez vos informations</span>
+                <button class="rounded-3xl p-2 border-2 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
+                focus:ring-2 hover:ring-2 hover:border-yellow-400 hover:text-yellow-400 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    Continuer avec Google
+                </button>
+            </ul>
+            <ul class="flex flex-row items-center justify-center content-center relative">
+                <hr>
+                <span class="text-lg">ou</span>
+                <!-- <hr>  -->
+            </ul>
+            <ul class="flex flex-col my-3 w-full">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="password" id="password">
+            </ul>
+            <ul class="flex flex-col w-full text-right hover:border-2 hover:border-solid hover:border-blue-500">
+                <a href="#" class="text-sm hover:text-blue-500">Mot de passe oublié</a>
+            </ul>
+    
+            <ul class="flex flex-col w-full">
+                <button class="backgroud_btn_h text-white rounded-3xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Se connecter</button>
+                <p>Vous n'avez pas un compte ? <button id="btn_signin" class="text-blue-500 font-medium">S'inscrire</button></p>
+            </ul>            
+        </form>
 
+    </div>
+    <div class="lg:w-6/12 h-full items-center justify-center overflow-hidden rounded-3xl">
+        <img class=" w-full h-auto object-contain" src="/images/background_connexion.webp" alt="landscape">
+    </div>
 </div>
