@@ -51,7 +51,7 @@
 
       </ul>   
       <ul id="nav_part3" class="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
-        <button class="pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        <button class="pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" onclick="OpenModalSign('signin');">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
       </ul>
     </nav>
 
@@ -70,12 +70,12 @@
               temps réel vos cultures et optimisez l'irrigation. Découvrez 
               comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br>
           </p>
-          <button class="w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
+          <button class="w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" onclick="OpenModalSign('signup');">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
         </div>
       </div>
     </div>
   </section>
-  <section id="modals-show" class="w-full h-screen z-50 backdrop-blur fixed inset-4 justify-center items-center flex">
+  <section id="modals-show" class="w-full h-screen z-50 backdrop-blur fixed inset-4 justify-center items-center hidden">
     <!-- <p>Lorem ipsum dolor sit amet.</p> -->
     <%- include('signin.ejs') %>
     <%- include('signup.ejs') %> 
