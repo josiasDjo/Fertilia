@@ -24,7 +24,7 @@ exports.createUtilisateur = async (req, res) => {
 
 exports.getUtilisateur = async (req, res) => {
     try {
-        const utilisateur = await Utilisateur.findByPk(req.params.id);
+        const utilisateur = await Utilisateur.findByPk(req.params.email);
         if (!utilisateur) return res.status(404).json({ error: 'Utilisateur non trouvé' });
         res.json(utilisateur);
     } catch (err) {
