@@ -1,26 +1,26 @@
-<div id="signup" class="hidden taille_conn backdrop-blur-md bg-white rounded-3xl lg:p-3 lg:w-9/12 lg:flex-row relative">
-    <div class="lg:w-6/12 h-full items-center justify-center overflow-hidden rounded-3xl">
+<div id="signup" class="hidden md:height_sign shadow-xl md:w-7/12 height_sign lg:taille_conn backdrop-blur-md bg-white rounded-3xl lg:p-3 lg:w-9/12 lg:flex-row relative">
+    <div class="lg:w-6/12 hidden lg:flex h-full items-center justify-center overflow-hidden rounded-3xl">
         <img class=" w-full h-auto object-contain" src="/images/background_connexion.webp" alt="landscape">
     </div>
 
-    <div class="flex flex-col lg:w-7/12 lg:px-24 py-10 justify-center items-center relative">
-        <button type="button" class="absolute top-2 right-2 text-2xl text-blue-500" onclick="closeModalSign('signup');"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
+    <div class="flex flex-col lg:w-7/12 lg:px-24 md:w-full py-3 lg:py-10 justify-center items-center relative">
+        <button type="button" class="absolute top-2 lg:right-2 left-2 text-2xl text-yellow-400" onclick="closeModalSign('signup');"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
 
         <!-- <h4 class="font_header text-center text-3xl font-bold">Ravie de vous revoir</h4> -->
-        <form action="/api/utilisateurs/signup" method="POST" class="lg:w-11/12 items-center relative justify-center flex flex-col lg:p-5">
+        <form action="/api/utilisateurs/signup" method="POST" class="lg:w-11/12 md:w-full md:px-10 items-center relative justify-center flex flex-col lg:p-5">
             <ul class="flex flex-col w-full text-center">
                 <span class="font-medium">Enregistrez-vous</span>
             </ul>
-            <ul class="flex flex-col my-3 w-full">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Nom" name="nom" id="nom">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Prénom" name="prenom" id="prenom">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="tel" placeholder="Téléphone" name="phone" id="phone">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email">
+            <ul class="flex flex-col md:my-4 lg:my-2 w-full">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Nom" name="nom" id="nom">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Prénom" name="prenom" id="prenom">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="tel" placeholder="Téléphone" name="phone" id="phone">
+                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email">
                 <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="default_mot_de_passe" id="password">
             </ul>
     
             <ul class="flex flex-col w-full">
-                <button class="backgroud_btn_h text-white rounded-3xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Envoyer</button>
+                <button class="backgroud_btn_h text-white rounded-3xl lg:my-5 md:my-2 p-2 border-2 border-solid border-yellow-500 border-opacity-30" type="submit">Envoyer</button>
                 <p class="text-sm">Vous avez déjà un compte ? <button id="btn_signin" class="text-blue-500 font-medium" type="button" onclick="OpenModalSign('signin');">Se connecter</button></p>
             </ul>            
         </form>
