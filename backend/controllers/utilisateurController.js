@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt");
 
 exports.createUtilisateur = async (req, res) => {
     try {
-        let { nom, prenom, email, default_mot_de_passe, role_id } = req.body;
-
+        let { nom, prenom, email, default_mot_de_passe } = req.body;
+        const role_id = 1;
         const UtilisateurExiste  = await Utilisateur.findOne({ where: { email }});
         if (UtilisateurExiste) {
             return res.status(500).json({ error : 'Cet Email existe déjà ' });
@@ -24,7 +24,9 @@ exports.createUtilisateur = async (req, res) => {
 
 exports.getUtilisateur = async (req, res) => {
     try {
-        const utilisateur = await Utilisateur.findByPk(req.params.email_signin);
+        const { email, password } = req.body;
+
+        const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) return res.status(404).json({ error: 'Utilisateur non trouvé' });
         res.json(utilisateur);
     } catch (err) {

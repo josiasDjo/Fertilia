@@ -8,6 +8,7 @@ function navbarSet(option) {
     let nav_part3 = document.getElementById('nav_part3')
 
     if (option === 'open') {
+        
         show.classList.remove('block');
         show.classList.add('hidden');
         hiddenBox.classList.remove('hidden');
@@ -16,6 +17,7 @@ function navbarSet(option) {
         navbar.classList.remove('h-16');
         navbar.classList.remove('relative');
         navbar.classList.add('h-96');
+        navbar.classList.add('md:h-96');
         navbar.classList.add('absolute');
         navbar.classList.add('top-0');
 
@@ -33,6 +35,7 @@ function navbarSet(option) {
         hiddenBox.classList.add('hidden');
 
         navbar.classList.remove('h-96');
+        navbar.classList.remove('md:h-96');
         navbar.classList.remove('absolute');
         navbar.classList.remove('top-0');
         navbar.classList.add('h-16');

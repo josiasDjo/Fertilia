@@ -58,3 +58,11 @@
 hr {
   width: 40%;
 }
+
+.height_sign {
+  height: 100vh - (100px);
+}
+.animate_nav {
+  transition-delay: 10ms;
+  transition: ease-in;
+}
