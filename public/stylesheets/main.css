@@ -62,6 +62,9 @@ hr {
 .height_sign {
   height: 100vh - (100px);
 }
+.height_sign_lg {
+  height: 100vh - (300px);
+}
 .animate_nav {
   transition-delay: 10ms;
   transition: ease-in;
