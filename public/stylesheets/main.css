@@ -63,6 +63,7 @@ hr {
   height: 100vh - (100px);
 }
 .height_sign_lg {
+  max-height: 100vh - (300px);
   height: 100vh - (300px);
 }
 .animate_nav {
