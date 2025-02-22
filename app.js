@@ -63,6 +63,18 @@ app.use(session({
   }
 }));
 
+// Initialiser Flash après la session
+// app.use(flash());
+
+// Middleware pour rendre Flash accessible dans les vues
+app.use((req, res, next) => {
+  res.locals.error_conn = "";
+  // res.locals.success_msg = req.flash('success_msg'); // Messages de succès
+  // res.locals.error_msg = req.flash('error_msg'); // Messages d'erreur
+  console.log('✅ Middleware Flash exécuté');
+  next();
+});
+// Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
 // app.use('/api/capteurs', CapteursRouter);

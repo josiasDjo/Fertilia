@@ -24,11 +24,18 @@ exports.createUtilisateur = async (req, res) => {
 
 exports.getUtilisateur = async (req, res) => {
     try {
-        const { email, password } = req.body;
-
+        const { email, mot_de_passe } = req.body;
+        const error = "Email ou mot de passe incorrect";
         const utilisateur = await Utilisateur.findOne({ where: { email }});
-        if (!utilisateur) return res.status(404).json({ error: 'Utilisateur non trouvé' });
-        res.json(utilisateur);
+        if (!utilisateur) {
+            res.locals.error_conn = error;
+        }
+        const mdp_user = await Utilisateur.findOne({where : { mot_de_passe }});
+        if (!mdp_user)  {
+            res.locals.error_conn = error;
+        }
+        // res.json(utilisateur);
+        // res.render('signin', { error_conn });
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
         res.status(500).json({ error: 'Erreur lors de la récupération de l\'utilisateur', err });
