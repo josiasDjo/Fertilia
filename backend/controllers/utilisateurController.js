@@ -29,12 +29,25 @@ exports.getUtilisateur = async (req, res) => {
         const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) {
             res.locals.error_conn = error;
+            return res.send({ error_conn:  error});
         }
         const mdp_user = await Utilisateur.findOne({where : { mot_de_passe }});
         if (!mdp_user)  {
             res.locals.error_conn = error;
+            return res.render('index', { error_conn:  error});
         }
-        // res.json(utilisateur);
+
+        req.session.users = {
+            id: utilisateur.id_utilisateurs,
+            nom: utilisateur.nom,
+            prenom: utilisateur.nom,
+            email: utilisateur.email,
+            role_id: utilisateur.role_id
+        }
+
+        if (utilisateur.role_id === 1) return res.render('dashboard');
+        return res.render('dashboard_client'); 
+        // return res.json(utilisateur);
         // res.render('signin', { error_conn });
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);

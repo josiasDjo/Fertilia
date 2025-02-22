@@ -153,3 +153,9 @@ function removeHover() {
         star.classList.remove('text-yellow-400');
     });
 }
+
+// document.getElementById('connexion_page_send').addEventListener("submit", async function(event) {
+//     event.preventDefault();
+
+//     alert('Soumettre le formulaire ?');
+// });
