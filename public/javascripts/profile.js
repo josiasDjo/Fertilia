@@ -50,7 +50,7 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         let err_msg = "Tous les champs sont réquis";
         const message_error = document.getElementById('message_error');
         if (message_error) {
-            message_error.innerText.value = err_msg;
+            message_error.innerText = err_msg;
         }else {
             alert('Message error not found');
         } 
