@@ -38,28 +38,29 @@ exports.getUtilisateur = async (req, res) => {
         }
 
         req.session.users = {
-            id: utilisateur.id_utilisateurs,
+            id_user: utilisateur.id_utilisateurs,
             nom: utilisateur.nom,
-            prenom: utilisateur.prenomort,
+            prenom: utilisateur.prenom,
             email: utilisateur.email,
             role_id: utilisateur.role_id
         }
 
-        if (utilisateur.role_id === 1) return res.render('dashboard', {
-                id_user: utilisateur.id_utilisateurs,
-                nom: utilisateur.nom,
-                prenom: utilisateur.prenom,
-                email: utilisateur.email,
-                role_id: utilisateur.role_
-            });
-        return res.render('dashboard_client', 
-            { 
-                id: id.req.session.users,
-                nom: nom.req.session.users,
-                prenom: nom.req.session.users,
-                email: email.req.session.users,
-                role_id: role_id.req.session.users
-            }); 
+        if (utilisateur.role_id === 1) return res.redirect('/users/mon-profile');
+            // return res.render('dashboard', {
+            //     id_user: utilisateur.id_utilisateurs,
+            //     nom: utilisateur.nom,
+            //     prenom: utilisateur.prenom,
+            //     email: utilisateur.email,
+            //     role_id: utilisateur.role_
+            // });
+        // return res.render('dashboard_client', 
+        //     { 
+        //         id: id.req.session.users,
+        //         nom: nom.req.session.users,
+        //         prenom: nom.req.session.users,
+        //         email: email.req.session.users,
+        //         role_id: role_id.req.session.users
+        //     }); 
         // return res.json(utilisateur);
         // res.render('signin', { error_conn });
     } catch (err) {
