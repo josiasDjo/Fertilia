@@ -21,25 +21,30 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
 
 document.getElementById('signup_submit').addEventListener('submit', async function(event) {
     event.preventDefault();
-
+    console.log('Sign up send data')
     const nom = document.getElementById('nom').value;
     const prenom = document.getElementById('prenom').value;
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('email_signup').value;
     const phone = document.getElementById('phone').value;
     const default_mot_de_passe =  document.getElementById('password').value;
 
-    const response = await fetch("/api/utilisateurs/signup", {
-        method: "POST",
-        headers: { "ContentT-ype": "application/json" },
-        body: JSON.stringify({ nom, prenom, email, phone, default_mot_de_passe})
-    });
-
-    const data = await response.json();
-    const message_error = document.getElementById('message_error');
+    if (nom != "" || prenom != ""  || email != "" || phone != "" || default_mot_de_passe != "") {
+        console.log('Block check')
+        const response = await fetch("/api/utilisateurs/signup", {
+            method: "POST",
+            headers: { "ContentT-ype": "application/json" },
+            body: JSON.stringify({ nom, prenom, email , phone, default_mot_de_passe})
+        });
     
-    if (data.success) {
-        window.location.href = '/users/mon-profile';
+        const data = await response.json();
+        const message_error = document.getElementById('message_error');
+        
+        if (data.success) {
+            window.location.href = '/users/mon-profile';
+        } else {
+            message_error.innerText = data.message;
+        }
     } else {
-        message_error.innerText = data.message;
+        alert('Tous les champs sont réquis');
     }
 });
