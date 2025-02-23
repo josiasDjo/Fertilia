@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 exports.createUtilisateur = async (req, res) => {
     try {
-        let { nom, prenom, email, default_mot_de_passe } = req.body;
+        let { nom, prenom, email, phone, default_mot_de_passe } = req.body;
         const role_id = 1;
         const UtilisateurExiste  = await Utilisateur.findOne({ where: { email }});
         if (UtilisateurExiste) {
