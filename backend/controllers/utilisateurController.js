@@ -40,7 +40,7 @@ exports.getUtilisateur = async (req, res) => {
         req.session.users = {
             id: utilisateur.id_utilisateurs,
             nom: utilisateur.nom,
-            prenom: utilisateur.prenom,
+            prenom: utilisateur.prenomort,
             email: utilisateur.email,
             role_id: utilisateur.role_id
         }
