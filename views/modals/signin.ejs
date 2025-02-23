@@ -3,7 +3,7 @@
         <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick="closeModalSign('signin');"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
         
         <h4 class="font_header text-center text-3xl font-bold">Ravie de vous revoir</h4>
-        <form action="/api/utilisateurs/signin" method="post" id="connexion_page_send" class="lg:w-full md:w-full md:px-10 items-center relative justify-center flex flex-col lg:p-5">
+        <form id="connexion_page_send" class="lg:w-full md:w-full md:px-10 items-center relative justify-center flex flex-col lg:p-5">
             <ul class="flex flex-col w-full text-center">
                 <span class="font-medium">Entrez vos informations</span>
                 <button class="rounded-3xl p-2 border-2 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
@@ -20,11 +20,9 @@
                 <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email_signin">
                 <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="mot_de_passe" id="password_signin">
             </ul>
-            <% if (error_conn) { %>
-                <ul class="flex flex-col w-full text-center">
-                    <p class="text-red-500"><%= error_conn %></p>
-                </ul>
-            <% } %>
+            <ul class="flex flex-col w-full text-center">
+                <p class="text-red-500" id="message_error"></p>
+            </ul>
             <ul class="flex flex-col w-full text-right hover:border-2 hover:border-solid hover:border-blue-500">
                 <a href="#" class="text-sm hover:text-blue-500">Mot de passe oublié</a>
             </ul>

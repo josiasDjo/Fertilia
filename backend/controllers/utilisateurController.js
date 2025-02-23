@@ -29,12 +29,13 @@ exports.getUtilisateur = async (req, res) => {
         const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) {
             res.locals.error_conn = error;
-            return res.send({ error_conn:  error});
+            return res.status(500).json({ success: false, message: error});
         }
         const mdp_user = await Utilisateur.findOne({where : { mot_de_passe }});
         if (!mdp_user)  {
             res.locals.error_conn = error;
-            return res.render('index', { error_conn:  error});
+            return res.json({ success: false, message: error});
+            // return res.render('index', { error_conn:  error});
         }
 
         req.session.users = {
@@ -45,27 +46,10 @@ exports.getUtilisateur = async (req, res) => {
             role_id: utilisateur.role_id
         }
 
-        if (utilisateur.role_id === 1) return res.redirect('/users/mon-profile');
-            // return res.render('dashboard', {
-            //     id_user: utilisateur.id_utilisateurs,
-            //     nom: utilisateur.nom,
-            //     prenom: utilisateur.prenom,
-            //     email: utilisateur.email,
-            //     role_id: utilisateur.role_
-            // });
-        // return res.render('dashboard_client', 
-        //     { 
-        //         id: id.req.session.users,
-        //         nom: nom.req.session.users,
-        //         prenom: nom.req.session.users,
-        //         email: email.req.session.users,
-        //         role_id: role_id.req.session.users
-        //     }); 
-        // return res.json(utilisateur);
-        // res.render('signin', { error_conn });
+        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Utilisateur authentifié'});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
-        res.status(500).json({ error: 'Erreur lors de la récupération de l\'utilisateur', err });
+        res.status(500).json({ success: false, error: 'Erreur lors de la récupération de l\'utilisateur', err });
     }
 };
 
