@@ -7,10 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/users/mon-profile', (req, res, next) => {
-  const id_user =  req.session.users.id_user;
-  const prenom = req.session.users.prenom;
+  // const id_user =  req.session.users.id_user;
+  // const prenom = req.session.users.prenom;
 
-  console.log(`Mon profile, ID: ${id_user}, Prénom: ${prenom}`);
+  // console.log(`Mon profile, ID: ${id_user}, Prénom: ${prenom}`);
   try {
     res.render('dashboard', {
       id_user: req.session.users.id_user,
