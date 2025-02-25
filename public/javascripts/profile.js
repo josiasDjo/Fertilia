@@ -14,7 +14,11 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         const data = await response.json();
         const message_error = document.getElementById('message_error');
         if (data.success) {
-            window.location.href = '/users/mon-profile';
+            try {
+                window.location.href = '/users/mon-profile';
+            } catch (err) {
+                console.log('Une erreur est survenue, ', err);
+            }
         } else {
             message_error.innerText = data.message;
         }
