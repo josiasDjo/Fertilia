@@ -15,6 +15,15 @@ exports.createUtilisateur = async (req, res) => {
         const saltRounds = 10;
         const hashed_mot_de_passe = await bcrypt.hash(default_mot_de_passe, saltRounds);
         const nouvelUtilisateur = await Utilisateur.create({ nom, prenom, email,phone, mot_de_passe: hashed_mot_de_passe, role_id });
+        
+        req.session.users = {
+            id_user: utilisateur.id_utilisateurs,
+            nom: utilisateur.nom,
+            prenom: utilisateur.prenom,
+            email: utilisateur.email,
+            role_id: utilisateur.role_id
+        }
+
         console.log(`Nouvel utilisateur ajouter avec succès }`);
         return res.json({ success: true, message : 'Nouvel utilisateur ajouter avec succès ! ', nouvelUtilisateur });
     } catch (err) {
