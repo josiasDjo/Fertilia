@@ -62,9 +62,12 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         const data = await response.json();
         
         if (data.success) {
+            message_error_in.innerText = data.message;
+            message_error_in.style.color = "green";
             window.location.href = '/users/mon-profile';
         } else {
             message_error_in.innerText = data.message;
+            message_error_in.style.color = "red";
         }
     } else {
         alert('Tous les champs sont réquis');
@@ -72,8 +75,10 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         const message_error = document.getElementById('message_error');
         if (message_error) {
             message_error_in.innerText = err_msg;
+            message_error_in.style.color = "red";
+
         }else {
-            alert('Message error not found');
+            alert('Une erreur s\'est produite');
         } 
     }
 });
