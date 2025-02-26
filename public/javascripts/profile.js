@@ -15,7 +15,7 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         const message_error = document.getElementById('message_error');
         if (data.success) {
             try {
-                alert('G : ', data.message);
+                // alert('G : ', data.message);
                 message_error.innerText = data.message;
                 message_error.style.color = "green";
                 window.location.href = "/users/mon-profile";
@@ -23,7 +23,7 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
                 console.log('Une erreur est survenue, ', err);
             }
         } else {
-            alert('G : ', data.message);
+            // alert('G : ', data.message);
 
             message_error.innerText = data.message;
             message_error.style.color = "red";

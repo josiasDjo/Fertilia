@@ -57,8 +57,8 @@ exports.getUtilisateur = async (req, res) => {
             email: utilisateur.email,
             role_id: utilisateur.role_id
         }
-        console.log('Utilisateur rédiriger')
-        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Utilisateur authentifié'});
+        console.log('Connexion Reussie !!')
+        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
         res.status(500).json({ success: false, error: 'Erreur lors de la récupération de l\'utilisateur', err });
