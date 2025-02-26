@@ -12,20 +12,20 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         });
 
         const data = await response.json();
-        const message_error = document.getElementById('message_error');
+        const message_error_in = document.getElementById('message_error_in');
         if (data.success) {
             try {
                 alert('G : ', data.message);
-                message_error.innerText = data.message;
-                message_error.style.color = "green";
+                message_error_in.innerText = data.message;
+                message_error_in.style.color = "green";
                 window.location.href = "/users/mon-profile";
             } catch (err) {
                 console.log('Une erreur est survenue, ', err);
             }
         } else {
             alert('G : ', data.message);
-            message_error.innerText = data.message;
-            message_error.style.color = "red";
+            message_error_in.innerText = data.message;
+            message_error_in.style.color = "red";
         }
     } else {
         // alert('Tous les champs sont réquis');
