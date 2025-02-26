@@ -36,6 +36,7 @@ exports.getUtilisateur = async (req, res) => {
     try {
         const { email, mot_de_passe } = req.body;
         const error = "Email ou mot de passe incorrect";
+        console.log(`Email : ${email}, Password : ${mot_de_passe}`);
         const utilisateur = await Utilisateur.findOne({ where: { email }});
         if (!utilisateur) {
             res.locals.error_conn = error;
