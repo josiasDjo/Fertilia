@@ -1,3 +1,12 @@
+// loader set animation
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    const content1 = document.getElementById('');
+    const content2 = document.getElementById('');
+    const content3 = document.getElementById('');
+
+});
+
 // Navbar show & hidden
 
 function navbarSet(option) {
@@ -153,9 +162,3 @@ function removeHover() {
         star.classList.remove('text-yellow-400');
     });
 }
-
-// document.getElementById('connexion_page_send').addEventListener("submit", async function(event) {
-//     event.preventDefault();
-
-//     alert('Soumettre le formulaire ?');
-// });
