@@ -29,7 +29,6 @@ const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 
-
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -63,6 +62,18 @@ app.use(session({
   }
 }));
 
+// Initialiser Flash après la session
+// app.use(flash());
+
+// Middleware pour rendre Flash accessible dans les vues
+app.use((req, res, next) => {
+  res.locals.error_conn = "";
+  // res.locals.success_msg = req.flash('success_msg'); // Messages de succès
+  // res.locals.error_msg = req.flash('error_msg'); // Messages d'erreur
+  console.log('✅ Middleware Flash exécuté');
+  next();
+});
+// Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
 // app.use('/api/capteurs', CapteursRouter);
@@ -70,7 +81,7 @@ app.use('/api/utilisateurs', UtilisateursRoutes);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
 app.use('/api/role/users', RolesRouter);
-// app.use('/api/user/stock', StocksRouter);
+// app.use('/user/mon-compte', StocksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
