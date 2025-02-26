@@ -6,7 +6,7 @@ const { where } = require('sequelize');
 exports.createUtilisateur = async (req, res) => {
     try {
         let { nom, prenom, email, phone, default_mot_de_passe } = req.body;
-        console.log(`Email : ${email}, Password : ${mot_de_passe}`);
+        console.log(`Email : ${email}, Password : ${default_mot_de_passe}`);
         const role_id = 1;
         const UtilisateurExiste  = await Utilisateur.findOne({ where: { email }});
         if (UtilisateurExiste) {
