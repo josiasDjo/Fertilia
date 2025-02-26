@@ -48,7 +48,7 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         console.log('Block check', email);
         const response = await fetch("/api/utilisateurs/signup", {
             method: "POST",
-            headers: { "ContentT-ype": "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nom, prenom, email , phone, default_mot_de_passe})
         });
     
