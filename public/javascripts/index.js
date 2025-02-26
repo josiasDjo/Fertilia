@@ -1,3 +1,23 @@
+// loader set animation
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    const content1 = document.getElementById('hero-header');
+    const content2 = document.getElementById('modalsShow');
+    const content3 = document.getElementById('main_su');
+
+    loader.classList.add('opacity-0');
+
+
+    setTimeout(() => {
+        loader.classList.remove('flex');
+        loader.classList.add('hidden');
+
+        content1.classList.remove('opacity-0');
+        content2.classList.remove('opacity-0');
+        content3.classList.remove('opacity-0');
+    })
+});
+
 // Navbar show & hidden
 
 function navbarSet(option) {
@@ -55,12 +75,15 @@ function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
+    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
+        body.classList.remove = "fixed";
+        body.style.top = "";
 
         console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
@@ -79,6 +102,7 @@ function OpenModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
+    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && signup && parent) {
         signup.classList.remove('flex');
@@ -88,6 +112,8 @@ function OpenModalSign(valeur) {
         signin.classList.add("backdrop-blur-xl")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
+        body.classList.add = "fixed";
+        body.style.top = `-${window.scrollY}px`;
         // parent.classList.add("backdrop-blur-md");
 
         console.log('Sign in found Open button');
@@ -153,9 +179,3 @@ function removeHover() {
         star.classList.remove('text-yellow-400');
     });
 }
-
-// document.getElementById('connexion_page_send').addEventListener("submit", async function(event) {
-//     event.preventDefault();
-
-//     alert('Soumettre le formulaire ?');
-// });

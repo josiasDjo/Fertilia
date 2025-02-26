@@ -2,15 +2,30 @@
 <html lang="en">
 <%- include('head') %>
 <body>
-    <nav class="absolute left-0 top-0 h-screen md:w-32 bg-red-500">
+    <nav class="absolute left-0 top-0 h-screen md:w-32">
 
     </nav>
 
-    <div class="fixed w-full h-16 top-0 rigth-0 bg-green-500">
-
+    <div class="fixed w-full h-16 top-0 rigth-0 shadow-xl justify-center content-center flex flex-row">
+        <div class="lg:w-28 sm:h-12 lg:h-24 items-center justify-center content-center flex md:pt-4 pb-3 relative lg:left-0 lg:mx-10 lg:absolute">
+            <img class="h-full w-auto lg:w-44 hidden lg:flex object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia">
+            <img class="h-full w-auto sm:flex lg:hidden lg:w-44 object-contain" src="/images/logo_only.webp" alt="Logo de Fertilia">
+        </div>
+        <div class="flex flex-row m-auto w-96 h-16 bg-white items-center">
+            <div class="flex flex-row text-center items-center justify-center mr-2">
+                <p>Bonjour 👋,</p>
+                <h2 class="font-bold"><%= prenom %></h2>
+            </div>
+            <div class="w-12 h-12 rounded-full overflow-hidden">
+                <img src="/images/images_pofile.jpg" alt="profile" class="object-cover w-auto h-full">
+            </div>
+        </div>
     </div>
 
-    <main>
+    <main class="">
+        <div class="m-24 p-24">
+            <h2 class="text-4xl">👋 hello</h2>
+        </div>
         
     </main>
 </body>

@@ -15,12 +15,18 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         const message_error = document.getElementById('message_error');
         if (data.success) {
             try {
-                window.location.href = '/users/mon-profile';
+                // alert('G : ', data.message);
+                message_error.innerText = data.message;
+                message_error.style.color = "green";
+                window.location.href = "/users/mon-profile";
             } catch (err) {
                 console.log('Une erreur est survenue, ', err);
             }
         } else {
+            // alert('G : ', data.message);
+
             message_error.innerText = data.message;
+            message_error.style.color = "red";
         }
     } else {
         // alert('Tous les champs sont réquis');
@@ -42,32 +48,37 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
     const email = document.getElementById('email_signup').value;
     const phone = document.getElementById('phone').value;
     const default_mot_de_passe =  document.getElementById('password').value;
+    const message_error_in = document.getElementById('message_error_in');
 
 
     if (nom != "" && prenom != ""  && email != "" && phone != "" && default_mot_de_passe != "") {
         console.log('Block check', email);
         const response = await fetch("/api/utilisateurs/signup", {
             method: "POST",
-            headers: { "ContentT-ype": "application/json" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ nom, prenom, email , phone, default_mot_de_passe})
         });
     
         const data = await response.json();
         
         if (data.success) {
+            message_error_in.innerText = data.message;
+            message_error_in.style.color = "green";
             window.location.href = '/users/mon-profile';
         } else {
-            const message_error = document.getElementById('message_error');
-            message_error.innerText = data.message;
+            message_error_in.innerText = data.message;
+            message_error_in.style.color = "red";
         }
     } else {
-        // alert('Tous les champs sont réquis');
+        alert('Tous les champs sont réquis');
         let err_msg = "Tous les champs sont réquis";
         const message_error = document.getElementById('message_error');
         if (message_error) {
-            message_error.innerText = err_msg;
+            message_error_in.innerText = err_msg;
+            message_error_in.style.color = "red";
+
         }else {
-            alert('Message error not found');
+            alert('Une erreur s\'est produite');
         } 
     }
 });

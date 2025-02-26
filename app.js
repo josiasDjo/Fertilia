@@ -39,6 +39,7 @@ app.set('views', [
   path.join(__dirname, 'views/modals'),
   path.join(__dirname, 'views/agriculteurs'),
   path.join(__dirname, 'includes'),
+  path.join(__dirname, 'views/components'),
 ]);
 app.set('view engine', 'ejs');
 
