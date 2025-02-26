@@ -1,10 +1,21 @@
 // loader set animation
 window.addEventListener('load', function() {
     const loader = document.getElementById('loader');
-    const content1 = document.getElementById('');
-    const content2 = document.getElementById('');
-    const content3 = document.getElementById('');
+    const content1 = document.getElementById('hero-header');
+    const content2 = document.getElementById('modalsShow');
+    const content3 = document.getElementById('main_su');
 
+    loader.classList.add('opacity-0');
+
+
+    setTimeout(() => {
+        loader.classList.remove('flex');
+        loader.classList.add('hidden');
+
+        content1.classList.remove('opacity-0');
+        content2.classList.remove('opacity-0');
+        content3.classList.remove('opacity-0');
+    })
 });
 
 // Navbar show & hidden

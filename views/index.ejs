@@ -74,14 +74,15 @@
       </div>
     </div>
   </section>
-  <section id="modalsShow" class="w-full h-screen z-50 backdrop-blur fixed inset-0 justify-center items-center content-center hidden opacity-0 transition-opacity duration-500">
+  <%- include('loader.ejs') %>
+  <section id="modalsShow" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center content-center hidden opacity-0 transition-opacity duration-500">
 
     <%- include('signin.ejs') %>
     <%- include('signup.ejs') %> 
 
   </section>
 
-  <main class="opacity-0 transition-opacity duration-500">
+  <main class="opacity-0 transition-opacity duration-500" id="main_su">
     <section id="avantages" class="p-2 lg:p-7 w-full lg:p-20">
       <h3 class="text-3xl mt-8 font-bold lg:text-3xl text-center">Avantages</h3>
   
