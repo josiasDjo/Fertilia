@@ -15,12 +15,15 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         const message_error = document.getElementById('message_error');
         if (data.success) {
             try {
-                window.location.href = '/users/mon-profile';
+                message_error.innerText = data.message;
+                message_error.style.color = "green";
+                window.location.href = "/users/mon-profile";
             } catch (err) {
                 console.log('Une erreur est survenue, ', err);
             }
         } else {
             message_error.innerText = data.message;
+            message_error.style.color = "red";
         }
     } else {
         // alert('Tous les champs sont réquis');

@@ -18,15 +18,15 @@ exports.createUtilisateur = async (req, res) => {
         const nouvelUtilisateur = await Utilisateur.create({ nom, prenom, email,phone, mot_de_passe: hashed_mot_de_passe, role_id });
         
         req.session.users = {
-            id_user: utilisateur.id_utilisateurs,
-            nom: utilisateur.nom,
-            prenom: utilisateur.prenom,
-            email: utilisateur.email,
-            role_id: utilisateur.role_id
+            id_user: nouvelUtilisateur.id_utilisateurs,
+            nom: nouvelUtilisateur.nom,
+            prenom: nouvelUtilisateur.prenom,
+            email: nouvelUtilisateur.email,
+            role_id: nouvelUtilisateur.role_id
         }
-
+        const firstName = nouvelUtilisateur.prenom;
         console.log(`Nouvel utilisateur ajouter avec succès }`);
-        return res.json({ success: true, message : 'Nouvel utilisateur ajouter avec succès ! ', nouvelUtilisateur });
+        return res.json({ success: true, message : 'Enregistrement réussi, Bienvenu ! ', firstName });
     } catch (err) {
         console.log(`Erreur lors de la création de l\'utilisateur, ${err}`)
         return res.json({ success: false, message: 'Erreur lors de l\'enregistrement' });
