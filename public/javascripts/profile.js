@@ -3,6 +3,7 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
 
     const email = document.getElementById('email_signin').value;
     const mot_de_passe = document.getElementById('password_signin').value;
+    const message_error_in = document.getElementById('message_error_in');
 
     if (email != "" && mot_de_passe != "") {
         const response = await fetch("/api/utilisateurs/signin", {
@@ -12,7 +13,6 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
         });
 
         const data = await response.json();
-        const message_error_in = document.getElementById('message_error_in');
         if (data.success) {
             try {
                 alert('G : ', data.message);
@@ -28,11 +28,11 @@ document.getElementById('connexion_page_send').addEventListener("submit", async 
             message_error_in.style.color = "red";
         }
     } else {
-        // alert('Tous les champs sont réquis');
+        alert('Tous les champs sont réquis');
         let err_msg = "Tous les champs sont réquis";
         const message_error = document.getElementById('message_error');
         if (message_error) {
-            message_error.innerText = err_msg;
+            message_error_in.innerText = err_msg;
         }else {
             alert('Message error not found');
         } 
