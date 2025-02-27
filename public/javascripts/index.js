@@ -182,7 +182,7 @@ function removeHover() {
 
 
 // Message Flash config
-const flash_msg = document.getElementById('flash_msg')
+const flash_msg = document.getElementById('flash_msg');
 
 if (flash_msg) {
     console.log('flash_msg found');
@@ -196,7 +196,15 @@ if (flash_msg) {
         flash_msg.classList.add('hidden');
         flash_msg.classList.remove('opacity-100');            
         flash_msg.classList.add('opacity-0');
-    }, 3000);
+    }, 5000);
 } else {
     console.log('flash_msg not found');
+}
+function closeFlash() {
+    const flash_msg = document.getElementById('flash_msg')
+
+    flash_msg.classList.remove('flex');
+    flash_msg.classList.add('hidden');
+    flash_msg.classList.remove('opacity-100');            
+    flash_msg.classList.add('opacity-0');
 }
