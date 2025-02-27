@@ -14,7 +14,7 @@
         </div>
     <% } else { %>
         <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center" id="flash_msg">
-            <div class="bg-green-500 text-center text-white flex flex-row p-3 border-2 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
+            <div class="bg-red-500 text-center text-white flex flex-row p-3 border-2 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
                 <% error_msg.forEach(function(msg) { %>
                     <p class="text-white font-bold mr-3"><%= msg %></p>
                     <button type="button" onclick="" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
