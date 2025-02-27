@@ -70,19 +70,11 @@ app.use(flash());
 // Middleware pour rendre Flash accessible dans les vues
 app.use((req, res, next) => {
   res.locals.error_conn = "";
-  
-  // Vérifier si des messages existent avant de les assigner
-  const errorFlash = req.flash('error_msg');
-  const successFlash = req.flash('success_msg');
-
-  res.locals.success_msg = (successFlash.length > 0) ? successFlash : null;
-  res.locals.error_msg = (errorFlash.length > 0) ? errorFlash : null;
-
-  console.log('📌 Contenu de error_msg après récupération:', res.locals.error_msg);
-  
+  res.locals.success_msg = req.flash('success_msg'); 
+  res.locals.error_msg = req.flash('error_msg');
+  console.log('✅ Middleware Flash exécuté');
   next();
 });
-
 // Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
