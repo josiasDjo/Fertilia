@@ -4,7 +4,7 @@
 <body class="items-center">
   <% if (success_msg.length > 0 || error_msg.length > 0) { %>
     <% if (success_msg.length> 0) { %>
-        <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center" id="flash_msg">
+        <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center opacity-100 transition-opacity" id="flash_msg">
             <div class="bg-green-500 text-center text-white flex flex-row p-3 border-4 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
                 <% success_msg.forEach(function(msg) { %>
                     <p class="text-white font-bold mr-3"><%= msg %></p>
