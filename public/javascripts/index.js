@@ -179,3 +179,13 @@ function removeHover() {
         star.classList.remove('text-yellow-400');
     });
 }
+
+
+// Message Flash config
+const flash_msg = document.getElementById('flash_msg')
+
+if (flash_msg) {
+    console.log('flash_msg found');
+} else {
+    console.log('flash_msg not found');
+}
