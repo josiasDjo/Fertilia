@@ -14,9 +14,12 @@ const isAuthenticated = (req, res, next) => {
   req.flash('error_msg', 'Vous avez été déconnecter');
   return res.redirect("/");
 }
+router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
+  req.flash('success_msg', 'Connexion réussie');
+  return res.redirect('/users/mon-profile');
+});
 router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
   try {
-    req.flash('success_msg', 'Connexion réussie');
     res.render('dashboard', {
       id_user: req.session.users.id_user,
       nom: req.session.users.nom,
