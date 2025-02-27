@@ -2,6 +2,27 @@
 <html lang="fr">
 <%- include('head') %>
 <body class="items-center">
+  <% if (success_msg.length > 0 || error_msg.length > 0) { %>
+    <% if (success_msg.length> 0) { %>
+        <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center opacity-100 transition-opacity" id="flash_msg">
+            <div class="bg-green-500 text-center text-white flex flex-row p-3 border-5 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
+                <% success_msg.forEach(function(msg) { %>
+                    <p class="text-white font-bold mr-3"><%= msg %></p>
+                    <button type="button" onclick="closeFlash();" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
+                <% }) %>
+            </div>
+        </div>
+    <% } else { %>
+        <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center" id="flash_msg">
+            <div class="bg-red-500 text-center text-white flex flex-row p-3 border-5 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
+                <% error_msg.forEach(function(msg) { %>
+                    <p class="text-white font-bold mr-3"><%= msg %></p>
+                    <button type="button" onclick="closeFlash();" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
+                <% }) %>
+            </div>
+        </div>
+    <% } %>
+<% } %>
   <section class="relative w-full opacity-0 transition-opacity duration-1000" id="hero-header">
     <nav id="navbar" class="animate_nav w-full flex flex-col px-10 py-2 md:h-24 relaitve bg-black bg-opacity-90 text-white h-16 
     lg:text-center lg:items-center lg:justify-center lg:w-full lg:h-28 lg:flex lg:flex-row lg:px-10 z-20">

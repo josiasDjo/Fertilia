@@ -179,3 +179,32 @@ function removeHover() {
         star.classList.remove('text-yellow-400');
     });
 }
+
+
+// Message Flash config
+const flash_msg = document.getElementById('flash_msg');
+
+if (flash_msg) {
+    console.log('flash_msg found');
+    let opacity = 100;
+    if(opacity > 0) {
+        opacity -= 0.5;
+        flash_msg.style.opacity = opacity;
+    }
+    setTimeout(() => {
+        flash_msg.classList.remove('flex');
+        flash_msg.classList.add('hidden');
+        flash_msg.classList.remove('opacity-100');            
+        flash_msg.classList.add('opacity-0');
+    }, 5000);
+} else {
+    console.log('flash_msg not found');
+}
+function closeFlash() {
+    const flash_msg = document.getElementById('flash_msg')
+
+    flash_msg.classList.remove('flex');
+    flash_msg.classList.add('hidden');
+    flash_msg.classList.remove('opacity-100');            
+    flash_msg.classList.add('opacity-0');
+}

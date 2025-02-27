@@ -2,28 +2,33 @@
 <html lang="en">
 <%- include('head') %>
 <body>
-    <nav class="absolute left-0 top-0 h-screen md:w-32">
-
-    </nav>
-
-    <div class="fixed w-full h-16 top-0 rigth-0 shadow-xl justify-center content-center flex flex-row">
-        <div class="lg:w-28 sm:h-12 lg:h-24 items-center justify-center content-center flex md:pt-4 pb-3 relative lg:left-0 lg:mx-10 lg:absolute">
-            <img class="h-full w-auto lg:w-44 hidden lg:flex object-contain" src="/images/logo&name.webp" alt="Logo de Fertilia">
-            <img class="h-full w-auto sm:flex lg:hidden lg:w-44 object-contain" src="/images/logo_only.webp" alt="Logo de Fertilia">
-        </div>
-        <div class="flex flex-row m-auto w-96 h-16 bg-white items-center">
-            <div class="flex flex-row text-center items-center justify-center mr-2">
-                <p>Bonjour 👋,</p>
-                <h2 class="font-bold"><%= prenom %></h2>
+    <% if (success_msg.length > 0 || error_msg.length > 0) { %>
+        <% if (success_msg.length> 0) { %>
+            <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center opacity-100 transition-opacity" id="flash_msg">
+                <div class="bg-green-500 text-center text-white flex flex-row p-3 border-5 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
+                    <% success_msg.forEach(function(msg) { %>
+                        <p class="text-white font-bold mr-3"><%= msg %></p>
+                        <button type="button" onclick="closeFlash();" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
+                    <% }) %>
+                </div>
             </div>
-            <div class="w-12 h-12 rounded-full overflow-hidden">
-                <img src="/images/images_pofile.jpg" alt="profile" class="object-cover w-auto h-full">
+        <% } else { %>
+            <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center" id="flash_msg">
+                <div class="bg-red-500 text-center text-white flex flex-row p-3 border-5 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative">
+                    <% error_msg.forEach(function(msg) { %>
+                        <p class="text-white font-bold mr-3"><%= msg %></p>
+                        <button type="button" onclick="closeFlash();" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
+                    <% }) %>
+                </div>
             </div>
-        </div>
-    </div>
+        <% } %>
+    <% } %>
+    
+    <%- include('navbar') %>
+    <%- include('sidebar') %>
 
     <main class="">
-        <div class="m-24 p-24">
+        <div class="m-24 p-24 text-center items-center justify-center">
             <h2 class="text-4xl">👋 hello</h2>
         </div>
         
