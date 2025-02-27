@@ -6,12 +6,17 @@ router.get('/', function(req, res, next) {
   res.render('../../views/index.ejs');
 });
 
-router.get('/users/mon-profile', (req, res, next) => {
-  // const id_user =  req.session.users.id_user;
-  // const prenom = req.session.users.prenom;
-
-  // console.log(`Mon profile, ID: ${id_user}, Prénom: ${prenom}`);
+// Vérifier si l'utilisateur est bien authentifier
+const isAuthenticated = (req, res, next) => {
+  if (req.session && req.session.users) {
+    return next();
+  }
+  req.flash('error_msg', 'Vous avez été déconnecter');
+  return res.redirect("/");
+}
+router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
   try {
+    req.flash('success_msg', 'Connexion réussie');
     res.render('dashboard', {
       id_user: req.session.users.id_user,
       nom: req.session.users.nom,
