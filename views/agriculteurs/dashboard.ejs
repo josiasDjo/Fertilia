@@ -4,11 +4,11 @@
 <body>
     <% if (success_msg.length > 0 || error_msg.length > 0) { %>
         <% if (success_msg.length> 0) { %>
-            <div class="bg-red-500 absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center">
-                <div class="bg-green-500 text-center text-white flex flex-row p-3 border-2 border-double border-white m-3 w-72 rounded-lg" id="flash_msg">
+            <div class="absolute w-full h-24 top-0 inset-0 z-50 items-center justify-center flex content-center">
+                <div class="bg-green-500 text-center text-white flex flex-row p-3 border-2 border-double border-white items-center justify-center m-3 w-72 rounded-lg relative" id="flash_msg">
                     <% success_msg.forEach(function(msg) { %>
                         <p class="text-white font-bold mr-3"><%= msg %></p>
-                        <button type="button" onclick="" class="text-xl text-white text-left absolute right-0"><i class="fa-solid fa-circle-xmark"></i></button>
+                        <button type="button" onclick="" class="text-xl text-white text-center items-center justify-center text-left absolute right-0 h-full w-16"><i class="fa-solid fa-circle-xmark"></i></button>
                     <% }) %>
                 </div>
             </div>
