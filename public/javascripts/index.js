@@ -72,7 +72,7 @@ function navbarSet(option) {
 
 //sidebar find which button was clicked
 const buttons = document.querySelectorAll(".aside_btn");
-
+const largeur = window.innerWidth;
 if (buttons) {
     buttons.forEach(button => {
         button.addEventListener("click", function () {
