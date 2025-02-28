@@ -74,7 +74,9 @@ function navbarSet(option) {
 function button_clicked(valeur) {
     alert(`ID:  ${valeur}`);
 
-    
+    const container_aside = document.getElementById('container_aside');
+    const dashboard
+    const 
 }
 // sign in & sign up pages set hidden or flex
 function closeModalSign(valeur) {
