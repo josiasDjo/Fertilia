@@ -79,7 +79,7 @@ if (buttons) {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
                 if (largeur < 1024) {
-                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-6");
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10");
                     btn.classList.add("bg-white", "text-black");
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
@@ -89,7 +89,7 @@ if (buttons) {
     
             // Activer le bouton cliqué
             if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white", "rounded-tr-xl", "rounded-tl-xl", "transform", "-translate-y-6");
+                this.classList.add("bg-black", "text-white", "h-20", "rounded-full", "transform", "-translate-y-10");
                 this.classList.remove("bg-white", "text-gray-700");
             } else {
                 this.classList.add("bg-blue-500", "text-white");
