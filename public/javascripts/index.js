@@ -82,6 +82,7 @@ if (buttons) {
                 if (largeur < 1024) {
                     btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
                     btn.classList.add("bg-white", "text-black");
+                    if (child_name) child_name.classList.remove('');
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
                     btn.classList.add("bg-white", "text-gray-700");
