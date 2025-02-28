@@ -82,7 +82,9 @@ if (buttons) {
                 if (largeur < 1024) {
                     btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
                     btn.classList.add("bg-white", "text-black");
-                    if (child_name) child_name.classList.remove('');
+                    if (child_name) {
+                        child_name.classList.remove('');
+                    }
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
                     btn.classList.add("bg-white", "text-gray-700");
@@ -93,6 +95,10 @@ if (buttons) {
             if (largeur < 1024) {
                 this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3");
                 this.classList.remove("bg-white", "text-gray-700");
+                if (child_name) {
+                    child_name.classList.remove('');
+                    child_name.classList.add('');
+                }
             } else {
                 this.classList.add("bg-blue-500", "text-white");
                 this.classList.remove("bg-white", "text-gray-700");
