@@ -94,7 +94,7 @@ hr {
 aside button:hover {
   box-shadow: 20px;
   border: 2px solid rgba(188, 214, 255, 0.973);
-  background-color: rgba(188, 214, 255, 0.973);;
+  background-color: rgba(188, 214, 255, 0.973);
   font-weight: 500;
 }
 .aside_btn {
