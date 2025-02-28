@@ -78,7 +78,7 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
-                if (largeur < 640) {
+                if (largeur < 1024) {
                     btn.classList.remove("bg-black", "text-white");
                     btn.classList.add("bg-white", "text-black");
                 } else {
@@ -89,7 +89,7 @@ if (buttons) {
     
             // Activer le bouton cliqué
             if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white");
+                this.classList.add("bg-black", "text-white", "rounded-tr-xl", "rounded-tl-xl");
                 this.classList.remove("bg-white", "text-gray-700");
             } else {
                 this.classList.add("bg-blue-500", "text-white");
@@ -102,7 +102,7 @@ if (buttons) {
 }
 
 function button_clicked(valeur) {
-    // alert(`ID:  ${valeur}`);
+    // alert(`Width:  ${largeur}`);
     const container_aside = document.getElementById('container_aside');
     const dashboard = document.getElementById('dashboard');
     const field_management = document.getElementById('field_management');
