@@ -143,7 +143,7 @@ function button_clicked(valeur) {
     } else if (valeur === "settings" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
         
     } else if (valeur === "signout" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
+        signout();
     }
 }
 // sign in & sign up pages set hidden or flex

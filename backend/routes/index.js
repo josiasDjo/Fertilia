@@ -33,4 +33,16 @@ router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
 
 });
 
+router.post('/logout', isAuthenticated, (req, res, next) => {
+  const { element } = req.body;
+
+  req.session.destroy((err) => {
+    if (err) {
+      console.Log("Erreur lors de la déconnexion", err);
+      res.json({success: false, message: "Erreur lors de la déconnexion"});
+    } 
+    res.clearCookie('connect.sid');
+    req.json({ success: true, message: "Déconnexion réussie"});
+  })
+});
 module.exports = router;
