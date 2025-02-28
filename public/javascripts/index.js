@@ -80,10 +80,11 @@ if (buttons) {
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
-                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex", "flex-col");
                     btn.classList.add("bg-white", "text-black");
                     if (child_name) {
-                        child_name.classList.remove('');
+                        child_name.classList.remove("flex");
+                        child_name.classList.add('hidden');
                     }
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
@@ -93,11 +94,11 @@ if (buttons) {
     
             // Activer le bouton cliqué
             if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex");
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
                     child_name.classList.remove('hidden');
-                    child_name.classList.add('flex');
+                    child_name.classList.add("flex", "text-white");
                 }
             } else {
                 this.classList.add("bg-blue-500", "text-white");
