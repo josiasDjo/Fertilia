@@ -93,8 +93,8 @@ hr {
 /* DashBoard SideBar */
 aside button:hover {
   box-shadow: 20px;
-  border: 2px solid #e9e9e9e0;
-  background-color: #e9e9e9e0;
+  border: 2px solid #d8d8d8;
+  background-color: #dbdbdb;
   font-weight: 500;
 }
 
