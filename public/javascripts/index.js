@@ -93,11 +93,11 @@ if (buttons) {
     
             // Activer le bouton cliqué
             if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3");
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
-                    child_name.classList.remove('');
-                    child_name.classList.add('');
+                    child_name.classList.remove('hidden');
+                    child_name.classList.add('flex');
                 }
             } else {
                 this.classList.add("bg-blue-500", "text-white");
