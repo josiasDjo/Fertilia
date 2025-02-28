@@ -78,8 +78,9 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
-                if (largeur < 1024) {
-
+                if (largeur < 640) {
+                    btn.classList.remove("bg-black", "text-white");
+                    btn.classList.add("bg-white", "text-black");
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
                     btn.classList.add("bg-white", "text-gray-700");
@@ -87,8 +88,13 @@ if (buttons) {
             });
     
             // Activer le bouton cliqué
-            this.classList.add("bg-blue-500", "text-white");
-            this.classList.remove("bg-white", "text-gray-700");
+            if (largeur < 1024) {
+                this.classList.add("bg-black", "text-white");
+                this.classList.remove("bg-white", "text-gray-700");
+            } else {
+                this.classList.add("bg-blue-500", "text-white");
+                this.classList.remove("bg-white", "text-gray-700");
+            }
         });
     })
 } else {
