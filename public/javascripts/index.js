@@ -89,7 +89,7 @@ if (buttons) {
     
             // Activer le bouton cliqué
             if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white", "h-20", "rounded-full", "transform", "-translate-y-10");
+                this.classList.add("bg-black", "text-white", "rounded-tr-full", "rounded-tl-full", "transform", "-translate-y-10");
                 this.classList.remove("bg-white", "text-gray-700");
             } else {
                 this.classList.add("bg-blue-500", "text-white");
