@@ -75,8 +75,26 @@ function button_clicked(valeur) {
     alert(`ID:  ${valeur}`);
 
     const container_aside = document.getElementById('container_aside');
-    const dashboard
-    const 
+    const dashboard = document.getElementById('dashboard');
+    const field_management = document.getElementById('field_management');
+    const stock = document.getElementById('stock');
+    const delivery = document.getElementById('delivery');
+    const settings = document.getElementById('settings');
+    const signout = document.getElementById('signout');
+
+    if (valeur === "dashboard" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "field_management" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "stock" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "delivery" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "settings" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "signout" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    }
 }
 // sign in & sign up pages set hidden or flex
 function closeModalSign(valeur) {
