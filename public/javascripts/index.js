@@ -78,8 +78,12 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
-                btn.classList.remove("bg-blue-500", "text-white");
-                btn.classList.add("bg-white", "text-gray-700");
+                if (largeur < 1024) {
+
+                } else {
+                    btn.classList.remove("bg-blue-500", "text-white");
+                    btn.classList.add("bg-white", "text-gray-700");
+                }
             });
     
             // Activer le bouton cliqué
