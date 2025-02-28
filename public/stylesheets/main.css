@@ -104,7 +104,7 @@ aside button:hover {
   font-weight: 500;
   color: rgb(255, 181, 42);
 }
-.aside_option_set_sm {
+.aside_option_set_sm:hover {
   box-shadow: 20px;
   border: 2px solid #000000;
   background-color: #000000;
