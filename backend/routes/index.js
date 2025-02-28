@@ -42,7 +42,7 @@ router.post('/logout', isAuthenticated, (req, res, next) => {
       res.json({success: false, message: "Erreur lors de la déconnexion"});
     } 
     res.clearCookie('connect.sid');
-    req.json({ success: true, message: "Déconnexion réussie"});
+    res.json({ success: true, message: "Déconnexion réussie"});
   })
 });
 module.exports = router;
