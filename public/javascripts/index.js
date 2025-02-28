@@ -69,7 +69,15 @@ function navbarSet(option) {
         console.log('Nav hidden', option);
     }
 }
-
+//sidebar cliqued by default
+document.addEventListener("DOMContentLoaded", function() {
+    const firstButton = document.querySelector('.aside_btn');
+    if (firstButton) {
+        firstButton.click();
+    } else {
+        console('aside_btn not found');
+    }
+});
 //sidebar find which button was clicked
 const buttons = document.querySelectorAll(".aside_btn");
 const largeur = window.innerWidth;
