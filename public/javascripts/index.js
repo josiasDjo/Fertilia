@@ -78,6 +78,7 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
+                const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
                     btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
                     btn.classList.add("bg-white", "text-black");
