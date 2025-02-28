@@ -69,7 +69,81 @@ function navbarSet(option) {
         console.log('Nav hidden', option);
     }
 }
+//sidebar cliqued by default
+document.addEventListener("DOMContentLoaded", function() {
+    const firstButton = document.querySelector('.aside_btn');
+    if (firstButton) {
+        firstButton.click();
+    } else {
+        console('aside_btn not found');
+    }
+});
+//sidebar find which button was clicked
+const buttons = document.querySelectorAll(".aside_btn");
+const largeur = window.innerWidth;
+if (buttons) {
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Réinitialiser tous les boutons
+            buttons.forEach(btn => {
+                const child_name = this.querySelector('#btn_label');
+                if (largeur < 1024) {
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex", "flex-col");
+                    btn.classList.add("bg-white", "text-black");
+                    if (child_name) {
+                        child_name.classList.remove("flex");
+                        child_name.classList.add('hidden');
+                    } else {
+                        alert("child_name not found")
+                    }
+                } else {
+                    btn.classList.remove("bg-blue-500", "text-white");
+                    btn.classList.add("bg-white", "text-gray-700");
+                }
+            });
+    
+            // Activer le bouton cliqué
+            if (largeur < 1024) {
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
+                this.classList.remove("bg-white", "text-gray-700");
+                if (child_name) {
+                    child_name.classList.remove('hidden');
+                    child_name.classList.add("flex", "text-white");
+                } else {
+                    alert("child_name not found")
+                }
+            } else {
+                this.classList.add("bg-blue-500", "text-white");
+                this.classList.remove("bg-white", "text-gray-700");
+            }
+        });
+    })
+} else {
+    console.log('SideBar buttons not found');
+}
 
+function button_clicked(valeur) {
+    // alert(`Width:  ${largeur}`);
+    const container_aside = document.getElementById('container_aside');
+    const dashboard = document.getElementById('dashboard');
+    const field_management = document.getElementById('field_management');
+    const stock = document.getElementById('stock');
+    const delivery = document.getElementById('delivery');
+    const settings = document.getElementById('settings');
+    const signout = document.getElementById('signout');
+
+    if (valeur === "dashboard" && dashboard && field_management && stock && delivery && settings && signout) {
+
+    } else if (valeur === "field_management" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "stock" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "delivery" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    } else if (valeur === "settings" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
+        
+    }
+}
 // sign in & sign up pages set hidden or flex
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');

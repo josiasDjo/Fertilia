@@ -82,3 +82,19 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         } 
     }
 });
+async function signout() {
+    const etat = "Se deconnecter";
+    const response = await fetch("/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({etat})
+    })
+
+    const data = await response.json();
+
+    if (data.success) {
+        window.location.href = "/";
+    } else {
+        window.location.reload();
+    }
+}
