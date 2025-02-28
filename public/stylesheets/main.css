@@ -99,8 +99,15 @@ aside button:hover {
 }
 
 .aside_option_set_lg {
-  border: 2px solid rgb(255, 181, 42);
-  background-color: rgb(255, 181, 42);
+  border: 2px solid #000000;
+  background-color: #000000;
   font-weight: 500;
-  color: white;
+  color: rgb(255, 181, 42);
+}
+.aside_option_set_sm {
+  box-shadow: 20px;
+  border: 2px solid #000000;
+  background-color: #000000;
+  color: rgb(255, 181, 42);
+  font-weight: 500;
 }
