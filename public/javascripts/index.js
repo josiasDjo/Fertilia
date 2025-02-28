@@ -71,9 +71,28 @@ function navbarSet(option) {
 }
 
 //sidebar find which button was clicked
-function button_clicked(valeur) {
-    alert(`ID:  ${valeur}`);
+const buttons = document.querySelectorAll(".aside_btn");
 
+if (buttons) {
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Réinitialiser tous les boutons
+            buttons.forEach(btn => {
+                btn.classList.remove("bg-blue-500", "text-white");
+                btn.classList.add("bg-white", "text-gray-700");
+            });
+    
+            // Activer le bouton cliqué
+            this.classList.add("bg-blue-500", "text-white");
+            this.classList.remove("bg-white", "text-gray-700");
+        });
+    })
+} else {
+    console.log('SideBar buttons not found');
+}
+
+function button_clicked(valeur) {
+    // alert(`ID:  ${valeur}`);
     const container_aside = document.getElementById('container_aside');
     const dashboard = document.getElementById('dashboard');
     const field_management = document.getElementById('field_management');
@@ -82,8 +101,8 @@ function button_clicked(valeur) {
     const settings = document.getElementById('settings');
     const signout = document.getElementById('signout');
 
-    if (valeur === "dashboard" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
+    if (valeur === "dashboard" && dashboard && field_management && stock && delivery && settings && signout) {
+
     } else if (valeur === "field_management" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
         
     } else if (valeur === "stock" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
