@@ -72,7 +72,7 @@ function navbarSet(option) {
 
 //sidebar find which button was clicked
 function button_clicked(valeur) {
-    alert('ID: ', valeur);
+    alert(`ID:  ${valeur}`);
 }
 // sign in & sign up pages set hidden or flex
 function closeModalSign(valeur) {
