@@ -85,6 +85,8 @@ if (buttons) {
                     if (child_name) {
                         child_name.classList.remove("flex");
                         child_name.classList.add('hidden');
+                    } else {
+                        alert("child_name not found")
                     }
                 } else {
                     btn.classList.remove("bg-blue-500", "text-white");
@@ -99,6 +101,8 @@ if (buttons) {
                 if (child_name) {
                     child_name.classList.remove('hidden');
                     child_name.classList.add("flex", "text-white");
+                } else {
+                    alert("child_name not found")
                 }
             } else {
                 this.classList.add("bg-blue-500", "text-white");
