@@ -54,7 +54,7 @@ hr {
   width: calc(100vw - 14rem);
 }
 .height_sign {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 4px);
 }
 .height_sign_lg {
   height: 100vh - (300px);
