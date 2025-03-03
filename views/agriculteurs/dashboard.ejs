@@ -24,18 +24,17 @@
         <% } %>
     <% } %>
     
-    <main class="w-full h-full p-3">
-        <%- include('navbar') %>
-        <%- include('sidebar') %>
-
-        <div class="hidden">
+    <main class="w-full relative flex flex-row">
+        <div class="w-3/12">
+            <%- include('sidebar') %>
+        </div>
+        <div class="w-full lg:w-9/12 bg-red-500">
+            <%- include('navbar') %>
             <%- include('menu_profile.ejs') %>
             <div class="m-24 p-24 text-center items-center justify-center">
                 <h2 class="text-4xl">👋 hello</h2>
             </div>
-        </div>
-
-        
+        </div>    
     </main>
 </body>
 </html>

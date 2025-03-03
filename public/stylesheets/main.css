@@ -50,8 +50,11 @@ hr {
   width: 40%;
 }
 
+.width_nav {
+  width: calc(100vw - 14rem);
+}
 .height_sign {
-  height: 100vh - (100px);
+  height: calc(100vh - 100px);
 }
 .height_sign_lg {
   height: 100vh - (300px);
