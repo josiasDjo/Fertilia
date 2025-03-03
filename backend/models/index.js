@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
         dialect: 'mysql', // Indique que l'on utilise MySQL
         logging: false, // Désactive les logs SQL dans la console
         pool: {
-            max: 10,  // Nombre maximum de connexions simultanées
+            max: 20,  // Nombre maximum de connexions simultanées
             min: 0,   // Nombre minimum de connexions
             acquire: 30000, // Temps max pour obtenir une connexion
             idle: 10000  // Temps max d'inactivité avant de fermer une connexion
