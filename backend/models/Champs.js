@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, DECIMAL } = require('sequelize');
 const sequelize = require('./index');
 const Utilisateur = require('./Utilisateurs');
 
@@ -8,6 +8,8 @@ const Champ = sequelize.define('table_champs', {
     nom: { type: DataTypes.STRING, allowNull: false },
     surface: { type: DataTypes.DECIMAL, allowNull: false },
     type_culture: { type: DataTypes.STRING, allowNull: false },	
+    longitude: { type: DataTypes.DECIMAL, allowNull: true},
+    latitude: { type: DataTypes.DECIMAL, allowNull: true},
     etat: {type: DataTypes.STRING, allowNull: false }
 }, {
     timestamp: true
