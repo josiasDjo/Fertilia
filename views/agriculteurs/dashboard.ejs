@@ -24,14 +24,17 @@
         <% } %>
     <% } %>
     
-    <%- include('navbar') %>
-    <%- include('sidebar') %>
-    
-    <main class="">
-        <%- include('menu_profile.ejs') %>
-        <div class="m-24 p-24 text-center items-center justify-center">
-            <h2 class="text-4xl">👋 hello</h2>
+    <main class="w-full h-full p-3">
+        <%- include('navbar') %>
+        <%- include('sidebar') %>
+
+        <div class="hidden">
+            <%- include('menu_profile.ejs') %>
+            <div class="m-24 p-24 text-center items-center justify-center">
+                <h2 class="text-4xl">👋 hello</h2>
+            </div>
         </div>
+
         
     </main>
 </body>
