@@ -213,7 +213,11 @@ function show_adding_field(param) {
     const adding_field = document.getElementById('show_addField');
 
     if (param === "open" && parent && adding_field) {
-        
+        parent.classList.remove('hidden');
+        parent.classList.add('flex');
+        adding_field.classList.add('flex');
+        adding_field.classList.remove('hidden');
+
     } else {
 
     }
