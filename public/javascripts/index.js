@@ -219,6 +219,10 @@ function show_adding_field(param) {
         adding_field.classList.remove('hidden');
 
     } else {
+        parent.classList.remove('flex');
+        parent.classList.add('hidden');
+        adding_field.classList.add('hidden');
+        adding_field.classList.remove('flex');
 
     }
 }
