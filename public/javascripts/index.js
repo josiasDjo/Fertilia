@@ -227,6 +227,11 @@ function show_adding_field(param) {
     }
 }
 
+const parentFields = document.getElementById('modals_addFields');
+parentFields.addEventListener('click', function(){
+    show_adding_field('close');
+})
+
 
 
 
