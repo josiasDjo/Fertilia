@@ -1,0 +1,15 @@
+<div class="w-full p-4">
+    <h3 class="text-left font-medium">Gestion des terrains</h3>
+    <div id="champs" class="w-full flex flex-wrap items-center justify-center">
+        <button type="button" onclick="show_adding_field('open');" class="h-44 w-44 m-3 bg-gray-200 text-6xl text-green-700"><i class="fa-solid fa-plus"></i></i></button>
+        <div class="h-44 w-44 m-3 bg-gray-200 text-center items-center justify-center flex">
+            <!-- <p class="text-center text-sm">Vous n'avez auncun champ pour le moment</p> -->
+            <img src="/images/cross_mark_search.jpeg" alt="cross image not found">
+        </div>
+        <div id="modals_addFields" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
+        content-center hidden">
+            <%- include('add_field') %>
+        </div>
+        <%- include('fields') %> %>
+    </div>
+</div>

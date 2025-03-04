@@ -206,6 +206,38 @@ function OpenModalSign(valeur) {
         console.log('Valeurs d\'entrée incorrectes');
     }
 }
+
+// Afficher Ajouter un terrain comme modal
+function show_adding_field(param) {
+    const parent = document.getElementById('modals_addFields');
+    const adding_field = document.getElementById('show_addField');
+
+    if (param === "open" && parent && adding_field) {
+        parent.classList.remove('hidden');
+        parent.classList.add('flex');
+        adding_field.classList.add('flex');
+        adding_field.classList.remove('hidden');
+
+    } else {
+        parent.classList.remove('flex');
+        parent.classList.add('hidden');
+        adding_field.classList.add('hidden');
+        adding_field.classList.remove('flex');
+
+    }
+}
+
+const parentFields = document.getElementById('modals_addFields');
+parentFields.addEventListener('click', function(){
+    show_adding_field('close');
+})
+
+
+
+
+
+
+
 // système de notation
 
 const stars = document.querySelectorAll('.star');
