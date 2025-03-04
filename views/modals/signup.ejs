@@ -10,11 +10,31 @@
                 <span class="font-medium">Enregistrez-vous</span>
             </ul>
             <ul class="flex flex-col sm:my-4 md:my-4 lg:my-2 w-full">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Nom" name="nom" id="nom">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Prénom" name="prenom" id="prenom">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="tel" placeholder="Téléphone" name="phone" id="phone">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email_signup">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="default_mot_de_passe" id="password">
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <input type="text" placeholder="Nom" name="nom" id="nom" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </div>
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <input type="text" placeholder="Prénom" name="prenom" id="prenom" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </div>
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class="fa-solid fa-square-phone"></i>
+                    <input type="tel" placeholder="Téléphone" name="phone" id="phone" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </div>
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class='bx bxs-envelope'></i>
+                    <input type="email" placeholder="Votre Email" name="email" id="email_signup" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </div>
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Votre mot de passe" name="default_mot_de_passe" id="password" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </div>
+                <!-- <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Nom" name="nom" id="nom"> -->
+                <!-- <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="text" placeholder="Prénom" name="prenom" id="prenom"> -->
+                <!-- <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="tel" placeholder="Téléphone" name="phone" id="phone"> -->
+                <!-- <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-2 md:mb-2 lg:mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email_signup"> -->
+                <!-- <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="default_mot_de_passe" id="password"> -->
             </ul>
             <ul class="flex flex-col w-full text-center">
                 <p class="text-sm" id="message_error_in"></p>
