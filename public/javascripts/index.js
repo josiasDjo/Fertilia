@@ -209,8 +209,14 @@ function OpenModalSign(valeur) {
 
 // Afficher Ajouter un terrain comme modal
 function show_adding_field(param) {
-    const parent = document.getElementById('');
+    const parent = document.getElementById('modals_addFields');
     const adding_field = document.getElementById('show_addField');
+
+    if (param === "open" && parent && adding_field) {
+        
+    } else {
+
+    }
 }
 
 
