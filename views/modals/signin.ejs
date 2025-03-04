@@ -7,8 +7,9 @@
             <ul class="flex flex-col w-full text-center">
                 <span class="font-medium">Entrez vos informations</span>
                 <button class="rounded-3xl p-2 border-2 border-solid font-medium border-black border-opacity-10 shadow-lg my-3 focus:outline-none 
-                focus:ring-2 hover:ring-2 hover:border-yellow-400 hover:text-yellow-400 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-                    <img src="/images/google.png" alt="google image" class="h-6 w-auto">
+                focus:ring-2 hover:ring-2 hover:border-yellow-400 hover:text-yellow-400 focus:ring-bg-yellow-400 focus:ring-opacity-50 flex flex-row
+                items-center justify-center">
+                    <img src="/images/google.png" alt="google image" class="h-6 w-auto mr-3">
                     Continuer avec Google
                 </button>
             </ul>
@@ -18,8 +19,13 @@
                 <!-- <hr>  -->
             </ul>
             <ul class="flex flex-col my-3 w-full">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="email" placeholder="Votre Email" name="email" id="email_signin">
-                <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="mot_de_passe" id="password_signin">
+                <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class='bx bxs-envelope'></i>
+                    <input type="email" placeholder="Votre Email" name="email" id="email_signin">
+                </div>
+                <div>
+                    <input class="rounded-3xl p-2 px-4 border-2 border-solid border-black focus:border-opacity-10 border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" type="password" placeholder="Votre mot de passe" name="mot_de_passe" id="password_signin">
+                </div>
             </ul>
             <ul class="flex flex-col w-full text-center">
                 <p class="text-sm" id="message_error"></p>
