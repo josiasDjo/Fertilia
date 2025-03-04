@@ -1,4 +1,4 @@
-<div class="bg-gray-200 relative w-80 p-4 items-center justify-center flex flex-col">
+<div class="bg-gray-200 relative w-80 p-4 items-center justify-center hidden flex-col">
     <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick="closeModalSign('signin');"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
     <h3 class="font-medium m-2">Ajouter un terrain</h3>
     <form action="" method="post" id="form_add_field" class="flex flex-col">
@@ -10,11 +10,15 @@
             <option value="Croissance">Croissance</option>
             <option value="Recolte">Recolte</option>
         </select>
-        <h4 class="font-medium">Localisation</h4>
-        
-        <i class="fa-solid fa-location-dot"></i>
-        <input type="number" name="longitude" id="longitude" class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-        <input type="number" name="latitude" id="latitude" class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <!-- <h4 class="font-medium">Localisation</h4> -->
+        <button type="button" id="locate_myField" class="text-green-700 rounded-3xl my-5 p-2 border-2 border-solid border-green-700 border-opacity-30">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Localiser mon champs</span>
+        </button>
+        <ul class="hidden">
+            <input type="number" name="longitude" id="longitude" class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+            <input type="number" name="latitude" id="latitude" class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        </ul>    
         <button type="submit" class="backgroud_btn_h text-white rounded-3xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Enregistrer</button>
     </form>
 </div>
