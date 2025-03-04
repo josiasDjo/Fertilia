@@ -206,6 +206,19 @@ function OpenModalSign(valeur) {
         console.log('Valeurs d\'entrée incorrectes');
     }
 }
+
+// Afficher Ajouter un terrain comme modal
+function show_adding_field(param) {
+    const parent = document.getElementById('');
+    const adding_field = document.getElementById('show_addField');
+}
+
+
+
+
+
+
+
 // système de notation
 
 const stars = document.querySelectorAll('.star');
