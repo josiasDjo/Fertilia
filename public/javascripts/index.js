@@ -7,15 +7,21 @@ window.addEventListener('load', function() {
 
     loader.classList.add('opacity-0');
 
-
-    setTimeout(() => {
-        loader.classList.remove('flex');
-        loader.classList.add('hidden');
-
-        content1.classList.remove('opacity-0');
-        content2.classList.remove('opacity-0');
-        content3.classList.remove('opacity-0');
-    })
+    if (loader && content1 && content2 && content3) {
+        setTimeout(() => {
+            loader.classList.remove('flex');
+            loader.classList.add('hidden');
+    
+            content1.classList.remove('opacity-0');
+            content2.classList.remove('opacity-0');
+            content3.classList.remove('opacity-0');
+        })
+    } else {
+        setTimeout(() => {
+            loader.classList.remove('flex');
+            loader.classList.add('hidden');
+        })
+    }
 });
 
 // Navbar show & hidden
