@@ -106,36 +106,7 @@ if (buttons) {
                     btn.classList.add("bg-white", "text-gray-700");
                 }
             });
-    
-            // Activer le bouton cliqué
-            if (largeur < 1024) {
-                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
-                this.classList.remove("bg-white", "text-gray-700");
-                if (child_name) {
-                    child_name.classList.remove('hidden');
-                    child_name.classList.add("flex", "text-white");
-                } else {
-                    alert("child_name not found")
-                }
-            } else {
-                this.classList.add("bg-blue-500", "text-white");
-                this.classList.remove("bg-white", "text-gray-700");
-
-                // if (btn_id === "dashboard") {
-                //     alert(btn_id);
-                // } else if (btn_id === "field_management") {
-                //     alert(btn_id);
-                // } else if (btn_id === "stock") {
-                //     alert(btn_id);
-                // } else if (btn_id === "delivery") {
-                //     alert(btn_id);
-                // } else if (btn_id === "settings") {
-                //     alert(btn_id);
-                // } else {
-                //     console.log('Not found');
-                // }
-            }
-
+            
             const btn_id = this.id;
 
             switch(btn_id) {
@@ -159,6 +130,20 @@ if (buttons) {
                     break;
             }
 
+            // Activer le bouton cliqué
+            if (largeur < 1024) {
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
+                this.classList.remove("bg-white", "text-gray-700");
+                if (child_name) {
+                    child_name.classList.remove('hidden');
+                    child_name.classList.add("flex", "text-white");
+                } else {
+                    alert("child_name not found")
+                }
+            } else {
+                this.classList.add("bg-blue-500", "text-white");
+                this.classList.remove("bg-white", "text-gray-700");
+            }
         });
     })
 } else {
