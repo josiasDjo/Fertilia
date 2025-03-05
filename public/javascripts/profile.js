@@ -98,7 +98,22 @@ if(form_add_field) {
         console.log('Add field');
         alert('Field submit');
 
-        const 
+        const nom = document.getElementById('nom').value;
+        const surface = document.getElementById('surface').value;
+        const type_culture = document.getElementById('type_culture').value;
+        const etat = document.getElementById('etat').value;
+        const longitude = document.getElementById('longitude').value;
+        const latitude = document.getElementById('latitude').value;
+        const message_error = document.getElementById('message_error');
+
+        if (nom != "" && surface != "" && type_culture != "" && etat != "") {
+            console.log(`Nom: ${nom}, Surface : ${surface}, etat : ${etat}`)
+        } else {
+            const err_l = "Tous les champs sont réquis !!! ";
+            message_error.innerText = err_l;
+            message_error.style.color = "red";
+            alert('Erreur : ', err_l);
+        }
     });
 }
 
