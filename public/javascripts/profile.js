@@ -127,8 +127,10 @@ async function field_mngt(event) {
     });
     const fields = await response.json();
 
-    if (fields.success) {
-        alert('Trouvé');
+    if (fields.length > 0) {
+        alert('>0')
+    } else {
+        alert('<0')
     }
 }
 async function signout() {
