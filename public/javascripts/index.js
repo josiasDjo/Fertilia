@@ -88,7 +88,7 @@ const buttons = document.querySelectorAll(".aside_btn");
 const largeur = window.innerWidth;
 if (buttons) {
     buttons.forEach(button => {
-        button.addEventListener("click", function (event) {
+        button.addEventListener("click", function () {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
@@ -120,43 +120,45 @@ if (buttons) {
             } else {
                 this.classList.add("bg-blue-500", "text-white");
                 this.classList.remove("bg-white", "text-gray-700");
+
+                // if (btn_id === "dashboard") {
+                //     alert(btn_id);
+                // } else if (btn_id === "field_management") {
+                //     alert(btn_id);
+                // } else if (btn_id === "stock") {
+                //     alert(btn_id);
+                // } else if (btn_id === "delivery") {
+                //     alert(btn_id);
+                // } else if (btn_id === "settings") {
+                //     alert(btn_id);
+                // } else {
+                //     console.log('Not found');
+                // }
             }
 
-            const btn_id = event.target.id;
+            const btn_id = this.id;
 
-            // switch(btn_id) {
-            //     case "dashboard":
-            //         alert(btn_id)
-            //         break;
-            //     case "field_management":
-            //         alert(btn_id)
-            //         break;
-            //     case "stock":
-            //         alert(btn_id)
-            //         break;
-            //     case "delivery":
-            //         alert(btn_id)
-            //         break;
-            //     case "settings":
-            //         alert(btn_id)
-            //         break;
-            //     default:
-            //         console.log('Aucun id de button trouvé');
-            //         break;
-            // }
-            if (btn_id === "dashboard") {
-                alert(btn_id);
-            } else if (btn_id === "dashboard") {
-                alert(btn_id);
-            } else if (btn_id === "dashboard") {
-                alert(btn_id);
-            } else if (btn_id === "dashboard") {
-                alert(btn_id);
-            } else if (btn_id === "dashboard") {
-                alert(btn_id);
-            } else {
-                console.log('Not found');
+            switch(btn_id) {
+                case "dashboard":
+                    alert(btn_id)
+                    break;
+                case "field_management":
+                    alert(btn_id)
+                    break;
+                case "stock":
+                    alert(btn_id)
+                    break;
+                case "delivery":
+                    alert(btn_id)
+                    break;
+                case "settings":
+                    alert(btn_id)
+                    break;
+                default:
+                    console.log('Aucun id de button trouvé');
+                    break;
             }
+
         });
     })
 } else {
