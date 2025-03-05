@@ -229,10 +229,10 @@ function show_adding_field(param) {
 
 const adding_field = document.getElementById('show_addField');;
 document.addEventListener('click', function(){
-    if(adding_field) {
-        adding_field.classList.remove('flex');
-        adding_field.classList.add('hidden');
-    }
+    // if(adding_field) {
+    //     adding_field.classList.remove('flex');
+    //     adding_field.classList.add('hidden');
+    // }
 })
 
 
