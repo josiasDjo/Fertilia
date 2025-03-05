@@ -120,7 +120,14 @@ if(form_add_field) {
         }
     });
 }
+async function field_mngt(event) {
+    const response = await fetch("/api/champs/");
+    const fields = await response.json();
 
+    if (fields.success) {
+        alert('Trouvé');
+    }
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
