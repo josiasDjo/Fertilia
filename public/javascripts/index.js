@@ -124,25 +124,38 @@ if (buttons) {
 
             const btn_id = event.target.id;
 
-            switch(btn_id) {
-                case "dashboard":
-                    alert(btn_id)
-                    break;
-                case "field_management":
-                    alert(btn_id)
-                    break;
-                case "stock":
-                    alert(btn_id)
-                    break;
-                case "delivery":
-                    alert(btn_id)
-                    break;
-                case "settings":
-                    alert(btn_id)
-                    break;
-                default:
-                    console.log('Aucun id de button trouvé');
-                    break;
+            // switch(btn_id) {
+            //     case "dashboard":
+            //         alert(btn_id)
+            //         break;
+            //     case "field_management":
+            //         alert(btn_id)
+            //         break;
+            //     case "stock":
+            //         alert(btn_id)
+            //         break;
+            //     case "delivery":
+            //         alert(btn_id)
+            //         break;
+            //     case "settings":
+            //         alert(btn_id)
+            //         break;
+            //     default:
+            //         console.log('Aucun id de button trouvé');
+            //         break;
+            // }
+            if (btn_id === "dashboard") {
+                alert(btn_id);
+            } else if (btn_id === "dashboard") {
+                alert(btn_id);
+            } else if (btn_id === "dashboard") {
+                alert(btn_id);
+            } else if (btn_id === "dashboard") {
+                alert(btn_id);
+            } else if (btn_id === "dashboard") {
+                alert(btn_id);
+            } else {
+                console.log('Not found');
             }
         });
     })
