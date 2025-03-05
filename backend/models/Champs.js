@@ -16,6 +16,6 @@ const Champ = sequelize.define('table_champs', {
 });
 
 Champ.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id'});
-Utilisateur.hasMany(Champ, { foreignKey: 'id_utilisateurs'});
+Utilisateur.hasMany(Champ, { foreignKey: 'utilisateur_id'});
 
 module.exports = Champ;

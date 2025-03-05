@@ -121,7 +121,10 @@ if(form_add_field) {
     });
 }
 async function field_mngt(event) {
-    const response = await fetch("/api/champs/");
+    const response = await fetch("/api/champs/terrain/getAll", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+    });
     const fields = await response.json();
 
     if (fields.success) {

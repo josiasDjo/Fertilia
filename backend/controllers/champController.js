@@ -2,7 +2,7 @@ const Champ = require('../models/Champs');
 
 exports.createChamp = async (req, res) => {
     try {	
-        const utilisateur_id = req.session.users.id_user
+        const utilisateur_id = req.session.users.id_user;
         // nom, surface, type_culture, etat, longitude, latitude
         const { nom, surface, type_culture, etat, longitude, latitude  } = req.body;
         const champ = await Champ.create({ utilisateur_id, nom, surface, type_culture, etat, longitude, latitude   });
@@ -16,10 +16,12 @@ exports.createChamp = async (req, res) => {
 
 exports.getAllChamps = async (req, res) => {
     try {
-        const champs = await Champ.findAll();
+        const utilisateur_id = req.session.users.id_user;
+        const champs = await Champ.findAll({ where: { utilisateur_id }});
         res.json(champs);
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la récupération des champs' });
+        console.log('Erreur lors de la récupération des champs', err);
+        res.json({ success: false, message: 'Erreur lors de la récupération des champs' });
     }
 };
 
