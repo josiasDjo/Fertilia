@@ -83,11 +83,12 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
     }
 });
 
-async function addField() {
-    alert('Field Submit');
-}
+// async function addField(event) {
+//     event.preventDefault();
+//     alert('Field Submit');
+// }
 document.getElementById('inscription_page_submit').addEventListener('submit', async function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log('Add field');
     alert('Field submit');
 });
