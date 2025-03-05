@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const conn_sub = document.getElementById('connexion_page_send');
     if (conn_sub) {
     document.getElementById('connexion_page_send').addEventListener("submit", async function(event) {
@@ -87,10 +89,7 @@ if (inscri_sub) {
         }
     });
 }
-// async function addField(event) {
-//     event.preventDefault();
-//     alert('Field Submit');
-// }
+
 const form_add_field = document.getElementById('form_add_field');
 if(form_add_field) {
     form_add_field.addEventListener('submit', async function(event) {
@@ -107,7 +106,21 @@ if(form_add_field) {
         const message_error = document.getElementById('message_error');
 
         if (nom != "" && surface != "" && type_culture != "" && etat != "") {
-            console.log(`Nom: ${nom}, Surface : ${surface}, etat : ${etat}`)
+            console.log(`Nom: ${nom}, Surface : ${surface}, etat : ${etat}`);
+            const response = await fetch("", {
+                method: "POST",
+                headers: { "Content-Types": "application/json"},
+                body: JSON.stringify({nom, surface, type_culture, etat, longitude, latitude})
+            })
+
+            const data = await response.json();
+            if(data.success) {
+                message_error.innerText = data.message;
+                message_error.style.color = "green";
+            } else {
+                message_error.innerText = data.message;
+                message_error.style.color = "red";
+            }
         } else {
             const err_l = "Tous les champs sont réquis !!! ";
             message_error.innerText = err_l;
