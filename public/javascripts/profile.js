@@ -82,6 +82,10 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
         } 
     }
 });
+
+document.getElementById('form_add_field').addEventListener('submit', async function(event) {
+    alert('Field submit');
+});
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
