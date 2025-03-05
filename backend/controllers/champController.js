@@ -3,7 +3,8 @@ const Champ = require('../models/Champs');
 exports.createChamp = async (req, res) => {
     try {	
         const utilisateur_id = req.session.users.id_user
-        const { nom, surface, type_culture, longitude, latitude, etat } = req.body;
+        // nom, surface, type_culture, etat, longitude, latitude
+        const { nom, surface, type_culture, etat, longitude, latitude } = req.body;
         const champ = await Champ.create({ utilisateur_id, nom, surface, type_culture, longitude, latitude, etat  });
         console.log('Champ Ajouté', champ)
         res.json({ success: true, message: 'Nouvel champ ajouté avec succès'});
