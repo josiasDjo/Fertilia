@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (firstButton) {
         firstButton.click();
     } else {
-        console('aside_btn not found');
+        console.log('aside_btn not found');
     }
 });
 //sidebar find which button was clicked
@@ -181,7 +181,6 @@ function OpenModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
-    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && signup && parent) {
         signup.classList.remove('flex');
@@ -191,9 +190,6 @@ function OpenModalSign(valeur) {
         signin.classList.add("backdrop-blur-xl")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        body.classList.add = "fixed";
-        body.style.top = `-${window.scrollY}px`;
-        // parent.classList.add("backdrop-blur-md");
 
         console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
