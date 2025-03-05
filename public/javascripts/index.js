@@ -111,19 +111,22 @@ if (buttons) {
 
             switch(btn_id) {
                 case "dashboard":
-                    alert(btn_id)
+                    console.log(btn_id)
                     break;
                 case "field_management":
-                    alert(btn_id)
+                    console.log(btn_id);
+                    const fields = document.getElementById('fields');
+                    fields.classList.remove('hidden');
+                    fields.classList.add('flex');
                     break;
                 case "stock":
-                    alert(btn_id)
+                    console.log(btn_id)
                     break;
                 case "delivery":
-                    alert(btn_id)
+                    console.log(btn_id)
                     break;
                 case "settings":
-                    alert(btn_id)
+                    console.log(btn_id)
                     break;
                 default:
                     console.log('Aucun id de button trouvé');
