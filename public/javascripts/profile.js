@@ -100,8 +100,8 @@ if(form_add_field) {
             console.log(`Nom: ${nom}, Surface : ${surface}, etat : ${etat}`);
             const response = await fetch("/api/champs/nouveau-champ", {
                 method: "POST",
-                headers: { "Content-Types": "application/json"},
-                body: JSON.stringify({nom, surface, type_culture, etat, longitude, latitude})
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nom, surface, type_culture, etat, longitude, latitude })
             })
 
             const data = await response.json();
