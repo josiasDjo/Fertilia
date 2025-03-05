@@ -6,7 +6,6 @@ window.addEventListener('load', function() {
     const content3 = document.getElementById('main_su');
 
     loader.classList.add('opacity-0');
-
     if (loader && content1 && content2 && content3) {
         setTimeout(() => {
             loader.classList.remove('flex');

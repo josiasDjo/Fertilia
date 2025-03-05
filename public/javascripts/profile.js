@@ -1,8 +1,6 @@
-const { response } = require("express");
-
 const conn_sub = document.getElementById('connexion_page_send');
-    if (conn_sub) {
-    document.getElementById('connexion_page_send').addEventListener("submit", async function(event) {
+if (conn_sub) {
+    conn_sub.addEventListener("submit", async function(event) {
         event.preventDefault();
 
         const email = document.getElementById('email_signin').value;
@@ -18,17 +16,10 @@ const conn_sub = document.getElementById('connexion_page_send');
             const data = await response.json();
             const message_error = document.getElementById('message_error');
             if (data.success) {
-                try {
-                    // alert('G : ', data.message);
-                    message_error.innerText = data.message;
-                    message_error.style.color = "green";
-                    window.location.href = "/users/mon-profile/flash";
-                } catch (err) {
-                    console.log('Une erreur est survenue, ', err);
-                }
+                message_error.innerText = data.message;
+                message_error.style.color = "green";
+                window.location.href = "/users/mon-profile/flash";
             } else {
-                // alert('G : ', data.message);
-
                 message_error.innerText = data.message;
                 message_error.style.color = "red";
             }
