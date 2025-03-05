@@ -233,7 +233,7 @@ document.addEventListener('click', function(){
     //     adding_field.classList.remove('flex');
     //     adding_field.classList.add('hidden');
     // }
-})
+});
 
 
 
