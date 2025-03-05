@@ -88,7 +88,7 @@ const buttons = document.querySelectorAll(".aside_btn");
 const largeur = window.innerWidth;
 if (buttons) {
     buttons.forEach(button => {
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function (event) {
             // Réinitialiser tous les boutons
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
@@ -120,6 +120,29 @@ if (buttons) {
             } else {
                 this.classList.add("bg-blue-500", "text-white");
                 this.classList.remove("bg-white", "text-gray-700");
+            }
+
+            const btn_id = event.target.id;
+
+            switch(btn_id) {
+                case "dashboard":
+                    alert(btn_id)
+                    break;
+                case "field_management":
+                    alert(btn_id)
+                    break;
+                case "stock":
+                    alert(btn_id)
+                    break;
+                case "delivery":
+                    alert(btn_id)
+                    break;
+                case "settings":
+                    alert(btn_id)
+                    break;
+                default:
+                    console.log('Aucun id de button trouvé');
+                    break;
             }
         });
     })
