@@ -89,7 +89,11 @@ const largeur = window.innerWidth;
 if (buttons) {
     buttons.forEach(button => {
         button.addEventListener("click", function () {
-            // Réinitialiser tous les boutons
+            // Réinitialiser tous les boutons et les contenneur
+            const field_management_cont = document.getElementById('field_management_cont');
+
+            field_management_cont.classList.remove('flex');
+            field_management_cont.classList.add('hidden');
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -115,9 +119,9 @@ if (buttons) {
                     break;
                 case "field_management":
                     console.log(btn_id);
-                    const fields = document.getElementById('fields');
-                    fields.classList.remove('hidden');
-                    fields.classList.add('flex');
+                    const field_management_cont = document.getElementById('field_management_cont');
+                    field_management_cont.classList.remove('hidden');
+                    field_management_cont.classList.add('flex');
                     break;
                 case "stock":
                     console.log(btn_id)
