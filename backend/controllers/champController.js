@@ -2,11 +2,13 @@ const Champ = require('../models/Champs');
 
 exports.createChamp = async (req, res) => {
     try {	
-        const { utilisateur_id, nom, surface, type_culture, longitude, latitude, etat } = req.body;
+        const utilisateur_id = req.session.users.id_user
+        const { nom, surface, type_culture, longitude, latitude, etat } = req.body;
         const champ = await Champ.create({ utilisateur_id, nom, surface, type_culture, longitude, latitude, etat  });
+        console.log('Champ Ajouté', champ)
         res.json({ success: true, message: 'Nouvel champ ajouté avec succès'});
     } catch (err) {
-        console.log('Erreur lors de la création du champ', err)
+        console.log('Erreur lors de l\'ajout du champ', err)
         res.json({ success: false, message: 'Erreur lors de la création du champ' });
     }
 };
