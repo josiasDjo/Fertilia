@@ -79,7 +79,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
 // app.use('/api/capteurs', CapteursRouter);
-// app.use('/api/champs', ChampsRouter);
+app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
 app.use('/api/role/users', RolesRouter);

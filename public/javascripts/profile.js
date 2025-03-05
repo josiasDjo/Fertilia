@@ -107,7 +107,7 @@ if(form_add_field) {
 
         if (nom != "" && surface != "" && type_culture != "" && etat != "") {
             console.log(`Nom: ${nom}, Surface : ${surface}, etat : ${etat}`);
-            const response = await fetch("", {
+            const response = await fetch("/api/champs/nouveau-champ", {
                 method: "POST",
                 headers: { "Content-Types": "application/json"},
                 body: JSON.stringify({nom, surface, type_culture, etat, longitude, latitude})
