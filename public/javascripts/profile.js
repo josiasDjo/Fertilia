@@ -84,7 +84,8 @@ document.getElementById('inscription_page_submit').addEventListener('submit', as
 });
 
 document.getElementById('form_add_field').addEventListener('submit', async function(event) {
-    event.defaultPrevented();
+    event.preventDefault();
+    console.log('Add field');
     alert('Field submit');
 });
 async function signout() {
