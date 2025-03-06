@@ -122,6 +122,7 @@ if(form_add_field) {
 }
 async function field_mngt(event) {
     let fields_container = document.getElementById('container_fields');
+    let not_element = document.getElementById('not_element');
     const response = await fetch("/api/champs/terrain/getAll", {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -129,7 +130,9 @@ async function field_mngt(event) {
     const fields = await response.json();
 
     if (fields.length > 0) {
-        // alert('>0')
+        not_element.classList.remove('flex');
+        not_element.classList.add('hidden');
+
         fields_container.innerHTML = "";
         console.log({fields});
         fields.forEach(element => {
@@ -149,7 +152,8 @@ async function field_mngt(event) {
             console.log('Element', element.nom);
         });
     } else {
-        alert('<0')
+        not_element.classList.add('flex');
+        not_element.classList.hidden('hidden');
     }
 }
 async function signout() {
