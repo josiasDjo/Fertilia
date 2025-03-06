@@ -8,14 +8,14 @@ const Champ = sequelize.define('table_champs', {
     nom: { type: DataTypes.STRING, allowNull: false },
     surface: { type: DataTypes.DECIMAL, allowNull: false },
     type_culture: { type: DataTypes.STRING, allowNull: false },	
-    longitude: { type: DataTypes.DECIMAL, allowNull: true},
-    latitude: { type: DataTypes.DECIMAL, allowNull: true},
+    longitude: { type: DataTypes.FLOAT, allowNull: true},
+    latitude: { type: DataTypes.FLOAT, allowNull: true},
     etat: {type: DataTypes.STRING, allowNull: false }
 }, {
     timestamp: true
 });
 
 Champ.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id'});
-Utilisateur.hasMany(Champ, { foreignKey: 'id_utilisateurs'});
+Utilisateur.hasMany(Champ, { foreignKey: 'utilisateur_id'});
 
 module.exports = Champ;

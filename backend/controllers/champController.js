@@ -1,21 +1,28 @@
 const Champ = require('../models/Champs');
 
 exports.createChamp = async (req, res) => {
-    try {
-        const { utilisateur_id, nom, surface, type_culture } = req.body;
-        const champ = await Champ.create({ utilisateur_id, nom, surface, type_culture });
-        res.status(201).json(champ);
+    try {	
+        const utilisateur_id = req.session.users.id_user;
+        // nom, surface, type_culture, etat, longitude, latitude
+        const { nom, surface, type_culture, etat, longitude, latitude  } = req.body;
+        const champ = await Champ.create({ utilisateur_id, nom, surface, type_culture, etat, longitude, latitude   });
+        console.log('Champ Ajouté');
+        res.json({ success: true, message: 'Nouvel champ ajouté avec succès'});
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la création du champ' });
+        console.log('Erreur lors de l\'ajout du champ', err)
+        res.json({ success: false, message: 'Erreur lors de la création du champ' });
     }
 };
 
 exports.getAllChamps = async (req, res) => {
     try {
-        const champs = await Champ.findAll();
+        const utilisateur_id = req.session.users.id_user;
+        const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
+        console.log('Champs : ', champs);
         res.json(champs);
     } catch (err) {
-        res.status(500).json({ error: 'Erreur lors de la récupération des champs' });
+        console.log('Erreur lors de la récupération des champs', err);
+        res.json({ success: false, message: 'Erreur lors de la récupération des champs' });
     }
 };
 

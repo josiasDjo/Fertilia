@@ -6,16 +6,21 @@ window.addEventListener('load', function() {
     const content3 = document.getElementById('main_su');
 
     loader.classList.add('opacity-0');
-
-
-    setTimeout(() => {
-        loader.classList.remove('flex');
-        loader.classList.add('hidden');
-
-        content1.classList.remove('opacity-0');
-        content2.classList.remove('opacity-0');
-        content3.classList.remove('opacity-0');
-    })
+    if (loader && content1 && content2 && content3) {
+        setTimeout(() => {
+            loader.classList.remove('flex');
+            loader.classList.add('hidden');
+    
+            content1.classList.remove('opacity-0');
+            content2.classList.remove('opacity-0');
+            content3.classList.remove('opacity-0');
+        })
+    } else {
+        setTimeout(() => {
+            loader.classList.remove('flex');
+            loader.classList.add('hidden');
+        })
+    }
 });
 
 // Navbar show & hidden
@@ -75,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (firstButton) {
         firstButton.click();
     } else {
-        console('aside_btn not found');
+        console.log('aside_btn not found');
     }
 });
 //sidebar find which button was clicked
@@ -84,7 +89,11 @@ const largeur = window.innerWidth;
 if (buttons) {
     buttons.forEach(button => {
         button.addEventListener("click", function () {
-            // Réinitialiser tous les boutons
+            // Réinitialiser tous les boutons et les contenneur
+            const field_management_cont = document.getElementById('field_management_cont');
+
+            field_management_cont.classList.remove('flex');
+            field_management_cont.classList.add('hidden');
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -101,9 +110,37 @@ if (buttons) {
                     btn.classList.add("bg-white", "text-gray-700");
                 }
             });
-    
+            
+            const btn_id = this.id;
+
+            switch(btn_id) {
+                case "dashboard":
+                    console.log(btn_id)
+                    break;
+                case "field_management":
+                    console.log(btn_id);
+                    const field_management_cont = document.getElementById('field_management_cont');
+                    field_management_cont.classList.remove('hidden');
+                    field_management_cont.classList.add('flex');
+                    break;
+                case "stock":
+                    console.log(btn_id)
+                    break;
+                case "delivery":
+                    console.log(btn_id)
+                    break;
+                case "settings":
+                    console.log(btn_id)
+                    break;
+                default:
+                    console.log('Aucun id de button trouvé');
+                    break;
+            }
+
             // Activer le bouton cliqué
             if (largeur < 1024) {
+                const child_name = this.querySelector('#btn_label');
+
                 this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
@@ -176,7 +213,6 @@ function OpenModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
-    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && signup && parent) {
         signup.classList.remove('flex');
@@ -186,9 +222,6 @@ function OpenModalSign(valeur) {
         signin.classList.add("backdrop-blur-xl")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        body.classList.add = "fixed";
-        body.style.top = `-${window.scrollY}px`;
-        // parent.classList.add("backdrop-blur-md");
 
         console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
@@ -227,10 +260,13 @@ function show_adding_field(param) {
     }
 }
 
-const parentFields = document.getElementById('modals_addFields');
-parentFields.addEventListener('click', function(){
-    show_adding_field('close');
-})
+const adding_field = document.getElementById('show_addField');;
+document.addEventListener('click', function(){
+    // if(adding_field) {
+    //     adding_field.classList.remove('flex');
+    //     adding_field.classList.add('hidden');
+    // }
+});
 
 
 
