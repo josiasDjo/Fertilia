@@ -139,6 +139,8 @@ if (buttons) {
 
             // Activer le bouton cliqué
             if (largeur < 1024) {
+                const child_name = this.querySelector('#btn_label');
+
                 this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
