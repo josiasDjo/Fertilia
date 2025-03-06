@@ -134,7 +134,7 @@ async function field_mngt(event) {
         console.log({fields});
         fields.forEach(element => {
             const articleHTML = `
-                <div id="field" class="h-56 w-44 m-3 bg-gray-200 text-6xl text-green-700 flex flex-col relative>
+                <div id="field" class="h-44 w-44 m-3 bg-gray-200 text-6xl text-green-700 flex flex-col relative>
                     <div id="graphic" class="w-full h-8/12">
                         <img src="/images/analyse.jpeg" alt="analyse" class="w-full h-auto object-cover">
                     </div>
