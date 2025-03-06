@@ -121,7 +121,7 @@ if(form_add_field) {
     });
 }
 async function field_mngt(event) {
-    const fields_container = document.getElementById('fields');
+    const fields_container = document.getElementById('container_fields');
     const response = await fetch("/api/champs/terrain/getAll", {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -134,11 +134,18 @@ async function field_mngt(event) {
         console.log({fields});
         fields.forEach(element => {
             const articleHTML = `
-                <div class="h-56 w-44 m-3 bg-gray-200 text-6xl text-green-700 flex flex-col relative>
-                    <h1>${element.nom}</h1>
-                    <span>${element.surface}</span>
+                <div id="field" class="h-56 w-44 m-3 bg-gray-200 text-6xl text-green-700 flex flex-col relative>
+                    <div id="graphic" class="w-full h-8/12">
+                        <img src="/images/analyse.jpeg" alt="analyse" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="bg-red-500 w-full relative">
+                        <button type="button" id="btn_showOption" class="text-3xl absolute top-2 right-2 bg-green-500 rounded-full">
+                            <i class='bx bx-dots-vertical'></i>
+                        </button>
+                    </div>
                 </div>
             `;
+            fields_container += articleHTML;
             console.log('Element', element.nom);
         });
     } else {
