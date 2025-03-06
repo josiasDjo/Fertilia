@@ -121,7 +121,7 @@ if(form_add_field) {
     });
 }
 async function field_mngt(event) {
-    const fields_container = document.getElementById('container_fields');
+    let fields_container = document.getElementById('container_fields');
     const response = await fetch("/api/champs/terrain/getAll", {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -145,7 +145,7 @@ async function field_mngt(event) {
                     </div>
                 </div>
             `;
-            fields_container += articleHTML;
+            fields_container.innerHTML += articleHTML;
             console.log('Element', element.nom);
         });
     } else {
