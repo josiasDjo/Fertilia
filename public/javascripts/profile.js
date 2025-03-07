@@ -141,7 +141,7 @@ async function field_mngt(event) {
                     <div id="graphic" class="w-full h-8/12">
                         <img src="/images/analyse.jpeg" alt="analyse" class="w-full h-auto object-cover">
                     </div>
-                    <div class="bg-red-500 w-full relative">
+                    <div class="bg-gray-200 w-full relative">
                         <h2 class="">${element.nom}</h2>
                     </div>
                 </div>
