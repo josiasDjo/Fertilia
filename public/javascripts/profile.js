@@ -86,7 +86,7 @@ if(form_add_field) {
     form_add_field.addEventListener('submit', async function(event) {
         event.preventDefault();
         console.log('Add field');
-        alert('Field submit');
+        // alert('Field submit');
 
         const nom = document.getElementById('nom').value;
         const surface = document.getElementById('surface').value;
@@ -137,12 +137,15 @@ async function field_mngt(event) {
         console.log({fields});
         fields.forEach(element => {
             const articleHTML = `
-                <div id="field" class="w-full h-64 lg:h-44 lg:w-56 mx-2 my-10 lg:m-3 bg-gray-200 flex flex-col relative">
-                    <div id="graphic" class="w-full h-8/12 relative">
+                <div id="field" class="w-full h-64 lg:h-44 lg:w-56 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
+                    <div id="graphic" class="w-full h-7/12 relative">
                         <img src="/images/analyse.jpeg" alt="analyse" class="w-full h-auto object-container">
                     </div>
-                    <div class="bg-gray-200 w-full relative">
+                    <div class="bg-gray-200 w-full h-4/12 absolute bottom-0 left-0">
                         <h2 class="">${element.nom}</h2>
+                    </div>
+                    <div class="backdrop-blur bg-red-500 h-full w-10 absolute top-0 right-0">
+                        <p>Lorem5</p>
                     </div>
                 </div>
             `;
