@@ -146,7 +146,7 @@ async function field_mngt(event) {
                         <p>${element.surface} hectare</p>
                     </div>
                     <div class="backdrop-blur bg-red-500 h-full w-10 absolute top-0 right-0">
-                        <p>Lorem5</p>
+                        <button type="button" id="btn_showMoreOption" class=""><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
                 </div>
             `;
