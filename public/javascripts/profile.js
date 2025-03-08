@@ -137,18 +137,28 @@ async function field_mngt(event) {
         console.log({fields});
         fields.forEach(element => {
             const articleHTML = `
-                <div id="field" class="w-full h-64 lg:h-44 lg:w-56 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
-                    <div id="graphic" class="w-full h-7/12 relative">
-                        <di class="">
-                            <div class="h-10 w-10 rounded-full border-4 border-solid border-yellow-600"></div>
-                        </di>
-                    </div>
-                    <div class="bg-gray-200 w-full h-4/12 absolute bottom-0 left-0">
-                        <h2 class="font-bold">${element.nom}, </h2>
+                <div id="field" class="w-full h-64 lg:h-64 lg:w-64 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
+
+                    <div class="bg-gray-200 w-full h-4/12 my-3 relative">
+                        <h2 class="font-bold text-xl">${element.nom} </h2>
                         <p>${element.surface} hectare</p>
                     </div>
                     <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 rounded-full py-2 text-center justify-center items-center flex">
                         <button type="button" id="btn_showMoreOption" class="h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    </div>
+                    <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-3">
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>                        
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>
                     </div>
                 </div>
             `;
