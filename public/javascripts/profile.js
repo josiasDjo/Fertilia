@@ -143,7 +143,7 @@ async function field_mngt(event) {
                         <h2 class="font-bold text-xl">${element.nom} </h2>
                         <p>${element.surface} hectare</p>
                     </div>
-                    <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 rounded-full py-2 text-center justify-center items-center flex">
+                    <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 rounded-lg py-2 text-center justify-center items-center flex">
                         <button type="button" id="btn_showMoreOption" class="h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
                     <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-3">
@@ -159,6 +159,9 @@ async function field_mngt(event) {
                             <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
                             <p class="font-medium text-black">Humidité</p>
                         </div>
+                    </div>
+                    <div class="w-full px-3">
+                        <button class="w-full backgroud_btn_h text-white rounded-xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Irriger</button>
                     </div>
                 </div>
             `;
