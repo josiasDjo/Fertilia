@@ -271,6 +271,7 @@ function detail_me(event) {
     console.log('detail_me');
     const show_details = document.getElementById('show_details');
 
+    show_details.click();
 }
 
 
