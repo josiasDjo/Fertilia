@@ -261,11 +261,11 @@ function show_adding_field(param) {
 }
 
 // afficher les détails du terrain selon le button cliqué
-const btn_showMoreOption_div = document.getElementById('btn_showMoreOption_div');
-if (btn_showMoreOption_div) {
-    console.log('btn_showMoreOption_div : ', btn_showMoreOption_div);
+const show_details = document.getElementById('show_details');
+if (show_details) {
+    console.log('show_details : ', show_details);
 } else {
-    console.log('btn_showMoreOption_div : ', btn_showMoreOption_div);
+    console.log('show_details : ', show_details);
 }
 function detail_me(event) {
     let buttonRect = event.target.getBoundingClientRect();
