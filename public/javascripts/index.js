@@ -260,18 +260,28 @@ function show_adding_field(param) {
     }
 }
 
-const adding_field = document.getElementById('show_addField');;
-document.addEventListener('click', function(){
-    // if(adding_field) {
-    //     adding_field.classList.remove('flex');
-    //     adding_field.classList.add('hidden');
-    // }
-});
+// afficher les détails du terrain selon le button cliqué
+const btn_showMoreOption_div = document.getElementById('btn_showMoreOption_div');
+if (btn_showMoreOption_div) {
+    console.log('btn_showMoreOption_div : ', btn_showMoreOption_div);
+} else {
+    console.log('btn_showMoreOption_div : ', btn_showMoreOption_div);
+}
+function detail_me(event) {
+    let buttonRect = event.target.getBoundingClientRect();
+    console.log('detail_me');
+    const show_details_div = document.getElementById('show_details_div');
 
+    if(show_details_div) {
+        show_details_div.style.top = buttonRect.top + "px";
+        show_details_div.style.right = buttonRect.right + "px";
+        show_details_div.classList.remove('hidden');
+        show_details_div.classList.add('flex');
+    } else {
+        console.log('show_details_div : ', show_details_div);
+    }
 
-
-
-
+}
 
 
 // système de notation

@@ -138,14 +138,14 @@ async function field_mngt(event) {
         fields.forEach(element => {
             const articleHTML = `
                 <div id="field" class="w-full h-64 lg:h-64 lg:w-64 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
-
-                    <div class="bg-gray-200 w-full h-4/12 my-3 relative">
+                    <div id="btn_showMoreOption_div" onclick="detail_me();" class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-40 rounded-lg py-2 text-center justify-center items-center flex">
+                        <button type="button" id="btn_showMoreOption" class="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    </div>    
+                    <div class="bg-gray-200 w-full h-4/12 my-3 relative z-10">
                         <h2 class="font-bold text-xl">${element.nom} </h2>
                         <p>${element.surface} hectare</p>
                     </div>
-                    <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 rounded-lg py-2 text-center justify-center items-center flex">
-                        <button type="button" id="btn_showMoreOption" class="h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                    </div>
+
                     <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-3">
                         <div class="w-16 items-center justify-center flex flex-col m-2">
                             <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
