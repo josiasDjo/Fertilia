@@ -86,7 +86,7 @@ if(form_add_field) {
     form_add_field.addEventListener('submit', async function(event) {
         event.preventDefault();
         console.log('Add field');
-        alert('Field submit');
+        // alert('Field submit');
 
         const nom = document.getElementById('nom').value;
         const surface = document.getElementById('surface').value;
@@ -137,12 +137,31 @@ async function field_mngt(event) {
         console.log({fields});
         fields.forEach(element => {
             const articleHTML = `
-                <div id="field" class="h-44 w-44 m-3 bg-gray-200 flex flex-col relative">
-                    <div id="graphic" class="w-full h-8/12">
-                        <img src="/images/analyse.jpeg" alt="analyse" class="w-full h-auto object-cover">
+                <div id="field" class="w-full h-64 lg:h-64 lg:w-64 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
+                    <div id="show_details" onclick="detail_me();" class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-40 rounded-lg py-2 text-center justify-center items-center flex">
+                        <button type="button" id="show_details" class="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    </div>    
+                    <div class="bg-gray-200 w-full h-4/12 my-3 relative z-10">
+                        <h2 class="font-bold text-xl">${element.nom} </h2>
+                        <p>${element.surface} hectare</p>
                     </div>
-                    <div class="bg-red-500 w-full relative">
-                        <h2 class="">${element.nom}</h2>
+
+                    <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-3">
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>                        
+                        <div class="w-16 items-center justify-center flex flex-col m-2">
+                            <div class="h-12 w-12 rounded-full border-4 border-solid border-yellow-500 text-center items-center justify-center flex">100</div>
+                            <p class="font-medium text-black">Humidité</p>
+                        </div>
+                    </div>
+                    <div class="w-full px-3">
+                        <button class="w-full backgroud_btn_h text-white rounded-xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Irriger</button>
                     </div>
                 </div>
             `;
