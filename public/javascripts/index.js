@@ -268,18 +268,8 @@ if (show_details) {
     console.log('show_details : ', show_details);
 }
 function detail_me(event) {
-    let buttonRect = event.target.getBoundingClientRect();
     console.log('detail_me');
-    const show_details_div = document.getElementById('show_details_div');
-
-    if(show_details_div) {
-        show_details_div.style.top = buttonRect.top + "px";
-        show_details_div.style.right = buttonRect.right + "px";
-        show_details_div.classList.remove('hidden');
-        show_details_div.classList.add('flex');
-    } else {
-        console.log('show_details_div : ', show_details_div);
-    }
+    const show_details = document.getElementById('show_details');
 
 }
 
