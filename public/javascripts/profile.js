@@ -145,8 +145,8 @@ async function field_mngt(event) {
                         <h2 class="font-bold">${element.nom}, </h2>
                         <p>${element.surface} hectare</p>
                     </div>
-                    <div class="backdrop-blur bg-red-500 h-full w-10 absolute top-0 right-0">
-                        <button type="button" id="btn_showMoreOption" class=""><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="backdrop-blur bg-red-500 h-10 w-10 absolute top-2 right-2 rounded-full py-2 text-center justify-center items-center">
+                        <button type="button" id="btn_showMoreOption" class="h-full w-full text-xl"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
                 </div>
             `;
