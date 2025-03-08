@@ -139,7 +139,9 @@ async function field_mngt(event) {
             const articleHTML = `
                 <div id="field" class="w-full h-64 lg:h-44 lg:w-56 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
                     <div id="graphic" class="w-full h-7/12 relative">
-                        <div class=""></div>
+                        <di class="">
+                            <div class="h-10 w-10 rounded-full border-4 border-solid border-yellow-600"></div>
+                        </di>
                     </div>
                     <div class="bg-gray-200 w-full h-4/12 absolute bottom-0 left-0">
                         <h2 class="font-bold">${element.nom}, </h2>
