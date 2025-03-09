@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const allChamps = require('../controllers/champController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -19,6 +20,7 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
   return res.redirect('/users/mon-profile');
 });
 router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
+  const champs = "/terrain/getAll";
   try {
     res.render('dashboard', {
       id_user: req.session.users.id_user,
