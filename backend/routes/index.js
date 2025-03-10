@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const allChamps = require('../controllers/champController');
-
+const champController = require('../controllers/champController');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('../../views/index.ejs');
@@ -20,7 +19,14 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
   return res.redirect('/users/mon-profile');
 });
 router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
-  const champs = "/terrain/getAll";
+  let champs = [];
+
+  const getChamps = async () => {
+    champs = await champController.getAllChamps();
+    console.log('Champs : ', champs);
+  }
+
+  getChamps();
   try {
     res.render('dashboard', {
       id_user: req.session.users.id_user,
@@ -28,6 +34,7 @@ router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
       prenom: req.session.users.prenom,
       email: req.session.users.email,
       role_id: req.session.users.role_id,
+      MesChamps: champs,
     });
   } catch(err) {
     console.log('Une erreur s\'est produite lors de la rédirection : ', err);

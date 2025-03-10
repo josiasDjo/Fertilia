@@ -19,10 +19,15 @@ exports.getAllChamps = async (req, res) => {
         const utilisateur_id = req.session.users.id_user;
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
         // console.log('Champs : ', champs);
-        res.json(champs);
+        // return res.json(champs);
+        return champs;
     } catch (err) {
         console.log('Erreur lors de la récupération des champs', err);
-        res.json({ success: false, message: 'Erreur lors de la récupération des champs' });
+        // return res.json({ success: false, message: 'Erreur lors de la récupération des champs' });
+        return {
+            success: false,
+            message: 'Erreur lors de la récupération des champs',
+        }
     }
 };
 
