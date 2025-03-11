@@ -261,20 +261,16 @@ function show_adding_field(param) {
 }
 
 // afficher les détails du terrain selon le button cliqué
-const show_details = document.getElementById('show_details');
+const show_details = document.querySelectorAll('.btn_show_option');
 if (show_details) {
-    show_details.addEventListener('click', function() {
-        alert('show click', show_details);
+    show_details.forEach(details => {
+        show_details.addEventListener('click', function() {
+            alert('show click', show_details);
+        })
+        console.log('show_details : ', show_details);
     })
-    console.log('show_details : ', show_details);
 } else {
     console.log('show_details : ', show_details);
-}
-function detail_me(event) {
-    console.log('detail_me');
-    const show_details = document.getElementById('show_details');
-
-    show_details.click();
 }
 
 
