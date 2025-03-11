@@ -120,33 +120,7 @@ if(form_add_field) {
         }
     });
 }
-// async function field_mngt(event) {
-//     let fields_container = document.getElementById('container_fields');
-//     let not_element = document.getElementById('not_element');
-//     // const response = await fetch("/api/champs/terrain/getAll", {
-//     //     method: "GET",
-//     //     headers: { "Content-Type": "application/json" }
-//     // });
-//     const fields = await response.json();
 
-//     if (fields.length > 0) {
-//         not_element.classList.remove('flex');
-//         not_element.classList.add('hidden');
-
-//         fields_container.innerHTML = "";
-//         console.log({fields});
-//         fields.forEach(element => {
-//             const articleHTML = `
-
-//             `;
-//             fields_container.innerHTML += articleHTML;
-//             console.log('Element', element.nom);
-//         });
-//     } else {
-//         not_element.classList.add('flex');
-//         not_element.classList.hidden('hidden');
-//     }
-// }
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
