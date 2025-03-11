@@ -24,8 +24,9 @@ router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
   console.log('User ID : ', users_id);
   const getChamps = async () => {
     const users_id = req.session.users.id_user;
+    req.users_id = users_id;
     console.log('User ID : ', users_id);
-    champs = await champController.getAllChamps(users_id);
+    champs = await champController.getAllChamps(req);
     console.log('Champs : ', champs);
   }
 
