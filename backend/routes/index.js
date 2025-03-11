@@ -18,20 +18,20 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
   req.flash('success_msg', 'Connexion réussie');
   return res.redirect('/users/mon-profile');
 });
-router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
-  let champs = [];
+router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
+
   const users_id = req.session.users.id_user;
   console.log('User ID : ', users_id);
   const getChamps = async () => {
     const users_id = req.session.users.id_user;
     req.users_id = users_id;
     console.log('User ID : ', users_id);
-    champs = await champController.getAllChamps(req);
-    // console.log('Champs : ', champs);
+    return await champController.getAllChamps(req);
   }
 
-  getChamps();
+  const champs = await getChamps();
   try {
+    console.log('Champs : ', champs);
     res.render('dashboard', {
       id_user: req.session.users.id_user,
       nom: req.session.users.nom,
