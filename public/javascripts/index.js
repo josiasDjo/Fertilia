@@ -264,10 +264,10 @@ function show_adding_field(param) {
 const show_details = document.querySelectorAll('.btn_show_option');
 if (show_details) {
     show_details.forEach(details => {
-        show_details.addEventListener('click', function() {
-            alert('show click', show_details);
+        details.addEventListener('click', function() {
+            alert('show click', details);
         })
-        console.log('show_details : ', show_details);
+        console.log('show_details : ', details);
     })
 } else {
     console.log('show_details : ', show_details);
