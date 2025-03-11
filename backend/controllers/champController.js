@@ -20,7 +20,7 @@ exports.getAllChamps = async (req, res) => {
         // const utilisateur_id = req.body;
         // console.log('Users ID Get Fields : ', utilisateur_id);
         const utilisateur_id = req.users_id;
-        console.log('User ID in Controller:', users_id);
+        console.log('User ID in Controller:', utilisateur_id);
 
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
         // console.log('Champs : ', champs);

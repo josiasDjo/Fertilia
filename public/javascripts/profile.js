@@ -123,10 +123,10 @@ if(form_add_field) {
 async function field_mngt(event) {
     let fields_container = document.getElementById('container_fields');
     let not_element = document.getElementById('not_element');
-    const response = await fetch("/api/champs/terrain/getAll", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-    });
+    // const response = await fetch("/api/champs/terrain/getAll", {
+    //     method: "GET",
+    //     headers: { "Content-Type": "application/json" }
+    // });
     const fields = await response.json();
 
     if (fields.length > 0) {
