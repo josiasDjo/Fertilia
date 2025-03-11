@@ -266,6 +266,7 @@ if (show_details) {
     show_details.forEach(details => {
         details.addEventListener('click', function() {
             alert('show click', details);
+            
         })
         console.log('show_details : ', details);
     })
