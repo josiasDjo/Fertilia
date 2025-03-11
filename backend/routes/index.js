@@ -20,9 +20,12 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
 });
 router.get('/users/mon-profile', isAuthenticated, (req, res, next) => {
   let champs = [];
-
+  const users_id = req.session.users.id_user;
+  console.log('User ID : ', users_id);
   const getChamps = async () => {
-    champs = await champController.getAllChamps();
+    const users_id = req.session.users.id_user;
+    console.log('User ID : ', users_id);
+    champs = await champController.getAllChamps(users_id);
     console.log('Champs : ', champs);
   }
 
