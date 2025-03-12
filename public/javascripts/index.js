@@ -303,11 +303,15 @@ if (show_hidden_history_stock) {
             history_container.classList.add('flex');
             hidden_history_stock.classList.remove('hidden');
             hidden_history_stock.classList.add('flex');
+            show_history_stock.classList.remove('flex');
+            show_history_stock.classList.add('hidden')
         } else {
             history_container.classList.remove('flex');
             history_container.classList.add('hidden');
             show_history_stock.classList.remove('hidden');
             show_history_stock.classList.add('flex');
+            hidden_history_stock.classList.remove('flex');
+            hidden_history_stock.classList.add('hidden');
         }
     });
 }
