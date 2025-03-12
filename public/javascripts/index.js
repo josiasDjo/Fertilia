@@ -106,7 +106,7 @@ if (buttons) {
                         alert("child_name not found")
                     }
                 } else {
-                    btn.classList.remove("bg-blue-500", "text-white");
+                    btn.classList.remove("blue_color_btn", "text-white");
                     btn.classList.add("bg-white", "text-gray-700");
                 }
             });
@@ -125,6 +125,9 @@ if (buttons) {
                     break;
                 case "stock":
                     console.log(btn_id)
+                    const stock_mgnt = document.getElementById('stock_mgnt');
+                    stock_mgnt.classList.remove('hidden');
+                    stock_mgnt.classList.add('flex');
                     break;
                 case "delivery":
                     console.log(btn_id)
@@ -150,7 +153,7 @@ if (buttons) {
                     alert("child_name not found")
                 }
             } else {
-                this.classList.add("bg-blue-500", "text-white", "hover:text-black");
+                this.classList.add("blue_color_btn", "text-white", "hover:text-black");
                 this.classList.remove("bg-white", "text-gray-700");
             }
         });

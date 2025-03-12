@@ -32,7 +32,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.blue_color_text {
+  color: #00B8F5;
+}
+.blue_color_btn {
+  background-color: #00B8F5;
+}
 .backgroud_btn_h{
   background-color: rgb(255, 181, 42);
 } 
