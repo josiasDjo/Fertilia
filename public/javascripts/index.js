@@ -97,7 +97,7 @@ if (buttons) {
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-            
+
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -289,6 +289,14 @@ if (show_details) {
     console.log('show_details : ', show_details);
 }
 
+// Stock config 
+// afficher l'historique des entrées et sorties
+const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
+if (show_hidden_history_stock) {
+    show_hidden_history_stock.addEventListener('click', () => {
+        alert('show_hidden_history_stock');
+    });
+}
 
 // système de notation
 
