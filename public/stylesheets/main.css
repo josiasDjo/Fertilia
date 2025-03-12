@@ -78,6 +78,14 @@ hr {
   transition: ease-in;
 }
 
+/* Bordures du tableaux */
+
+table td, th {
+  border: 1px solid black; /* Ajoute une bordure noire à chaque cellule */
+  padding: 8px; /* Ajoute un peu d'espace à l'intérieur des cellules */
+  text-align: left; /* Aligne le texte à gauche */
+}
+
 /* Loading page */
 
 .loader {
