@@ -145,12 +145,12 @@ if (buttons) {
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
                     child_name.classList.remove('hidden');
-                    child_name.classList.add("flex", "text-white");
+                    child_name.classList.add("flex", "text-white", "text-center");
                 } else {
                     alert("child_name not found")
                 }
             } else {
-                this.classList.add("bg-blue-500", "text-white");
+                this.classList.add("bg-blue-500", "text-white", "hover:text-black");
                 this.classList.remove("bg-white", "text-gray-700");
             }
         });
