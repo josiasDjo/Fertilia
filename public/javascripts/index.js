@@ -294,7 +294,8 @@ if (show_details) {
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
 if (show_hidden_history_stock) {
     show_hidden_history_stock.addEventListener('click', () => {
-        alert('show_hidden_history_stock');
+        const history_container = document.getElementById('history_container');
+        // alert('show_hidden_history_stock');
     });
 }
 
