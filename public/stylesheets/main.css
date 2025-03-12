@@ -81,9 +81,9 @@ hr {
 /* Bordures du tableaux */
 
 table td, th {
-  border: 1px solid black; /* Ajoute une bordure noire à chaque cellule */
-  padding: 8px; /* Ajoute un peu d'espace à l'intérieur des cellules */
-  text-align: left; /* Aligne le texte à gauche */
+  border: 2px solid black;
+  padding: 8px;
+  text-align: left;
 }
 
 /* Loading page */
