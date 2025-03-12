@@ -91,9 +91,13 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
+            const stock_management = document.getElementById('stock_management');
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
+            stock_management.classList.remove('flex');
+            stock_management.classList.add('hidden');
+            
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -119,13 +123,11 @@ if (buttons) {
                     break;
                 case "field_management":
                     console.log(btn_id);
-                    const field_management_cont = document.getElementById('field_management_cont');
                     field_management_cont.classList.remove('hidden');
                     field_management_cont.classList.add('flex');
                     break;
                 case "stock":
                     console.log(btn_id)
-                    const stock_management = document.getElementById('stock_management');
                     stock_management.classList.remove('hidden');
                     stock_management.classList.add('flex');
                     break;
