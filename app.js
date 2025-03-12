@@ -41,6 +41,9 @@ app.set('views', [
   path.join(__dirname, 'views/agriculteurs'),
   path.join(__dirname, 'includes'),
   path.join(__dirname, 'views/components'),
+  path.join(__dirname, 'views/components/fields'),
+  path.join(__dirname, 'views/components/livraisons'),
+  path.join(__dirname, 'views/components/stocks'),
 ]);
 app.set('view engine', 'ejs');
 
