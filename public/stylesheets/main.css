@@ -32,10 +32,21 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.blue_color_text {
+  color: #00B8F5;
+}
+.blue_color_btn {
+  background-color: #00B8F5;
+}
 .backgroud_btn_h{
   background-color: rgb(255, 181, 42);
-} 
+}
+.green_color_text {
+  color: #009444;
+}
+.green_color_bg {
+  background-color: #009444;
+}
 .backgroud_text_h{
   color: rgb(255, 181, 42);
 }
@@ -65,6 +76,14 @@ hr {
 .animate_nav {
   transition-delay: 10ms;
   transition: ease-in;
+}
+
+/* Bordures du tableaux */
+
+table td, th {
+  border: 2px solid black;
+  padding: 4px;
+  text-align: left;
 }
 
 /* Loading page */

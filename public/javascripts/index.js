@@ -91,9 +91,13 @@ if (buttons) {
         button.addEventListener("click", function () {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
+            const stock_management = document.getElementById('stock_management');
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
+            stock_management.classList.remove('flex');
+            stock_management.classList.add('hidden');
+
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -106,7 +110,7 @@ if (buttons) {
                         alert("child_name not found")
                     }
                 } else {
-                    btn.classList.remove("bg-blue-500", "text-white");
+                    btn.classList.remove("blue_color_btn", "text-white");
                     btn.classList.add("bg-white", "text-gray-700");
                 }
             });
@@ -119,12 +123,13 @@ if (buttons) {
                     break;
                 case "field_management":
                     console.log(btn_id);
-                    const field_management_cont = document.getElementById('field_management_cont');
                     field_management_cont.classList.remove('hidden');
                     field_management_cont.classList.add('flex');
                     break;
                 case "stock":
                     console.log(btn_id)
+                    stock_management.classList.remove('hidden');
+                    stock_management.classList.add('flex');
                     break;
                 case "delivery":
                     console.log(btn_id)
@@ -145,12 +150,12 @@ if (buttons) {
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
                     child_name.classList.remove('hidden');
-                    child_name.classList.add("flex", "text-white");
+                    child_name.classList.add("flex", "text-white", "text-center");
                 } else {
                     alert("child_name not found")
                 }
             } else {
-                this.classList.add("bg-blue-500", "text-white");
+                this.classList.add("blue_color_btn", "text-white", "hover:text-black");
                 this.classList.remove("bg-white", "text-gray-700");
             }
         });
@@ -261,22 +266,55 @@ function show_adding_field(param) {
 }
 
 // afficher les détails du terrain selon le button cliqué
-const show_details = document.getElementById('show_details');
+const show_details = document.querySelectorAll('.btn_show_option');
 if (show_details) {
-    show_details.addEventListener('click', function() {
-        alert('show click', show_details);
+    show_details.forEach(details => {
+
+        details.addEventListener('click', function() {
+            const container = this.closest('.field_card');
+            const child_name_detail = container.querySelector('#show_details_div');
+
+            if (child_name_detail.classList.contains('flex')) {
+                child_name_detail.classList.add('hidden');
+                child_name_detail.classList.remove("flex");
+            } else {
+                child_name_detail.classList.remove('hidden');
+                child_name_detail.classList.add("flex");
+            }
+
+        })
+        console.log('show_details : ', details);
     })
-    console.log('show_details : ', show_details);
 } else {
     console.log('show_details : ', show_details);
 }
-function detail_me(event) {
-    console.log('detail_me');
-    const show_details = document.getElementById('show_details');
 
-    show_details.click();
+// Stock config 
+// afficher l'historique des entrées et sorties
+const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
+if (show_hidden_history_stock) {
+    show_hidden_history_stock.addEventListener('click', () => {
+        const history_container = document.getElementById('history_container');
+        const show_history_stock = document.getElementById('show_history_stock');
+        const hidden_history_stock = document.getElementById('hidden_history_stock');
+
+        if (history_container && history_container.classList.contains('hidden')) {
+            history_container.classList.remove('hidden');
+            history_container.classList.add('flex');
+            hidden_history_stock.classList.remove('hidden');
+            hidden_history_stock.classList.add('flex');
+            show_history_stock.classList.remove('flex');
+            show_history_stock.classList.add('hidden')
+        } else {
+            history_container.classList.remove('flex');
+            history_container.classList.add('hidden');
+            show_history_stock.classList.remove('hidden');
+            show_history_stock.classList.add('flex');
+            hidden_history_stock.classList.remove('flex');
+            hidden_history_stock.classList.add('hidden');
+        }
+    });
 }
-
 
 // système de notation
 
