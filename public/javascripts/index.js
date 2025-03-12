@@ -268,8 +268,15 @@ if (show_details) {
         details.addEventListener('click', function() {
             const container = this.closest('.field_card');
             const child_name_detail = container.querySelector('#show_details_div');
-            child_name_detail.classList.remove('hidden');
-            child_name_detail.classList.add("block");
+
+            if (child_name_detail.classList.contains('flex')) {
+                child_name_detail.classList.add('hidden');
+                child_name_detail.classList.remove("flex");
+            } else {
+                child_name_detail.classList.remove('hidden');
+                child_name_detail.classList.add("flex");
+            }
+
         })
         console.log('show_details : ', details);
     })
