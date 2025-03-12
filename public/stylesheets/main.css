@@ -40,7 +40,10 @@
 }
 .backgroud_btn_h{
   background-color: rgb(255, 181, 42);
-} 
+}
+.green_color_text {
+  color: #009444;
+}
 .backgroud_text_h{
   color: rgb(255, 181, 42);
 }
