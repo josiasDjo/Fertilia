@@ -295,7 +295,20 @@ const show_hidden_history_stock = document.getElementById('show_or_hidden_histor
 if (show_hidden_history_stock) {
     show_hidden_history_stock.addEventListener('click', () => {
         const history_container = document.getElementById('history_container');
-        // alert('show_hidden_history_stock');
+        const show_history_stock = document.getElementById('show_history_stock');
+        const hidden_history_stock = document.getElementById('hidden_history_stock');
+
+        if (history_container && history_container.classList.contains('hidden')) {
+            history_container.classList.remove('hidden');
+            history_container.classList.add('flex');
+            hidden_history_stock.classList.remove('hidden');
+            hidden_history_stock.classList.add('flex');
+        } else {
+            history_container.classList.remove('flex');
+            history_container.classList.add('hidden');
+            show_history_stock.classList.remove('hidden');
+            show_history_stock.classList.add('flex');
+        }
     });
 }
 
