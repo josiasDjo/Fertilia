@@ -1,10 +1,24 @@
 <div id="container_fields" class="w-full mx-3 flex flex-wrap relative">
     <% if (MesChamps.length > 0) { %>
         <% MesChamps.forEach((champ) => { %>
-            <div class="field_card w-full h-64 lg:h-64 lg:w-64 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg overflow-hidden flex flex-col relative">
+            <div class="field_card w-full h-64 lg:h-64 lg:w-64 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg flex flex-col relative">
                 <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
                     <button type="button" id="show_details" class="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                </div>    
+                </div>
+                <div id="show_details_div" class="w-72 hidden flex-col items-start p-5 rounded-lg shadow-lg bg-gray-100 absolute top-16 right-2 z-30">
+                    <button class="flex flex-row text-lg my-2 mx-2">
+                        <p><i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                        <p class="px-3">Détails sur le terrain</p>
+                    </button>
+                    <button class="flex flex-row text-lg my-2 mx-2">
+                        <p class="text-3xl"><i class='bx bx-edit-alt'></i></p>
+                        <p class="px-3">Modifier le terrain</p>
+                    </button>
+                    <button class="flex flex-row text-lg my-2 mx-2 text-red-500">
+                        <p class="text-3xl"><i class='bx bxs-trash'></i></p>
+                        <p class="px-3">Supprimer le terrain</p>
+                    </button>
+                </div>
                 <div class="bg-gray-200 w-full h-4/12 my-3 relative z-10">
                     <h2 class="font-bold text-xl"><%= champ.nom %></h2>
                     <p><%= champ.surface %> hectare</p>
