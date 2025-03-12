@@ -125,9 +125,9 @@ if (buttons) {
                     break;
                 case "stock":
                     console.log(btn_id)
-                    const stock_mgnt = document.getElementById('stock_mgnt');
-                    stock_mgnt.classList.remove('hidden');
-                    stock_mgnt.classList.add('flex');
+                    const stock_management = document.getElementById('stock_management');
+                    stock_management.classList.remove('hidden');
+                    stock_management.classList.add('flex');
                     break;
                 case "delivery":
                     console.log(btn_id)
