@@ -264,7 +264,8 @@ function show_adding_field(param) {
 const show_details = document.querySelectorAll('.btn_show_option');
 if (show_details) {
     show_details.forEach(details => {
-        const child_name_detail = this.querySelector('#show_details_div');
+        const container = this.closest('.field_card');
+        const child_name_detail = container.querySelector('#show_details_div');
         details.addEventListener('click', function() {
             child_name_detail.classList.remove('hidden');
             child_name_detail.classList.add("block");
