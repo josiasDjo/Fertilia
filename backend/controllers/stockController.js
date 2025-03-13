@@ -2,25 +2,29 @@ const Stock = require('../models/Stock');
 
 exports.addProduct = async (req, res) => {
     try {
-        const { produit, quantite, unite, utilisateur_id } = req.body;
-        const nouvelStock = await Stock.create({ produit, quantite, unite, utilisateur_id });
-
-        console.log('Produit ajouter avec succès');
-        return res.status(201).json({ message: 'Produit ajouter avec succès'});
+        const { produit, type_produit, quantite, unite, emplacement, fournisseur } = req.body;
+        const utilisateur_id = req.session.users.id_user;
+        const nouvelStock = await Stock.create({ utilisateur_id, produit, type_produit, quantite, unite, emplacement, fournisseur, utilisateur_id });
+        // console.log('Produit ajouter avec succès', nouvelStock);
+        return res.json({ success:true, message: 'Produit ajouter avec succès'});
     } catch (err) {
         console.log('Erreur lors de l\'ajout du produit', err);
-        return res.status(201).json({ error: 'Erreur lors de l\'ajout du produit'});
+        return res.json({ success: false, message: 'Erreur lors de l\'ajout du produit'});
     }
 }
 
-exports.getAllProducts = async (res, req) =>  {
+exports.getAllProducts = async (req, res) =>  {
     try {
-        const { produit } = req.body;
-        const allProducts = await Stock.findAll(); 
-        return res.status(201).json({allProducts});
+        const utilisateur_id = req.users_id;
+        console.log('User ID: ', utilisateur_id);
+        const allProducts = await Stock.findAll({where: {utilisateur_id: utilisateur_id}}); 
+        return allProducts;
     } catch (err) {
         console.log('Aucun produit trouvé', err);
-        return res.status(500).json({ error: 'Aucun produit trouver'});
+        return { 
+            success: false,
+            message: 'Aucun produit trouver'
+        };
     }
 }
 

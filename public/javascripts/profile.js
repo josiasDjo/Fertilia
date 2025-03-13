@@ -81,6 +81,7 @@ if (inscri_sub) {
     });
 }
 
+// Ajouter un champs
 const form_add_field = document.getElementById('form_add_field');
 if(form_add_field) {
     form_add_field.addEventListener('submit', async function(event) {
@@ -120,7 +121,42 @@ if(form_add_field) {
         }
     });
 }
+//Ajouter un produit au stock
+const form_add_products = document.getElementById('form_add_products');
+if(form_add_products) {
+    form_add_products.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const produit = document.getElementById('nom_produit').value;
+        const type_produit = document.getElementById('type_produit').value;
+        const quantite = document.getElementById('quantite_produit').value;
+        const unite = document.getElementById('unite_produit').value;
+        const emplacement = document.getElementById('Emplacement_stock').value;
+        const fournisseur = document.getElementById('fournisseur_produit').value;
+        const message_show = document.getElementById('message_show');
 
+        if (produit && produit != "" && type_produit && type_produit != "" && quantite && quantite != "" && unite && unite != "" && emplacement && emplacement != "" && fournisseur && fournisseur != "") {
+            const response = await fetch("/user/mon-compte/ajouter-produit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ produit, type_produit, quantite, unite, emplacement, fournisseur })
+            });
+            
+            const data = await response.json();
+
+            if (data.success) {
+                message_show.innerText = data.message;
+                message_show.style.color = "green"
+            } else {
+                message_show.innerText = data.message;
+                message_show.style.color = "red"
+            }
+        } else {
+            message_show.innerText = "Tous les champs sont réquis !! ";
+            message_show.style.color = "red";
+        }
+
+    })
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
