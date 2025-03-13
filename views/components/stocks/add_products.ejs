@@ -3,22 +3,22 @@
     <h3 class="font-medium m-2">Ajouter un produit</h3>
     <form id="form_add_products" class="w-full">
         <input type="text" name="nom_produit" id="nom_produit" placeholder="Nom du produit" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-        <select name="" id="" aria-placeholder="Type de produit" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <select name="type_produit" id="type_produit" aria-placeholder="Type de produit" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
             <option value="engrais">engrais</option>
             <option value="semences">semences</option>
             <option value="pesticides">pesticides</option>
             <option value="matériels">matériels</option>
         </select>
-        <input type="number" name="quantite" id="quantite" placeholder="Quantité" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <input type="number" name="quantite" id="quantite_produit" placeholder="Quantité" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
         <ul class="mb-2 text-lg items-center justify-center flex">
             <label for="unite">Kg</label>
-            <input type="radio" name="unite" id="unite" value="kg" class="mr-3 ml-2 text-lg">
+            <input type="radio" name="unite" id="unite_produit" value="kg" class="mr-3 ml-2 text-lg">
             <label for="unite">Litres</label>
-            <input type="radio" name="unite" id="unite" value="litres" class="mr-3 ml-2 text-lg">
+            <input type="radio" name="unite" id="unite_produit" value="litres" class="mr-3 ml-2 text-lg">
             <label for="unite">Sacs</label>
-            <input type="radio" name="unite" id="unite" value="sacs" class="mr-3 ml-2 text-lg">
+            <input type="radio" name="unite" id="unite_produit" value="sacs" class="mr-3 ml-2 text-lg">
             <label for="unite">Pièce</label>
-            <input type="radio" name="unite" id="unite" value="piece" class="mr-3 ml-2 text-lg">
+            <input type="radio" name="unite" id="unite_produit" value="piece" class="mr-3 ml-2 text-lg">
         </ul>
         <input type="text" name="Emplacement" id="Emplacement" placeholder="Emplacement ex: Entrepôt A"  class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
         <input type="text" name="fournisseur" id="fournisseur" placeholder="Fournisseur / Marque" class="w-full  rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">

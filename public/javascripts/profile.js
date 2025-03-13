@@ -126,7 +126,11 @@ const form_add_products = document.getElementById('form_add_products');
 if(form_add_products) {
     form_add_products.addEventListener('submit', (event) => {
         event.preventDefault();
-        alert('form_add_products submit');
+        // alert('form_add_products submit');
+        const nom_produit = document.getElementById('nom_produit').value;
+        const type_produit = document.getElementById('type_produit').value;
+        const quantite_produit
+        const unite_produit 
     })
 }
 async function signout() {
