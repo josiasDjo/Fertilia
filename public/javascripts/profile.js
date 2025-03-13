@@ -129,8 +129,10 @@ if(form_add_products) {
         // alert('form_add_products submit');
         const nom_produit = document.getElementById('nom_produit').value;
         const type_produit = document.getElementById('type_produit').value;
-        const quantite_produit
-        const unite_produit 
+        const quantite_produit = document.getElementById('type_produit').value;
+        const unite_produit = document.getElementById('type_produit').value;
+        const Emplacement_stock = document.getElementById('type_produit').value;
+        const fournisseur_produit = document.getElementById('type_produit').value;
     })
 }
 async function signout() {
