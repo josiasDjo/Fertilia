@@ -133,6 +133,8 @@ if(form_add_products) {
         const unite_produit = document.getElementById('type_produit').value;
         const Emplacement_stock = document.getElementById('type_produit').value;
         const fournisseur_produit = document.getElementById('type_produit').value;
+
+        
     })
 }
 async function signout() {
