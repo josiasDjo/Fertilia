@@ -15,12 +15,15 @@ exports.addProduct = async (req, res) => {
 
 exports.getAllProducts = async (res, req) =>  {
     try {
-        const { produit } = req.body;
-        const allProducts = await Stock.findAll(); 
-        return res.status(201).json({allProducts});
+        const { utilisateur_id } = req.session.users.id_user;
+        const allProducts = await Stock.findAll({ where: { utilisateur_id: utilisateur_id }}); 
+        return allProducts;
     } catch (err) {
         console.log('Aucun produit trouvé', err);
-        return res.status(500).json({ error: 'Aucun produit trouver'});
+        return { 
+            success: false,
+            message: 'Aucun produit trouver'
+        };
     }
 }
 
