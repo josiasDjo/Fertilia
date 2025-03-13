@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const champController = require('../controllers/champController');
+const stockController = require('../controllers/stockController');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('../../views/index.ejs');
@@ -21,15 +22,23 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
 router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
 
   const users_id = req.session.users.id_user;
-  console.log('User ID : ', users_id);
+  // console.log('User ID : ', users_id);
   const getChamps = async () => {
     const users_id = req.session.users.id_user;
     req.users_id = users_id;
-    console.log('User ID : ', users_id);
+    // console.log('User ID : ', users_id);
     return await champController.getAllChamps(req);
   }
 
+  const getStocks = async () => {
+    const users_id = req.session.users.id_user;
+    req.users_id = users_id;
+    console.log('User ID stock : ', users_id);
+    return await stockController.getAllProducts(req);
+  }
+
   const champs = await getChamps();
+  const stocks = await getStocks();
   try {
     console.log('Champs : ', champs);
     res.render('dashboard', {
@@ -39,6 +48,7 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
       email: req.session.users.email,
       role_id: req.session.users.role_id,
       MesChamps: champs,
+      MonStocks: stocks,
     });
   } catch(err) {
     console.log('Une erreur s\'est produite lors de la rédirection : ', err);
