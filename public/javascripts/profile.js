@@ -126,19 +126,19 @@ const form_add_products = document.getElementById('form_add_products');
 if(form_add_products) {
     form_add_products.addEventListener('submit', async (event) => {
         event.preventDefault();
-        const nom_produit = document.getElementById('nom_produit').value;
+        const produit = document.getElementById('nom_produit').value;
         const type_produit = document.getElementById('type_produit').value;
-        const quantite_produit = document.getElementById('type_produit').value;
-        const unite_produit = document.getElementById('type_produit').value;
-        const Emplacement_stock = document.getElementById('type_produit').value;
-        const fournisseur_produit = document.getElementById('type_produit').value;
+        const quantite = document.getElementById('quantite_produit').value;
+        const unite = document.getElementById('unite_produit').value;
+        const emplacement = document.getElementById('Emplacement_stock').value;
+        const fournisseur = document.getElementById('fournisseur_produit').value;
         const message_show = document.getElementById('message_show');
 
-        if (nom_produit && nom_produit != "" && type_produit && type_produit != "" && quantite_produit && quantite_produit != "" && unite_produit && unite_produit != "" && Emplacement_stock && Emplacement_stock != "" && fournisseur_produit && fournisseur_produit != "") {
+        if (produit && produit != "" && type_produit && type_produit != "" && quantite && quantite != "" && unite && unite != "" && emplacement && emplacement != "" && fournisseur && fournisseur != "") {
             const response = await fetch("/user/mon-compte/ajouter-produit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ nom_produit, type_produit, quantite_produit, unite_produit, Emplacement_stock, fournisseur_produit })
+                body: JSON.stringify({ produit, type_produit, quantite, unite, emplacement, fournisseur })
             });
             
             const data = await response.json();

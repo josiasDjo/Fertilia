@@ -16,9 +16,6 @@ exports.createChamp = async (req, res) => {
 
 exports.getAllChamps = async (req, res) => {
     try {
-        // const utilisateur_id = req.session.users.id_user;
-        // const utilisateur_id = req.body;
-        // console.log('Users ID Get Fields : ', utilisateur_id);
         const utilisateur_id = req.users_id;
         console.log('User ID in Controller:', utilisateur_id);
 
