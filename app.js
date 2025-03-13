@@ -86,7 +86,7 @@ app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
 app.use('/api/role/users', RolesRouter);
-// app.use('/user/mon-compte', StocksRouter);
+app.use('/user/mon-compte', StocksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -135,7 +135,7 @@ if(form_add_products) {
         const message_show = document.getElementById('message_show');
 
         if (nom_produit && nom_produit != "" && type_produit && type_produit != "" && quantite_produit && quantite_produit != "" && unite_produit && unite_produit != "" && Emplacement_stock && Emplacement_stock != "" && fournisseur_produit && fournisseur_produit != "") {
-            const response = await fetch("", {
+            const response = await fetch("/user/mon-compte/ajouter-produit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ nom_produit, type_produit, quantite_produit, unite_produit, Emplacement_stock, fournisseur_produit })
