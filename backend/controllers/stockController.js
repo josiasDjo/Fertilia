@@ -13,7 +13,7 @@ exports.addProduct = async (req, res) => {
     }
 }
 
-exports.getAllProducts = async (res, req) =>  {
+exports.getAllProducts = async (req, res) =>  {
     try {
         const { utilisateur_id } = req.users_id;
         console.log('User ID: ', utilisateur_id);
