@@ -81,6 +81,7 @@ if (inscri_sub) {
     });
 }
 
+// Ajouter un champs
 const form_add_field = document.getElementById('form_add_field');
 if(form_add_field) {
     form_add_field.addEventListener('submit', async function(event) {
@@ -120,7 +121,14 @@ if(form_add_field) {
         }
     });
 }
-
+//Ajouter un produit au stock
+const form_add_products = document.getElementById('form_add_products');
+if(form_add_products) {
+    form_add_products.addEventListener('submit', (event) => {
+        event.preventDefault();
+        alert('form_add_products submit');
+    })
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
