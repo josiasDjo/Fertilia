@@ -3,9 +3,8 @@ const Stock = require('../models/Stock');
 exports.addProduct = async (req, res) => {
     try {
         const { produit, type_produit, quantite, unite, emplacement, fournisseur } = req.body;
-        console.log('Produit : ', produit, type_produit, quantite, unite, emplacement, fournisseur);
         const utilisateur_id = req.session.users.id_user;
-        const nouvelStock = await Stock.create({ utilisateur_id, produit, type_produit, quantite, unite, emplacement, fournisseur });
+        const nouvelStock = await Stock.create({ utilisateur_id, produit, type_produit, quantite, unite, emplacement, fournisseur, utilisateur_id });
         // console.log('Produit ajouter avec succès', nouvelStock);
         return res.json({ success:true, message: 'Produit ajouter avec succès'});
     } catch (err) {
