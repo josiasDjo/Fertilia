@@ -3,11 +3,14 @@
         <li class="text-md mr-2"><i class="fa-solid fa-warehouse"></i></li>
         Mon stock</h3>
     <div class="w-full flex flex-row">
-        <button type="button" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter en stock <i class="fa-solid fa-arrow-right"></i></i></button>
+        <button id="addMore_Product" type="button" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter en stock <i class="fa-solid fa-arrow-right"></i></i></button>
         <button type="button" class="hidden h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg text-red-500">Sortir du stock <i class="fa-solid fa-arrow-left"></i></i></button>
     </div>
 
-    <%- include('add_products') %>
+    <div id="modals_addProduct" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
+    content-center hidden">
+        <%- include('add_products') %>
+    </div>
     <div id="container_graphcic" class="w-full flex flex-col">
         <div id="other_graph" class="w-full flex flex-row">
             <div id="" class="w-48 h-48 lg:w-96 lg:h-64 bg-gray-200 m-3 rounded-lg">
