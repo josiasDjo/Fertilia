@@ -6,15 +6,29 @@
         <button type="button" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter en stock <i class="fa-solid fa-arrow-right"></i></i></button>
         <button type="button" class="hidden h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg text-red-500">Sortir du stock <i class="fa-solid fa-arrow-left"></i></i></button>
     </div>
-    <div class="w-full relative items-center justify-center flex flex-col lg:flex-row">
-        <div id="graphic_stock" class="w-full lg:w-96 relative">
-            <img src="/images/graphic_stock.jpeg" class="w-full h-auto object-contain" alt="graphic_stock">
+
+    <div id="container_graphcic" class="w-full flex flex-col">
+        <div id="other_graph" class="w-full flex flex-row">
+            <div id="" class="w-96 h-64 bg-gray-200 m-3 rounded-lg">
+
+            </div>
+            <div id="" class="w-96 h-64 bg-gray-200 m-3 rounded-lg">
+
+            </div>
+            <div id="" class="w-96 h-64 bg-gray-200 m-3 rounded-lg">
+
+            </div>
         </div>
-        <div id="stock_level" class="green_color_bg p-3 rounded-lg text-white texg-left flex items-left lg:items-center">
-            <p class="text-lg">Stock est bon</p>
+        <div class="w-full relative items-center justify-center flex flex-col lg:flex-row">
+            <div id="graphic_stock" class="w-full relative">
+                <img src="/images/graphic_stock.jpeg" class="w-full h-auto object-contain" alt="graphic_stock">
+            </div>
+            <div id="stock_level" class="green_color_bg p-3 rounded-lg text-white texg-left flex items-left lg:items-center">
+                <p class="text-lg">Stock est bon</p>
+            </div>
         </div>
     </div>
-
+    
     <div id="history_stock" class="w-full items-left relative my-5">
         <button id="show_or_hidden_history_stock" class="flex flex-row justify-center">
             Afficher l'historique des entrées et sorties
