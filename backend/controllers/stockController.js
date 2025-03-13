@@ -17,7 +17,7 @@ exports.getAllProducts = async (req, res) =>  {
     try {
         const utilisateur_id = req.users_id;
         console.log('User ID: ', utilisateur_id);
-        const allProducts = await Stock.findAll({where: { utilisateur_id: utilisateur_id}}); 
+        const allProducts = await Stock.findAll({where: {utilisateur_id: utilisateur_id}}); 
         return allProducts;
     } catch (err) {
         console.log('Aucun produit trouvé', err);
