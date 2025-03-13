@@ -9,7 +9,7 @@ exports.addProduct = async (req, res) => {
         return res.json({ success:true, message: 'Produit ajouter avec succès'});
     } catch (err) {
         console.log('Erreur lors de l\'ajout du produit', err);
-        return res.json({ success: false, error: 'Erreur lors de l\'ajout du produit'});
+        return res.json({ success: false, message: 'Erreur lors de l\'ajout du produit'});
     }
 }
 
