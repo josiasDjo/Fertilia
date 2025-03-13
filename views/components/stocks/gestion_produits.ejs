@@ -11,17 +11,25 @@
             </tr>
         </thead>
         <tbody class="">
-            <tr>
-                <td class="flex flex-col">
-                    <button type="button" class="text-xl"><i class='bx bx-edit-alt'></i></button>
-                    <button type="button" class="text-xl text-red-500"><i class='bx bxs-trash'></i></button>
-                </td>
-                <td>Lorem</td>
-                <td>Lorem</td>
-                <td>Lorem</td>
-                <td>Lorem</td>
-                <td>Lorem</td>
-            </tr>
+            <% if (MonStocks && MonStocks.length > 0) { %>
+                <% MonStocks.forEach((stock) => { %>
+                    <tr>
+                        <td class="flex flex-col">
+                            <button type="button" class="text-xl"><i class='bx bx-edit-alt'></i></button>
+                            <button type="button" class="text-xl text-red-500"><i class='bx bxs-trash'></i></button>
+                        </td>
+                        <td><%= stock.produit %></td>
+                        <td><%= stock.type_produit %></td>
+                        <td><%= stock.quantite %> <%= stock.unite %></td>
+                        <td><%= stock.emplacement%></td>
+                        <td><%= stock.fournisseur %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>Aucun élément pour le moment</tr>
+            <% } %>
+
+
         </tbody>
     </table>
 </div>

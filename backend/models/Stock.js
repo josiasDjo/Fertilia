@@ -15,7 +15,7 @@ const Stock = sequelize.define('table_stocks', {
     timestamp: true
 });
 
-Stock.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id '});
-Utilisateur.hasMany(Stock, { foreignKey: 'utilisateur_id ' });
+Stock.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id'});
+Utilisateur.hasMany(Stock, { foreignKey: 'utilisateur_id' });
 
 module.exports = Stock;
