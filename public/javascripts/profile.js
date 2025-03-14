@@ -158,12 +158,12 @@ if(form_add_products) {
     })
 }
 // supprimer un produit
-const delete_product_on_stock = document.getElementById('delete_product_on_stock');
+const delete_product_on_stock = document.querySelector('delete_product_on_stock');
 if(delete_product_on_stock) {
     delete_product_on_stock.addEventListener('click', async (event) => {
         event.preventDefault();
         if(confirm("Voulez-vous vraiment supprimer ce produit ? ")) {
-            const id_stock  = document.getElementById('id_product_modify');
+            const id_stock  = document.getElementById('id_product_modify').value;
             const response = await fetch("/user/mon-compte/supprimer-produit", {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
