@@ -157,6 +157,32 @@ if(form_add_products) {
 
     })
 }
+// supprimer un produit
+const delete_product_on_stock = document.querySelectorAll('.delete_product_on_stock');
+if(delete_product_on_stock) {
+    delete_product_on_stock.forEach(delete_product => {
+        delete_product.addEventListener('click', async (event) => {
+            event.preventDefault();
+            if(confirm("Voulez-vous vraiment supprimer ce produit ? ")) {
+                const id_stock  = document.getElementById('id_product_modify').textContent;
+                console.log('ID STOCK : ', id_stock);
+                const response = await fetch("/user/mon-compte/supprimer-produit", {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({id_stock })
+                })
+                const data = await response.json();
+                if (data.success) {
+                    alert('Produit supprimé avec succès')
+                    window.location.reload();
+                } else {
+                    console.log('Erreur : ', data.message);
+                    alert('Une erreur s\'est produite')
+                }
+            }
+        })
+    });
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
