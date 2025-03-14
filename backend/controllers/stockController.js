@@ -58,7 +58,7 @@ exports.deleteProduct = async (req, res) => {
         const deleteProduit = await Stock.findByPk(id_stock);
         if (!deleteProduit) return res.json({ success: false, message: 'Produit non trouvé'});
         await Stock.destroy({where: {id_stock: id_stock}});
-        return res.json({ success: false, message:'Produit supprimé avec succès' });
+        return res.json({ success: true, message:'Produit supprimé avec succès' });
     } catch (err) {
         console.log('Une erreur est survenue lors de la suppression', err);
         return res.json({ success: false, message: 'Une erreur est survenue lors de la suppression'});

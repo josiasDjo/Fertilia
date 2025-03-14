@@ -12,7 +12,7 @@
         </thead>
         <tbody class="">
             <% if (MonStocks && MonStocks.length > 0) { %>
-                <p% MonStocks.forEach((stock) => { %>
+                <% MonStocks.forEach((stock) => { %>
                     <tr>
                         <td class="flex flex-col">
                             <button type="button" id="" class="edit_product_on_stock text-xl"><i class='bx bx-edit-alt'></i></button>
@@ -31,8 +31,6 @@
                     <td colspan="6" class="text-center text-red-500">Aucun élément pour le moment</td>
                 </tr>
             <% } %>
-
-
         </tbody>
     </table>
 </div>
