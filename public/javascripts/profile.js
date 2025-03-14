@@ -160,8 +160,8 @@ if(form_add_products) {
 // supprimer un produit
 const delete_product_on_stock = document.querySelector('delete_product_on_stock');
 if(delete_product_on_stock) {
-    delete_product_on_stock.forEach(btn => {
-        btn.addEventListener('click', async (event) => {
+    delete_product_on_stock.forEach(delete_product => {
+        delete_product.addEventListener('click', async (event) => {
             event.preventDefault();
             if(confirm("Voulez-vous vraiment supprimer ce produit ? ")) {
                 const id_stock  = document.getElementById('id_product_modify').value;
