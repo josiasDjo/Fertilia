@@ -164,7 +164,7 @@ if(delete_product_on_stock) {
         delete_product.addEventListener('click', async (event) => {
             event.preventDefault();
             if(confirm("Voulez-vous vraiment supprimer ce produit ? ")) {
-                const id_stock  = document.getElementById('id_product_modify').value;
+                const id_stock  = document.getElementById('id_product_modify').textContent;
                 console.log('ID STOCK : ', id_stock);
                 const response = await fetch("/user/mon-compte/supprimer-produit", {
                     method: "DELETE",
