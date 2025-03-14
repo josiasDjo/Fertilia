@@ -174,6 +174,7 @@ if(delete_product_on_stock) {
                 const data = await response.json();
                 if (data.success) {
                     alert('Produit supprimé avec succès')
+                    window.location.reload();
                 } else {
                     console.log('Erreur : ', data.message);
                     alert('Une erreur s\'est produite')
