@@ -53,7 +53,8 @@ exports.updateProduct = async (req, res) => {
 
 exports.deleteProduct = async (req, res) => {
     try {
-        const deleteProduit = await Stock.findByPk(req.params.id_stock);
+        const id_stock = req.body;
+        const deleteProduit = await Stock.findByPk(id_stock);
         if (!deleteProduit) return res.json({ success: false, message: 'Produit non trouvé'});
         await Stock.destroy(req.body);
         return res.json({ success: false, message:'Produit supprimé avec succès' });
