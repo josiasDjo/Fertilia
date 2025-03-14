@@ -158,7 +158,7 @@ if(form_add_products) {
     })
 }
 // supprimer un produit
-const delete_product_on_stock = document.querySelector('delete_product_on_stock');
+const delete_product_on_stock = document.querySelectorAll('.delete_product_on_stock');
 if(delete_product_on_stock) {
     delete_product_on_stock.forEach(delete_product => {
         delete_product.addEventListener('click', async (event) => {
