@@ -54,6 +54,7 @@ exports.updateProduct = async (req, res) => {
 exports.deleteProduct = async (req, res) => {
     try {
         const id_stock = req.body.id_stock;
+        console.log('ID stock : ', id_stock);
         const deleteProduit = await Stock.findByPk(id_stock);
         if (!deleteProduit) return res.json({ success: false, message: 'Produit non trouvé'});
         await Stock.destroy({where: {id_stock: id_stock}});
