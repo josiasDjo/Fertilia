@@ -173,6 +173,7 @@ if(delete_product_on_stock) {
             if (data.success) {
                 alert('Produit supprimé avec succès')
             } else {
+                console.log('Erreur : ', data.message);
                 alert('Une erreur s\'est produite')
             }
         }
