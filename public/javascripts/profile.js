@@ -190,15 +190,16 @@ if(form_modify_products){
         event.preventDefault();
         alert('Modifier');
 
-        const id_stock = document.getElementById('');
-        const produit = document.getElementById('nom_produit').value;
-        const quantite = document.getElementById('quantite_produit').value;
-        const emplacement = document.getElementById('Emplacement_stock').value;
+        const id_stock = document.getElementById('id_modify_product');
+        const produit = document.getElementById('nom_produit_modify').value;
+        const quantite = document.getElementById('quantite_produit_modify').value;
+        const emplacement = document.getElementById('Emplacement_stock_modify').value;
         const message_show = document.getElementById('message_show'); 
 
-        const response = await fetch("/modifier-produit", {
+        const response = await fetch("/user/mon-compte/modifier-produit", {
             method: "PUT",
-            
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id_stock, produit, quantite, emplacement })
         })
     });
 }
