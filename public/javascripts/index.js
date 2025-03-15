@@ -338,6 +338,12 @@ function close_add_product() {
         modals_addProduct.classList.remove('hidden');
     }
 }
+const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
+if (modify_product_on_stock) {
+    modify_product_on_stock.forEach(modify_product => {
+        modify_product.addEventListener('click', )
+    })
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
