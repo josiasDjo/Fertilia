@@ -45,7 +45,7 @@ exports.updateProduct = async (req, res) => {
         console.log('ID stock : ', id_stock);
         const updateProduct = await Stock.findByPk(id_stock);
         if (!updateProduct) return res.json({ success: false, message: 'Produit non trouvé' });
-        await Stock.update(produit, quantite, emplacement);
+        await Stock.update({produit, quantite, emplacement}, {where:{id_stock: id_stock}});
         return res.json({ success: true, message: 'Produit modifié avec succès' });
     } catch (err) {
         console.log('Une erreur est survenue', err);
