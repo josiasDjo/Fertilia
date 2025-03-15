@@ -348,9 +348,7 @@ if (modify_product_on_stock) {
             let cells = row.getElementsByTagName('td');
 
             // Assigne les valeurs aux champs du formulaire
-            const id = document.getElementById('id_product_modify').textContent;
-            console.log('ID : ', id);
-            document.getElementById('id_product_modify_M').value = id;
+            document.getElementById('id_modify_product').value = cells[0].textContent.trim();
             document.getElementById('nom_produit_modify').value = cells[1].textContent.trim();
             document.getElementById('quantite_produit_modify').value = cells[3].textContent.trim();
             document.getElementById('Emplacement_stock_modify').value = cells[4].textContent.trim();
