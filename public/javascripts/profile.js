@@ -183,7 +183,14 @@ if(delete_product_on_stock) {
         })
     });
 }
-
+//modifier un produit 
+const form_modify_products = document.getElementById('form_modify_products');
+if(form_modify_products){
+    form_modify_products.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        alert('Modifier');
+    });
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
