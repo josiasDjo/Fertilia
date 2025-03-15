@@ -1,22 +1,10 @@
-<div id="modify_product" class="bg-gray-200 relative w-10/12 md:w-96 p-4 items-center justify-center flex flex-col shadow-lg z-50">
+<div id="modify_product" class="bg-gray-200 relative w-10/12 md:w-96 p-4 items-center justify-center hidden flex-col shadow-lg z-50">
     <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick="close_modify_product();"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
     <h3 class="font-medium m-2">Ajouter un produit</h3>
     <form id="form_modify_products" class="w-full">
         <input type="text" name="nom_produit" id="nom_produit" placeholder="Nom du produit" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
         <input type="number" name="quantite" id="quantite_produit" placeholder="Quantité" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-        <!-- <ul class="mb-2 text-lg items-center justify-center flex">
-            <label for="unite">Kg</label>
-            <input type="radio" name="unite" id="unite_produit" value="kg" class="mr-3 ml-2 text-lg">
-            <label for="unite">Litres</label>
-            <input type="radio" name="unite" id="unite_produit" value="litres" class="mr-3 ml-2 text-lg">
-            <label for="unite">Sacs</label>
-            <input type="radio" name="unite" id="unite_produit" value="sacs" class="mr-3 ml-2 text-lg">
-            <label for="unite">Pièce</label>
-            <input type="radio" name="unite" id="unite_produit" value="piece" class="mr-3 ml-2 text-lg">
-        </ul> -->
         <input type="text" name="Emplacement" id="Emplacement_stock" required placeholder="Emplacement ex: Entrepôt A"  class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-        <!-- <input type="text" name="fournisseur" id="fournisseur_produit" required placeholder="Fournisseur / Marque" class="w-full  rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50"> -->
-        
         <ul class="flex flex-col w-full text-center">
             <p class="text-sm" id="message_show"></p>
         </ul>
