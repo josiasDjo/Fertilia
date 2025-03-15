@@ -190,7 +190,7 @@ if(form_modify_products){
         event.preventDefault();
         alert('Modifier');
 
-        const id_stock = document.getElementById('id_modify_product');
+        const id_stock = document.getElementById('id_modify_product').value;
         const produit = document.getElementById('nom_produit_modify').value;
         const quantite = document.getElementById('quantite_produit_modify').value;
         const emplacement = document.getElementById('Emplacement_stock_modify').value;

@@ -42,6 +42,7 @@ exports.getProduct = async (res, req) => {
 exports.updateProduct = async (req, res) => {
     try {
         const { id_stock, produit, quantite, emplacement } = req.body;
+        console.log('ID stock : ', id_stock);
         const updateProduct = await Stock.findByPk(id_stock);
         if (!updateProduct) return res.json({ success: false, message: 'Produit non trouvé' });
         await Stock.update(produit, quantite, emplacement);
