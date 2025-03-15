@@ -1,0 +1,32 @@
+<div id="add_produt" class="bg-gray-200 relative w-10/12 md:w-96 p-4 items-center justify-center flex flex-col shadow-lg z-50">
+    <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick="close_add_product();"><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
+    <h3 class="font-medium m-2">Ajouter un produit</h3>
+    <form id="form_add_products" class="w-full">
+        <input type="text" name="nom_produit" id="nom_produit" placeholder="Nom du produit" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <select name="type_produit" id="type_produit" aria-placeholder="Type de produit" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+            <option value="engrais">engrais</option>
+            <option value="semences">semences</option>
+            <option value="pesticides">pesticides</option>
+            <option value="matériels">matériels</option>
+        </select>
+        <input type="number" name="quantite" id="quantite_produit" placeholder="Quantité" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <ul class="mb-2 text-lg items-center justify-center flex">
+            <label for="unite">Kg</label>
+            <input type="radio" name="unite" id="unite_produit" value="kg" class="mr-3 ml-2 text-lg">
+            <label for="unite">Litres</label>
+            <input type="radio" name="unite" id="unite_produit" value="litres" class="mr-3 ml-2 text-lg">
+            <label for="unite">Sacs</label>
+            <input type="radio" name="unite" id="unite_produit" value="sacs" class="mr-3 ml-2 text-lg">
+            <label for="unite">Pièce</label>
+            <input type="radio" name="unite" id="unite_produit" value="piece" class="mr-3 ml-2 text-lg">
+        </ul>
+        <input type="text" name="Emplacement" id="Emplacement_stock" required placeholder="Emplacement ex: Entrepôt A"  class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        <input type="text" name="fournisseur" id="fournisseur_produit" required placeholder="Fournisseur / Marque" class="w-full  rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+        
+        <ul class="flex flex-col w-full text-center">
+            <p class="text-sm" id="message_show"></p>
+        </ul>
+
+        <button type="submit" class="w-full backgroud_btn_h text-white rounded-3xl my-5 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Enregistrer</button>
+    </form>
+</div>

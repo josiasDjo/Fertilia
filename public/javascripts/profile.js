@@ -183,6 +183,16 @@ if(delete_product_on_stock) {
         })
     });
 }
+const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
+if (modify_product_on_stock) {
+    modify_product_on_stock.forEach(modify_product => {
+        modify_product.addEventListener('click', async (event) => {
+            event.preventDefault();
+
+            alert('Modify');
+        })
+    })
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
