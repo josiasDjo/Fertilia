@@ -344,6 +344,22 @@ if (modify_product_on_stock) {
         modify_product.addEventListener('click', )
     })
 }
+function close_modify_product() {
+    const add_produt = document.getElementById('add_produt');
+    const modals_addProduct = document.getElementById('modals_addProduct');
+
+    if (modals_addProduct && add_produt && add_produt.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
+        add_produt.classList.remove('flex');
+        add_produt.classList.add('hidden');
+        modals_addProduct.classList.remove('flex');
+        modals_addProduct.classList.add('hidden');
+    } else {
+        add_produt.classList.add('flex');
+        add_produt.classList.remove('hidden');
+        modals_addProduct.classList.add('flex');
+        modals_addProduct.classList.remove('hidden');
+    }
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
