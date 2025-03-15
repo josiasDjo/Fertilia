@@ -201,6 +201,17 @@ if(form_modify_products){
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id_stock, produit, quantite, emplacement })
         })
+
+        const data = await response.json();
+
+        if(data.success) {
+            message_show.innerText = data.message;
+            message_show.style.color = "green";
+            window.location.reload();
+        } else {
+            message_show.innerText = data.message;
+            message_show.style.color = "red"
+        }
     });
 }
 async function signout() {
