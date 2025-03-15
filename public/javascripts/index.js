@@ -341,21 +341,21 @@ function close_add_product() {
 const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
 if (modify_product_on_stock) {
     modify_product_on_stock.forEach(modify_product => {
-        modify_product.addEventListener('click', )
+        modify_product.addEventListener('click', close_modify_product())
     })
 }
 function close_modify_product() {
-    const add_produt = document.getElementById('add_produt');
+    const modify_product = document.getElementById('modify_product');
     const modals_addProduct = document.getElementById('modals_addProduct');
 
-    if (modals_addProduct && add_produt && add_produt.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
-        add_produt.classList.remove('flex');
-        add_produt.classList.add('hidden');
+    if (modals_addProduct && modify_product && modify_product.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
+        modify_product.classList.remove('flex');
+        modify_product.classList.add('hidden');
         modals_addProduct.classList.remove('flex');
         modals_addProduct.classList.add('hidden');
     } else {
-        add_produt.classList.add('flex');
-        add_produt.classList.remove('hidden');
+        modify_product.classList.add('flex');
+        modify_product.classList.remove('hidden');
         modals_addProduct.classList.add('flex');
         modals_addProduct.classList.remove('hidden');
     }
