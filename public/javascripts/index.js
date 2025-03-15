@@ -344,6 +344,16 @@ if (modify_product_on_stock) {
         modify_product.addEventListener('click', (event) => {
             let row = this.closest('tr');
 
+            // Récupère les cellules de la ligne
+            let cells = row.getElementsByTagName('td');
+
+            // Assigne les valeurs aux champs du formulaire
+            document.getElementById('productName').value = cells[1].textContent.trim();
+            document.getElementById('category').value = cells[2].textContent.trim();
+            document.getElementById('quantity').value = cells[3].textContent.trim();
+            document.getElementById('location').value = cells[4].textContent.trim();
+            document.getElementById('supplier').value = cells[5].textContent.trim();
+            
             close_modify_product();
         })
     })
