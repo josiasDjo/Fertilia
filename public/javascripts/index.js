@@ -349,13 +349,13 @@ if (modify_product_on_stock) {
 
             // Assigne les valeurs aux champs du formulaire
 
-            let quantite_NC = cells[3].textContent.trim();
-            let quantite = valeur.split("").filter(char => !isNaN(char) && char !== " ").join("");
+            let quantite_NC = cells[4].textContent.trim();
+            let quantite = quantite_NC.split("").filter(char => !isNaN(char) && char !== " ").join("");
 
             document.getElementById('id_modify_product').value = cells[0].textContent.trim();
-            document.getElementById('nom_produit_modify').value = cells[1].textContent.trim();
+            document.getElementById('nom_produit_modify').value = cells[2].textContent.trim();
             document.getElementById('quantite_produit_modify').value = quantite;
-            document.getElementById('Emplacement_stock_modify').value = cells[4].textContent.trim();
+            document.getElementById('Emplacement_stock_modify').value = cells[5].textContent.trim();
             
             close_modify_product();
         })
