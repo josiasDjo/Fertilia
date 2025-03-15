@@ -341,7 +341,11 @@ function close_add_product() {
 const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
 if (modify_product_on_stock) {
     modify_product_on_stock.forEach(modify_product => {
-        modify_product.addEventListener('click', close_modify_product)
+        modify_product.addEventListener('click', (event) => {
+            let row = this.closest('tr');
+
+            close_modify_product();
+        })
     })
 }
 function close_modify_product() {
