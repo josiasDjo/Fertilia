@@ -342,7 +342,7 @@ const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stoc
 if (modify_product_on_stock) {
     modify_product_on_stock.forEach(modify_product => {
         modify_product.addEventListener('click', (event) => {
-            let row = this.closest('tr');
+            let row = event.target.closest('tr');
 
             // Récupère les cellules de la ligne
             let cells = row.getElementsByTagName('td');
