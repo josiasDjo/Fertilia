@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const Fournisseur = require('../models/Fournisseur');
 
 exports.createFournisseur = async (req, res) => {
@@ -49,9 +50,11 @@ exports.modifyFournisseur = async (req, res) => {
 
         if (!fournisseurExiste) return res.json({ success: false, message: 'Aucun fournisseur trouvé'});
 
-        const 
-    } catch {
-
+        await Fournisseur.update({nom_fournisseur, contact_fournisseur, where: {id_fournisseur: id_fournisseur} });
+        return res.json({ success: true, message: 'Fournisseur modifié'});
+    } catch (err) {
+        console.log('Une erreur s\'est produite : ', err);
+        res.json({ success: false, message: 'Une erreur s\'est produite'});
     }
 }
 
