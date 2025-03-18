@@ -15,7 +15,7 @@ exports.ajouterEntreeSortie = async (req, res) => {
 
 exports.getEntreeSortie = async (req, res) => {
     try {
-        const { id_utilisateurs } = req.body.id_utilisateurs;
+        const { id_utilisateurs } = req.body.users_id;
 
         const actionExiste = await EntreeSortie.findAll({ where: { id_utilisateurs: id_utilisateurs }});
         return res.json(actionExiste);
@@ -24,3 +24,4 @@ exports.getEntreeSortie = async (req, res) => {
         return res.json({ success: false, message: 'Une erreur s\'est produite'});
     }
 }
+
