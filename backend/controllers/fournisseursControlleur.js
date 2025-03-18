@@ -59,5 +59,14 @@ exports.modifyFournisseur = async (req, res) => {
 }
 
 exports.deleteFournisseur = async (req, res) => {
+    try {
+        const { id_fournisseur } = req.body.id_fournisseur;
+        const fournisseurExiste = await Fournisseur.findByPk(id_fournisseur);
 
+        if (!fournisseurExiste) return res.json({ success: false, message: 'Auncun fournisseur trouvé'});
+        await fournisseurExiste.destroy();
+    } catch (err) {
+        console.log('Une erreur s\'est produite : ', err);
+        res.json({ success: false, message: 'Une erreur s\'est produite'});
+    }
 }
