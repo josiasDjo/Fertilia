@@ -14,5 +14,9 @@ exports.ajouterEntreeSortie = async (req, res) => {
 }
 
 exports.getEntreeSortie = async (req, res) => {
+    try {
+        const { id_utilisateurs } = req.body.id_utilisateurs;
 
+        const actionExiste = await EntreeSortie.findAll()
+    }
 }
