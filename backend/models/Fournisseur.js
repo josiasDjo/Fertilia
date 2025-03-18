@@ -1,5 +1,6 @@
+const { DataTypes } = require('sequelize');
 const sequelize = require('./index');
-const { DataTypes, INTEGER } = require('sequelize');
+const Utilisateur = require('./Utilisateurs');
 
 const Fournisseur = sequelize.define('table_fournisseur', {
     id_fournisseur : { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
@@ -9,5 +10,8 @@ const Fournisseur = sequelize.define('table_fournisseur', {
 }, {
     timestamp: true 
 });
+
+Stock.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id'});
+Utilisateur.hasMany(Stock, { foreignKey: 'utilisateur_id' });
 
 module.exports = Fournisseur;
