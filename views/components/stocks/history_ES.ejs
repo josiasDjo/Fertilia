@@ -23,9 +23,9 @@
                         </td>
                         <td><%= history.produit %></td>
                         <td><%= history.type_produit %></td>
-                        <td><%= history.quantite %> <%= stock.unite %></td>
-                        <td><%= history.emplacement%></td>
-                        <td><%= history.fournisseur %></td>
+                        <td><%= history.quantite %> <%= history.unite %></td>
+                        <td><%= history.action%></td>
+                        <td><%= history.quantite_totale %></td>
                     </tr>
                 <% }) %>
             <% } else { %>
