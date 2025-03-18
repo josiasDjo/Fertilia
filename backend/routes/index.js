@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const champController = require('../controllers/champController');
 const stockController = require('../controllers/stockController');
+const entreeSortieController = require('../controllers/EntreeSortieController');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('../../views/index.ejs');
@@ -33,8 +35,15 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
     return await stockController.getAllProducts(req);
   }
 
+  getHistoryAction = async () => {
+    const users_id = req.session.users.id_user;
+    req.users_id = users_id;
+    console.log('User ID history : ', users_id);
+    return await entreeSortieController.getEntreeSortie(req);
+  }
   const champs = await getChamps();
   const stocks = await getStocks();
+  const historyAction = await getHistoryAction();
   try {
     // console.log('Champs : ', champs);
     res.render('dashboard', {
@@ -45,6 +54,7 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
       role_id: req.session.users.role_id,
       MesChamps: champs,
       MonStocks: stocks,
+      MonHistoriqueES: historyAction,
     });
   } catch(err) {
     console.log('Une erreur s\'est produite lors de la rédirection : ', err);

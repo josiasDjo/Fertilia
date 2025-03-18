@@ -144,6 +144,9 @@ if(form_add_products) {
             const data = await response.json();
 
             if (data.success) {
+                const action = "Entrée";
+                const History = EntreeSortieHistory(produit,type_produit,quantite,unite,action);
+
                 message_show.innerText = data.message;
                 message_show.style.color = "green"
             } else {
@@ -169,7 +172,7 @@ if(delete_product_on_stock) {
                 const response = await fetch("/user/mon-compte/supprimer-produit", {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({id_stock })
+                    body: JSON.stringify({ id_stock })
                 })
                 const data = await response.json();
                 if (data.success) {
@@ -182,6 +185,56 @@ if(delete_product_on_stock) {
             }
         })
     });
+}
+//modifier un produit 
+const form_modify_products = document.getElementById('form_modify_products');
+if(form_modify_products){
+    form_modify_products.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        alert('Modifier');
+
+        const id_stock = document.getElementById('id_modify_product').value;
+        const produit = document.getElementById('nom_produit_modify').value;
+        const quantite = document.getElementById('quantite_produit_modify').value;
+        const emplacement = document.getElementById('Emplacement_stock_modify').value;
+        const message_show = document.getElementById('message_show'); 
+
+        const response = await fetch("/user/mon-compte/modifier-produit", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id_stock, produit, quantite, emplacement })
+        })
+
+        const data = await response.json();
+
+        if(data.success) {
+            message_show.innerText = data.message;
+            message_show.style.color = "green";
+            window.location.reload();
+        } else {
+            message_show.innerText = data.message;
+            message_show.style.color = "red"
+        }
+    });
+}
+
+
+// Historique Entrées et Sorties
+async function EntreeSortieHistory(produit,type_produit,quantite,unite,action) {
+    const response = await fetch("/api/mon-compte/historique/ajouter_action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ produit,type_produit,quantite,unite,action})
+    });
+
+    const data = response.json();
+    if(data.success) {
+        // alert('Ajouté à l`\'Historique');
+        return 'Ajouté à l`\'Historique'
+    } else {
+        // alert('Erreur lors de \'ajout à l\'historique');
+        return 'Erreur lors de \'ajout à l\'historique';
+    }
 }
 async function signout() {
     const etat = "Se deconnecter";

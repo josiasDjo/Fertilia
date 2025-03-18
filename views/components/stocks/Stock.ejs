@@ -10,6 +10,7 @@
     <div id="modals_addProduct" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
     content-center hidden">
         <%- include('add_products') %>
+        <%- include('modify_product') %>
     </div>
     <div id="container_graphcic" class="w-full flex flex-col">
         <div id="other_graph" class="w-full flex flex-row">
@@ -40,8 +41,8 @@
             <li id="hidden_history_stock" class="hidden m-2"><i class="fa-solid fa-chevron-up"></i></li>
         </button>
 
-        <div id="history_container" class="hidden bg-gray-200 w-full h-96 relative">
-
+        <div id="history_container" class="hidden bg-gray-200 w-full relative">
+            <%- include('history_ES') %>
         </div>
     </div>
 

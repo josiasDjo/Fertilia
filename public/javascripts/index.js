@@ -338,6 +338,45 @@ function close_add_product() {
         modals_addProduct.classList.remove('hidden');
     }
 }
+const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
+if (modify_product_on_stock) {
+    modify_product_on_stock.forEach(modify_product => {
+        modify_product.addEventListener('click', (event) => {
+            let row = event.target.closest('tr');
+
+            // Récupère les cellules de la ligne
+            let cells = row.getElementsByTagName('td');
+
+            // Assigne les valeurs aux champs du formulaire
+
+            let quantite_NC = cells[4].textContent.trim();
+            let quantite = quantite_NC.split("").filter(char => !isNaN(char) && char !== " ").join("");
+
+            document.getElementById('id_modify_product').value = cells[0].textContent.trim();
+            document.getElementById('nom_produit_modify').value = cells[2].textContent.trim();
+            document.getElementById('quantite_produit_modify').value = quantite;
+            document.getElementById('Emplacement_stock_modify').value = cells[5].textContent.trim();
+            
+            close_modify_product();
+        })
+    })
+}
+function close_modify_product() {
+    const modify_product = document.getElementById('modify_product');
+    const modals_addProduct = document.getElementById('modals_addProduct');
+
+    if (modals_addProduct && modify_product && modify_product.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
+        modify_product.classList.remove('flex');
+        modify_product.classList.add('hidden');
+        modals_addProduct.classList.remove('flex');
+        modals_addProduct.classList.add('hidden');
+    } else {
+        modify_product.classList.add('flex');
+        modify_product.classList.remove('hidden');
+        modals_addProduct.classList.add('flex');
+        modals_addProduct.classList.remove('hidden');
+    }
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');

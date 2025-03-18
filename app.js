@@ -29,6 +29,9 @@ const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
 const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
+const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
+const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes');
+const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -81,12 +84,15 @@ app.use((req, res, next) => {
 // Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
+app.use('/api/fournisseurs', FournisseurRoutes);
 // app.use('/api/capteurs', CapteursRouter);
 app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
 app.use('/api/role/users', RolesRouter);
 app.use('/user/mon-compte', StocksRouter);
+app.use('/api/fournisseurs', CmdFournisseurRoutes);
+app.use('/api/mon-compte/historique', EntreeSortieRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
