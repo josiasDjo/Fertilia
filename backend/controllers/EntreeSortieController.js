@@ -17,6 +17,10 @@ exports.getEntreeSortie = async (req, res) => {
     try {
         const { id_utilisateurs } = req.body.id_utilisateurs;
 
-        const actionExiste = await EntreeSortie.findAll()
+        const actionExiste = await EntreeSortie.findAll({ where: { id_utilisateurs: id_utilisateurs }});
+        return res.json(actionExiste);
+    } catch (err) {
+        console.log('Une erreur s\'est produite : ', err);
+        return res.json({ success: false, message: 'Une erreur s\'est produite'});
     }
 }
