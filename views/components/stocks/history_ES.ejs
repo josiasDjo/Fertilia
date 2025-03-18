@@ -1,0 +1,38 @@
+<div id="produit_stocké" class="w-full overflow-x-scroll my-5">
+    <table class="w-full border-2 border-solid border-black border-collapse">
+        <thead class="">
+            <tr>
+                <th class="hidden">N</th>
+                <th class="text-center"><i class="fa-solid fa-circle-dot"></i></th>
+                <th>Nom du produit</th>
+                <th>Catégorie</th>
+                <th>Quantité</th>
+                <th>Emplacement</th>
+                <th>Fournisseur / Marque </th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <% if (MonStocks && MonStocks.length > 0) { %>
+                <% MonStocks.forEach((stock) => { %>
+                    <tr>
+                        <td class="hidden"><%= stock.id_stock %></td>
+                        <td class="flex flex-col">
+                            <button type="button" id="" class="edit_product_on_stock text-xl"><i class='bx bx-edit-alt'></i></button>
+                            <button type="button" id="" class="delete_product_on_stock text-xl text-red-500"><i class='bx bxs-trash'></i></button>
+                            <p class="hidden" id="id_product_modify"><%= stock.id_stock %></p>
+                        </td>
+                        <td><%= stock.produit %></td>
+                        <td><%= stock.type_produit %></td>
+                        <td><%= stock.quantite %> <%= stock.unite %></td>
+                        <td><%= stock.emplacement%></td>
+                        <td><%= stock.fournisseur %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr class="text-center">
+                    <td colspan="6" class="text-center text-red-500">Aucun élément pour le moment</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
