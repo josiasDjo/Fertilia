@@ -29,6 +29,7 @@ const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
 const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
+const FounisseurRoutes = require('./backend/routes/FournisseurRoutes');
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -81,6 +82,7 @@ app.use((req, res, next) => {
 // Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
+app.use('/api/fournisseurs', FounisseurRoutes);
 // app.use('/api/capteurs', CapteursRouter);
 app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
