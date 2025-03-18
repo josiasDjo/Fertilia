@@ -44,9 +44,10 @@ exports.getFournisseur = async (req, res) => {
 
 exports.modifyFournisseur = async (req, res) => {
     try {
-
+        const { id_fournisseur, nom_fournisseur, contact_fournisseur, id_utilisateurs } = req.body;
+        const fournisseurExiste = await 
     } catch {
-        
+
     }
 }
 
