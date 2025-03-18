@@ -39,7 +39,7 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
     const users_id = req.session.users.id_user;
     req.users_id = users_id;
     console.log('User ID history : ', users_id);
-    return await entreeSortieController.ajouterEntreeSortie(req);
+    return await entreeSortieController.getEntreeSortie(req);
   }
   const champs = await getChamps();
   const stocks = await getStocks();
