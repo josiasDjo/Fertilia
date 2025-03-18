@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const FournisseurRoutes = require('');
+const FournisseurRoutes = require('../controllers/fournisseursControlleur');
 
-router.post('');
-router.get('');
-router.put('');
-router.delete('');
+router.post('/ajouter-fournisseur');
+router.get('/');
+router.put('/modifier-fournisseur');
+router.delete('/supprimer-fournisseur');
 
 module.exports = router;
