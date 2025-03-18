@@ -18,6 +18,6 @@ const Commande_Fournisseur = sequelize.define('table_commande_fournisseur', {
 Commande_Fournisseur.belongsTo(Utilisateur, { foreignKey: 'id_utilisateurs' });
 Commande_Fournisseur.belongsTo(Fournisseur, { foreignKey: 'id_fournisseur'});
 Utilisateur.hasMany(Commande_Fournisseur, { foreignKey: 'id_utilisateurs' });
-Fournisseur.hasMany()
+Fournisseur.hasMany(Utilisateur, { foreignKey: 'id_fournisseur'})
 
 module.exports = Commande_Fournisseur;
