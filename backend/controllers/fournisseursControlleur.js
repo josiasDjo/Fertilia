@@ -45,7 +45,11 @@ exports.getFournisseur = async (req, res) => {
 exports.modifyFournisseur = async (req, res) => {
     try {
         const { id_fournisseur, nom_fournisseur, contact_fournisseur, id_utilisateurs } = req.body;
-        const fournisseurExiste = await 
+        const fournisseurExiste = await Fournisseur.findByPk(id_fournisseur);
+
+        if (!fournisseurExiste) return res.json({ success: false, message: 'Aucun fournisseur trouvé'});
+
+        const 
     } catch {
 
     }
