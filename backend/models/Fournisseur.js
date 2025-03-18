@@ -7,5 +7,7 @@ const Fournisseur = sequelize.define('table_fournisseur', {
     contact_fournisseur: { type: DataTypes.STRING, allowNull: false },
     id_utilisateurs : { type: DataTypes.INTEGER, allowNull: false },
 }, {
-    
-})
+    timestamp: true 
+});
+
+module.exports = Fournisseur;
