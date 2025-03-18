@@ -144,6 +144,9 @@ if(form_add_products) {
             const data = await response.json();
 
             if (data.success) {
+                const action = "Entrée";
+                const History = EntreeSortieHistory(produit,type_produit,quantite,unite,action);
+
                 message_show.innerText = data.message;
                 message_show.style.color = "green"
             } else {
@@ -213,6 +216,25 @@ if(form_modify_products){
             message_show.style.color = "red"
         }
     });
+}
+
+
+// Historique Entrées et Sorties
+async function EntreeSortieHistory(produit,type_produit,quantite,unite,action) {
+    const response = await fetch("/api/mon-compte/historique/ajouter_action", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ produit,type_produit,quantite,unite,action})
+    });
+
+    const data = response.json();
+    if(data.success) {
+        // alert('Ajouté à l`\'Historique');
+        return 'Ajouté à l`\'Historique'
+    } else {
+        // alert('Erreur lors de \'ajout à l\'historique');
+        return 'Erreur lors de \'ajout à l\'historique';
+    }
 }
 async function signout() {
     const etat = "Se deconnecter";
