@@ -11,7 +11,7 @@ const Fournisseur = sequelize.define('table_fournisseur', {
     timestamp: true 
 });
 
-Stock.belongsTo(Utilisateur, { foreignKey: 'utilisateur_id'});
-Utilisateur.hasMany(Stock, { foreignKey: 'utilisateur_id' });
+Fournisseur.belongsTo(Utilisateur, { foreignKey: 'id_utilisateurs'});
+Utilisateur.hasMany(Stock, { foreignKey: 'id_utilisateurs' });
 
 module.exports = Fournisseur;
