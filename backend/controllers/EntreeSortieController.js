@@ -21,6 +21,7 @@ exports.getEntreeSortie = async (req, res) => {
     try {
         const { id_utilisateurs } = req.users_id;
 
+        console.log('ID users ES : ', id_utilisateurs);
         const actionExiste = await EntreeSortie.findAll({ where: { id_utilisateurs }});
         if (!actionExiste) return "Vous n'avez pas d'historique pour le moment";
         return actionExiste;
