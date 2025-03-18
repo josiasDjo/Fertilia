@@ -172,7 +172,7 @@ if(delete_product_on_stock) {
                 const response = await fetch("/user/mon-compte/supprimer-produit", {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({id_stock })
+                    body: JSON.stringify({ id_stock })
                 })
                 const data = await response.json();
                 if (data.success) {
