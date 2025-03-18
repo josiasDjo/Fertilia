@@ -6,7 +6,7 @@ const Entree_Sortie = sequelize.define('table_entree_sortie', {
     id_action: { type: DataTypes.INTEGER, primaryKey:true, autoIncrement: true },
     produit: { type: DataTypes.STRING, allowNull: false },
     type_produit: { type: DataTypes.STRING, allowNull: false },
-    quatite: { type: DataTypes.FLOAT, allowNull: false },
+    quantite: { type: DataTypes.FLOAT, allowNull: false },
     unite: { type: DataTypes.STRING, allowNull: false },
     action: { type: DataTypes.STRING, allowNull: false },
     quantite_totale: { type: DataTypes.FLOAT, allowNull: false },
