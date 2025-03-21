@@ -236,6 +236,7 @@ async function EntreeSortieHistory(produit,type_produit,quantite,unite,action) {
         return 'Erreur lors de \'ajout à l\'historique';
     }
 }
+
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {
