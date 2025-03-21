@@ -354,11 +354,14 @@ if (sortir_produit_on_stock) {
 
             let quantite_NC = cells[4].textContent.trim();
             let quantite = quantite_NC.split("").filter(char => !isNaN(char) && char !== " ").join("");
+            let quantite_unite = quantite_NC.split("").filter(char => /[a-zA-Z]/.test(char)).join("");
+
 
             document.getElementById('id_substrate_product').value = cells[0].textContent.trim();
             document.getElementById('nom_produit_substrate').value = cells[2].textContent.trim();
             document.getElementById('quantite_substrate').value = quantite;
             document.getElementById('quantite_initiale').textContent = quantite;
+            document.getElementById('quantie_unite_substrat').textContent = quantite_unite
             document.getElementById('Emplacement_substrate').value = cells[5].textContent.trim();
 
             const substrate_product = document.getElementById('substrate_product');
