@@ -145,6 +145,7 @@ if(form_add_products) {
 
             if (data.success) {
                 const action = "Entrée";
+                const quantite_initiale = 
                 const History = EntreeSortieHistory(produit,type_produit,quantite,quantite_initiale,unite,action);
 
                 message_show.innerText = data.message;
