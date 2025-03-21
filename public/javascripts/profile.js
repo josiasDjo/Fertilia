@@ -170,6 +170,7 @@ if (form_substrate_products) {
         const produit = document.getElementById('nom_produit_substrate').value;
         const type_produit = document.getElementById('type_produit_substrate').value;
         const quantite = document.getElementById('quantite_substrate').value;
+        const quantite_initiale = document.getElementById('quantite_initiale').textContent;
         const unite = document.getElementById('quantite_unite_substrate').textContent;
         const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
@@ -177,7 +178,7 @@ if (form_substrate_products) {
         if (id_stock != "" && produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
             console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
             
-            const response = await fetch("", {
+            const response = await fetch("/user/mon-compte/modifier-produit", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ id_stock, produit, quantite, emplacement })
