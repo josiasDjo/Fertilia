@@ -167,10 +167,11 @@ if (form_substrate_products) {
         event.preventDefault();
         alert('Submitted');
         const produit = document.getElementById('nom_produit').value;
+        const type_produit = document.getElementById('type_produit_substrate').value;
         const quantite = document.getElementById('quantite_produit').value;
         const unite = document.getElementById('unite_produit').value;
         const emplacement = document.getElementById('Emplacement_stock').value;
-        const message_show = document.getElementById('message_show');
+        const message_show = document.getElementById('message_show_substrate');
     })
 }
 // supprimer un produit
