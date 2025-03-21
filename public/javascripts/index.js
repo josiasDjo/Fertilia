@@ -344,6 +344,27 @@ if (sortir_produit_on_stock) {
     sortir_produit_on_stock.forEach(sortir_produit => {
         sortir_produit.addEventListener('click', async (event) => {
             event.preventDefault();
+            
+            let row = event.target.closest('tr');
+
+            // Récupère les cellules de la ligne
+            let cells = row.getElementsByTagName('td');
+
+            // Assigne les valeurs aux champs du formulaire
+
+            let quantite_NC = cells[4].textContent.trim();
+            let quantite = quantite_NC.split("").filter(char => !isNaN(char) && char !== " ").join("");
+
+            document.getElementById('id_substrate_product').value = cells[0].textContent.trim();
+            document.getElementById('nom_produit_substrate').value = cells[2].textContent.trim();
+            document.getElementById('quantite_produit_modify').value = quantite;
+            document.getElementById('quantite_initiale').textContent = quantite;
+            document.getElementById('Emplacement_stock_modify').value = cells[5].textContent.trim();
+
+            const substrate_product = document.getElementById('substrate_product');
+            const modals_addProduct = document.getElementById('modals_addProduct');
+
+
             alert('Quitter');
         });
     });
