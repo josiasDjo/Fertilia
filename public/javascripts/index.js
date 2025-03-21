@@ -404,6 +404,7 @@ if (modify_product_on_stock) {
             document.getElementById('id_modify_product').value = cells[0].textContent.trim();
             document.getElementById('nom_produit_modify').value = cells[2].textContent.trim();
             document.getElementById('quantite_produit_modify').value = quantite;
+            document.getElementById('quantite_init_modify').textContent = quantite;
             document.getElementById('Emplacement_stock_modify').value = cells[5].textContent.trim();
             
             close_modify_product();

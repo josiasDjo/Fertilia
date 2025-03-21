@@ -145,7 +145,7 @@ if(form_add_products) {
 
             if (data.success) {
                 const action = "Entrée";
-                const History = EntreeSortieHistory(produit,type_produit,quantite,unite,action);
+                const History = EntreeSortieHistory(produit,type_produit,quantite,quantite_initiale,unite,action);
 
                 message_show.innerText = data.message;
                 message_show.style.color = "green"
@@ -241,13 +241,12 @@ if(form_modify_products){
         const quantite = document.getElementById('quantite_produit_modify').value;
         const emplacement = document.getElementById('Emplacement_stock_modify').value;
         const message_show = document.getElementById('message_show'); 
+        const quantite_initiale = document.getElementById('quantite_init_modify').textContent;
 
-        const quantite_initiale = quantite;
         const response = await fetch("/user/mon-compte/modifier-produit", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id_stock, produit, quantite, quantite_initiale, emplacement })
-            // id_stock,produit,quantite,quantite_initiale,emplacement 
+            body: JSON.stringify({ id_stock, produit, quantite, emplacement })
         })
 
         const data = await response.json();
