@@ -170,15 +170,15 @@ if (form_substrate_products) {
         const id_stock = document.getElementById('id_substrate_product').value;
         const produit = document.getElementById('nom_produit_substrate').value;
         const type_produit = document.getElementById('type_produit_substrate').value;
-        const quantite = document.getElementById('quantite_substrate').value;
+        const quantite_1 = document.getElementById('quantite_substrate').value;
         const quantite_initiale = document.getElementById('quantite_initiale').textContent;
         const unite = document.getElementById('quantite_unite_substrate').textContent;
         const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
 
-        if (id_stock != "" && produit != "" && type_produit != "" && quantite != "" && quantite_initiale != "" && unite != "" && emplacement != "" && message_show) {
-            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
-            
+        if (id_stock != "" && produit != "" && type_produit != "" && quantite_1 != "" && quantite_initiale != "" && unite != "" && emplacement != "" && message_show) {
+            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite_1}, unite : ${unite}, emplacement : ${emplacement}`);
+            const quantite = quantite_initiale - quantite_1;
             const response = await fetch("/user/mon-compte/modifier-produit", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
