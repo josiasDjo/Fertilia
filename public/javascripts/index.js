@@ -359,6 +359,7 @@ if (sortir_produit_on_stock) {
 
             document.getElementById('id_substrate_product').value = cells[0].textContent.trim();
             document.getElementById('nom_produit_substrate').value = cells[2].textContent.trim();
+            document.getElementById('type_produit_substrate').value = cells[3].textContent.trim();
             document.getElementById('quantite_substrate').value = quantite;
             document.getElementById('quantite_initiale').textContent = quantite;
             document.getElementById('quantite_unite_substrate').textContent = quantite_unite;
