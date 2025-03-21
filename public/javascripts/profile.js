@@ -166,11 +166,11 @@ if (form_substrate_products) {
     form_substrate_products.addEventListener('submit', async (event) => {
         event.preventDefault();
         alert('Submitted');
-        const produit = document.getElementById('nom_produit').value;
+        const produit = document.getElementById('nom_produit_substrate').value;
         const type_produit = document.getElementById('type_produit_substrate').value;
-        const quantite = document.getElementById('quantite_produit').value;
-        const unite = document.getElementById('unite_produit').value;
-        const emplacement = document.getElementById('Emplacement_stock').value;
+        const quantite = document.getElementById('quantite_substrate').value;
+        const unite = document.getElementById('quantite_unite_substrate').value;
+        const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
 
         if (produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
