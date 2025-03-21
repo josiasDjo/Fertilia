@@ -181,7 +181,7 @@ if (form_substrate_products) {
             const response = await fetch("/user/mon-compte/modifier-produit", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id_stock, produit, quantite, emplacement })
+                body: JSON.stringify({ id_stock,produit,quantite,quantite_initiale,emplacement })
             })
             const data = response.json();
 
@@ -242,10 +242,12 @@ if(form_modify_products){
         const emplacement = document.getElementById('Emplacement_stock_modify').value;
         const message_show = document.getElementById('message_show'); 
 
+        const quantite_initiale = quantite;
         const response = await fetch("/user/mon-compte/modifier-produit", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ id_stock, produit, quantite, emplacement })
+            body: JSON.stringify({ id_stock, produit, quantite, quantite_initiale, emplacement })
+            // id_stock,produit,quantite,quantite_initiale,emplacement 
         })
 
         const data = await response.json();
