@@ -166,6 +166,7 @@ if (form_substrate_products) {
     form_substrate_products.addEventListener('submit', async (event) => {
         event.preventDefault();
         alert('Submitted');
+        const id_stock = document.getElementById('id_substrate_product').value;
         const produit = document.getElementById('nom_produit_substrate').value;
         const type_produit = document.getElementById('type_produit_substrate').value;
         const quantite = document.getElementById('quantite_substrate').value;
@@ -173,14 +174,23 @@ if (form_substrate_products) {
         const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
 
-        if (produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
+        if (id_stock != "" && produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
             console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
             
             const response = await fetch("", {
-                
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id_stock, produit, quantite, emplacement })
             })
+            const data = response.json();
 
-
+            if(data.success) {
+                message_show.innerText = "Opération réussie !";
+                message_show.style.color = "green";
+            } else {
+                message_show.innerText = data.message;
+                message_show.style.color = "red";
+            }
 
             // EntreeSortieHistory(produit,type_produit,quantite,unite,action)
         } else {
