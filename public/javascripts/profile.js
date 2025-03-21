@@ -187,12 +187,14 @@ if (form_substrate_products) {
             if(data.success) {
                 message_show.innerText = "Opération réussie !";
                 message_show.style.color = "green";
+
+            // EntreeSortieHistory(produit,type_produit,quantite,unite,action)
+
             } else {
                 message_show.innerText = data.message;
                 message_show.style.color = "red";
             }
 
-            // EntreeSortieHistory(produit,type_produit,quantite,unite,action)
         } else {
             message_show.innerText = "Tous les champs sont réquis !! ";
             message_show.style.color = "red";
