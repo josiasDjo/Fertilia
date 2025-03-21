@@ -172,6 +172,14 @@ if (form_substrate_products) {
         const unite = document.getElementById('unite_produit').value;
         const emplacement = document.getElementById('Emplacement_stock').value;
         const message_show = document.getElementById('message_show_substrate');
+
+        if (produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
+            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
+        } else {
+            message_show.innerText = "Tous les champs sont réquis !! ";
+            message_show.style.color = "red";
+            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
+        }
     })
 }
 // supprimer un produit
