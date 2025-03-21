@@ -3,8 +3,8 @@ const EntreeSortie = require('../models/Entree_Sortie');
 
 exports.ajouterEntreeSortie = async (req, res) => {
     try {
-        const { produit, type_produit, quantite, unite, action } = req.body;
-        const quantite_totale = quantite;
+        const { produit, type_produit, quantite, quantite_totale, unite, action } = req.body;
+        // const quantite_totale = quantite;
         const id_utilisateurs = req.session.users.id_user;
 
         console.log('ID: ', id_utilisateurs, ' Quantité : ', quantite_totale)

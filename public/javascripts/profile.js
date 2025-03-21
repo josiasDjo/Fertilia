@@ -182,7 +182,7 @@ if (form_substrate_products) {
             const response = await fetch("/user/mon-compte/modifier-produit", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id_stock,produit,quantite,quantite_initiale,emplacement })
+                body: JSON.stringify({ id_stock,produit,quantite,emplacement })
             })
             const data = response.json();
 
@@ -191,7 +191,7 @@ if (form_substrate_products) {
                 message_show.style.color = "green";
 
                 const action = "Sortie";
-                EntreeSortieHistory(produit,type_produit,quantite,unite,action);
+                EntreeSortieHistory(produit,type_produit,quantite, quantite_initiale,unite,action);
             } else {
                 message_show.innerText = data.message;
                 message_show.style.color = "red";
