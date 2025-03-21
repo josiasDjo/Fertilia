@@ -166,6 +166,11 @@ if (form_substrate_products) {
     form_substrate_products.addEventListener('submit', async (event) => {
         event.preventDefault();
         alert('Submitted');
+        const produit = document.getElementById('nom_produit').value;
+        const quantite = document.getElementById('quantite_produit').value;
+        const unite = document.getElementById('unite_produit').value;
+        const emplacement = document.getElementById('Emplacement_stock').value;
+        const message_show = document.getElementById('message_show');
     })
 }
 // supprimer un produit
