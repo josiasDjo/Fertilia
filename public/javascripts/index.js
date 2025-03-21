@@ -338,6 +338,16 @@ function close_add_product() {
         modals_addProduct.classList.remove('hidden');
     }
 }
+// Show container show substrate container
+const sortir_produit_on_stock = document.querySelectorAll('.sortir_produit');
+if (sortir_produit_on_stock) {
+    sortir_produit_on_stock.forEach(sortir_produit => {
+        sortir_produit.addEventListener('click', async (event) => {
+            event.preventDefault();
+            alert('Quitter');
+        });
+    });
+}
 const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
 if (modify_product_on_stock) {
     modify_product_on_stock.forEach(modify_product => {
