@@ -178,25 +178,29 @@ if (form_substrate_products) {
 
         if (id_stock != "" && produit != "" && type_produit != "" && quantite_1 != "" && quantite_initiale != "" && unite != "" && emplacement != "" && message_show) {
             console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite_1}, unite : ${unite}, emplacement : ${emplacement}`);
-            const quantite = quantite_initiale - quantite_1;
-            const response = await fetch("/user/mon-compte/modifier-produit", {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ id_stock,produit,quantite,emplacement })
-            })
-            const data = response.json();
-
-            if(data.success) {
-                message_show.innerText = "Opération réussie !";
-                message_show.style.color = "green";
-
-                const action = "Sortie";
-                EntreeSortieHistory(produit,type_produit,quantite, quantite_initiale,unite,action);
+            if (quantite_initiale >= quantite_1) {
+                const quantite = quantite_initiale - quantite_1;
+                const response = await fetch("/user/mon-compte/modifier-produit", {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id_stock,produit,quantite,emplacement })
+                })
+                const data = response.json();
+    
+                if(data.success) {
+                    message_show.innerText = "Opération réussie !";
+                    message_show.style.color = "green";
+    
+                    const action = "Sortie";
+                    const History = EntreeSortieHistory(produit,type_produit,quantite, quantite_initiale,unite,action);
+                } else {
+                    message_show.innerText = data.message;
+                    message_show.style.color = "red";
+                }
             } else {
-                message_show.innerText = data.message;
+                message_show.innerText = `La quantité sortante doit être inférieure à ${quantite_initiale}`;
                 message_show.style.color = "red";
             }
-
         } else {
             message_show.innerText = "Tous les champs sont réquis !! ";
             message_show.style.color = "red";
