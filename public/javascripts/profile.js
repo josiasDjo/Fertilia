@@ -175,7 +175,7 @@ if (form_substrate_products) {
         const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
 
-        if (id_stock != "" && produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
+        if (id_stock != "" && produit != "" && type_produit != "" && quantite != "" && quantite_initiale != "" && unite != "" && emplacement != "" && message_show) {
             console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
             
             const response = await fetch("/user/mon-compte/modifier-produit", {
@@ -265,7 +265,7 @@ if(form_modify_products){
 // Historique Entrées et Sorties
 async function EntreeSortieHistory(produit,type_produit,quantite,quantite_init,unite,action) {
     const quantite_totale = quantite_init - quantite
-    console.log('Quantité totale  = ', quantite_total)
+    console.log('Quantité totale  = ', quantite_totale)
     const response = await fetch("/api/mon-compte/historique/ajouter_action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
