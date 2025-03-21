@@ -1,10 +1,10 @@
 <div id="substrate_product" class="bg-gray-200 relative w-10/12 md:w-96 p-4 items-center justify-center hidden flex-col shadow-lg z-50">
-    <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick=""><i class="fa-solid fa-rectangle-xmark" id="closeConnexion"></i></button>
+    <button type="button" class="absolute top-2 left-2 text-2xl text-yellow-400" onclick=""><i class="fa-solid fa-rectangle-xmark" id="closesubstrate"></i></button>
     <h3 class="font-medium m-2">Ajouter un produit</h3>
     <form id="form_substrate_products" class="w-full">
         <input type="number" name="id" id="id_substrate_product" class="hidden" require>
         <input type="text" name="nom_produit_substrate" id="nom_produit_substrate" placeholder="Nom du produit" required class="w-full cursor-not-allowed rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-        <p>La quantité doit être inférieur ou égale à <span id="quantite_initiale"></span></p>
+        <p class="text-sm text-red-500 font-medium">La quantité doit être inférieur ou égale à <span id="quantite_initiale"></span></p>
         <input type="number" name="quantite_substrate" id="quantite_substrate" placeholder="Quantité" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
         <input type="text" name="Emplacement_substrate" id="Emplacement_substrate" required placeholder="Emplacement ex: Entrepôt A"  class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
         <ul class="flex flex-col w-full text-center">
