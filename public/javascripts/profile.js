@@ -145,7 +145,8 @@ if(form_add_products) {
 
             if (data.success) {
                 const action = "Entrée";
-                const History = EntreeSortieHistory(produit,type_produit,quantite,unite,action);
+                const quantite_initiale = quantite;
+                const History = EntreeSortieHistory(produit,type_produit,quantite,quantite_initiale,unite,action);
 
                 message_show.innerText = data.message;
                 message_show.style.color = "green"
@@ -158,6 +159,53 @@ if(form_add_products) {
             message_show.style.color = "red";
         }
 
+    })
+}
+//Sortir un produit du stock
+const form_substrate_products = document.getElementById('form_substrate_products');
+if (form_substrate_products) {
+    form_substrate_products.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        alert('Submitted');
+        const id_stock = document.getElementById('id_substrate_product').value;
+        const produit = document.getElementById('nom_produit_substrate').value;
+        const type_produit = document.getElementById('type_produit_substrate').value;
+        const quantite_1 = document.getElementById('quantite_substrate').value;
+        const quantite_initiale = document.getElementById('quantite_initiale').textContent;
+        const unite = document.getElementById('quantite_unite_substrate').textContent;
+        const emplacement = document.getElementById('Emplacement_substrate').value;
+        const message_show = document.getElementById('message_show_substrate');
+
+        if (id_stock != "" && produit != "" && type_produit != "" && quantite_1 != "" && quantite_initiale != "" && unite != "" && emplacement != "" && message_show) {
+            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite_1}, unite : ${unite}, emplacement : ${emplacement}`);
+            if (quantite_initiale >= quantite_1) {
+                const quantite = quantite_initiale - quantite_1;
+                const response = await fetch("/user/mon-compte/modifier-produit", {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id_stock,produit,quantite,emplacement })
+                })
+                const data = response.json();
+    
+                if(data.success) {
+                    message_show.innerText = "Opération réussie !";
+                    message_show.style.color = "green";
+    
+                    const action = "Sortie";
+                    const History = EntreeSortieHistory(produit,type_produit,quantite, quantite_initiale,unite,action);
+                } else {
+                    message_show.innerText = data.message;
+                    message_show.style.color = "red";
+                }
+            } else {
+                message_show.innerText = `La quantité sortante doit être inférieure à ${quantite_initiale}`;
+                message_show.style.color = "red";
+            }
+        } else {
+            message_show.innerText = "Tous les champs sont réquis !! ";
+            message_show.style.color = "red";
+            console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
+        }
     })
 }
 // supprimer un produit
@@ -198,6 +246,7 @@ if(form_modify_products){
         const quantite = document.getElementById('quantite_produit_modify').value;
         const emplacement = document.getElementById('Emplacement_stock_modify').value;
         const message_show = document.getElementById('message_show'); 
+        const quantite_initiale = document.getElementById('quantite_init_modify').textContent;
 
         const response = await fetch("/user/mon-compte/modifier-produit", {
             method: "PUT",
@@ -220,11 +269,13 @@ if(form_modify_products){
 
 
 // Historique Entrées et Sorties
-async function EntreeSortieHistory(produit,type_produit,quantite,unite,action) {
+async function EntreeSortieHistory(produit,type_produit,quantite,quantite_init,unite,action) {
+    const quantite_totale = quantite_init - quantite
+    console.log('Quantité totale  = ', quantite_totale)
     const response = await fetch("/api/mon-compte/historique/ajouter_action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ produit,type_produit,quantite,unite,action})
+        body: JSON.stringify({ produit,type_produit,quantite,quantite_totale,unite,action})
     });
 
     const data = response.json();
@@ -236,6 +287,7 @@ async function EntreeSortieHistory(produit,type_produit,quantite,unite,action) {
         return 'Erreur lors de \'ajout à l\'historique';
     }
 }
+
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {

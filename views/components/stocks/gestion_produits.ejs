@@ -9,6 +9,7 @@
                 <th>Quantité</th>
                 <th>Emplacement</th>
                 <th>Fournisseur / Marque </th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody class="">
@@ -17,8 +18,8 @@
                     <tr>
                         <td class="hidden"><%= stock.id_stock %></td>
                         <td class="flex flex-col">
-                            <button type="button" id="" class="edit_product_on_stock text-xl"><i class='bx bx-edit-alt'></i></button>
-                            <button type="button" id="" class="delete_product_on_stock text-xl text-red-500"><i class='bx bxs-trash'></i></button>
+                            <button type="button" id="" class="edit_product_on_stock text-xl border-none"><i class='bx bx-edit-alt'></i></button>
+                            <button type="button" id="" class="delete_product_on_stock text-xl text-red-500 border-none"><i class='bx bxs-trash'></i></button>
                             <p class="hidden" id="id_product_modify"><%= stock.id_stock %></p>
                         </td>
                         <td><%= stock.produit %></td>
@@ -26,6 +27,12 @@
                         <td><%= stock.quantite %> <%= stock.unite %></td>
                         <td><%= stock.emplacement%></td>
                         <td><%= stock.fournisseur %></td>
+                        <td>
+                            <button id="sortir_produit" type="button" class="sortir_produit bg-red-500 px-3 py-2 m-3 rounded-lg flex flex-row text-center justify-center items-center">
+                                <span class="flex m-3"><i class="fa-solid fa-up-right-from-square"></i></span>
+                                <span class="hidden lg:flex">Sortir du stock</span>
+                            </button>
+                        </td>
                     </tr>
                 <% }) %>
             <% } else { %>
