@@ -175,6 +175,14 @@ if (form_substrate_products) {
 
         if (produit != "" && type_produit != "" && quantite != "" && unite != "" && emplacement != "" && message_show) {
             console.log(`produit : ${produit}, type_produit : ${type_produit}, quantite : ${quantite}, unite : ${unite}, emplacement : ${emplacement}`);
+            
+            const response = await fetch("", {
+                
+            })
+
+
+
+            // EntreeSortieHistory(produit,type_produit,quantite,unite,action)
         } else {
             message_show.innerText = "Tous les champs sont réquis !! ";
             message_show.style.color = "red";
