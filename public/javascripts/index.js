@@ -368,7 +368,7 @@ if (sortir_produit_on_stock) {
             substrate_product.classList.add('flex');
             modals_addProduct.classList.remove('hidden');
             modals_addProduct.classList.add('flex');
-            alert('Quitter');
+            // alert('Quitter');
         });
     });
 }
