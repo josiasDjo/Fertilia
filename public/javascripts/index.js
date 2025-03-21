@@ -364,7 +364,10 @@ if (sortir_produit_on_stock) {
             const substrate_product = document.getElementById('substrate_product');
             const modals_addProduct = document.getElementById('modals_addProduct');
 
-
+            substrate_product.classList.remove('hidden');
+            substrate_product.classList.add('flex');
+            modals_addProduct.classList.remove('hidden');
+            modals_addProduct.classList.add('flex');
             alert('Quitter');
         });
     });
