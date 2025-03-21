@@ -169,7 +169,7 @@ if (form_substrate_products) {
         const produit = document.getElementById('nom_produit_substrate').value;
         const type_produit = document.getElementById('type_produit_substrate').value;
         const quantite = document.getElementById('quantite_substrate').value;
-        const unite = document.getElementById('quantite_unite_substrate').value;
+        const unite = document.getElementById('quantite_unite_substrate').textContent;
         const emplacement = document.getElementById('Emplacement_substrate').value;
         const message_show = document.getElementById('message_show_substrate');
 
