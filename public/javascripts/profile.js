@@ -264,11 +264,12 @@ if(form_modify_products){
 
 // Historique Entrées et Sorties
 async function EntreeSortieHistory(produit,type_produit,quantite,quantite_init,unite,action) {
-    const quantite_total = quantite_init - quantite
+    const quantite_totale = quantite_init - quantite
+    console.log('Quantité totale  = ', quantite_total)
     const response = await fetch("/api/mon-compte/historique/ajouter_action", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ produit,type_produit,quantite,quantite_init,unite,action})
+        body: JSON.stringify({ produit,type_produit,quantite,quantite_totale,unite,action})
     });
 
     const data = response.json();
