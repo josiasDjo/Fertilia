@@ -372,6 +372,17 @@ if (sortir_produit_on_stock) {
         });
     });
 }
+function close_substrate_product() {
+    const substrate_product = document.getElementById('substrate_product');
+    const modals_addProduct = document.getElementById('modals_addProduct');
+
+    if (substrate_product && modals_addProduct) {
+        substrate_product.classList.remove('flex');
+        substrate_product.classList.add('hidden');
+        modals_addProduct.classList.remove('flex');
+        modals_addProduct.classList.add('hidden');
+    }
+}
 const modify_product_on_stock = document.querySelectorAll('.edit_product_on_stock');
 if (modify_product_on_stock) {
     modify_product_on_stock.forEach(modify_product => {
