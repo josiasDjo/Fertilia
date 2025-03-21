@@ -357,9 +357,9 @@ if (sortir_produit_on_stock) {
 
             document.getElementById('id_substrate_product').value = cells[0].textContent.trim();
             document.getElementById('nom_produit_substrate').value = cells[2].textContent.trim();
-            document.getElementById('quantite_produit_modify').value = quantite;
+            document.getElementById('quantite_substrate').value = quantite;
             document.getElementById('quantite_initiale').textContent = quantite;
-            document.getElementById('Emplacement_stock_modify').value = cells[5].textContent.trim();
+            document.getElementById('Emplacement_substrate').value = cells[5].textContent.trim();
 
             const substrate_product = document.getElementById('substrate_product');
             const modals_addProduct = document.getElementById('modals_addProduct');
