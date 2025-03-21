@@ -9,6 +9,7 @@
                 <th>Quantité</th>
                 <th>Emplacement</th>
                 <th>Fournisseur / Marque </th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody class="">
@@ -26,6 +27,7 @@
                         <td><%= stock.quantite %> <%= stock.unite %></td>
                         <td><%= stock.emplacement%></td>
                         <td><%= stock.fournisseur %></td>
+                        <td><button type="button" class="">Sortir du stock</button></td>
                     </tr>
                 <% }) %>
             <% } else { %>
