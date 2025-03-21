@@ -160,6 +160,15 @@ if(form_add_products) {
 
     })
 }
+//Sortir un produit du stock
+const sortir_produit_on_stock = document.querySelectorAll('.sortir_produit');
+if (sortir_produit_on_stock) {
+    sortir_produit_on_stock.forEach(sortir_produit => {
+        sortir_produit.addEventListener('click', async (event) => {
+
+        });
+    });
+}
 // supprimer un produit
 const delete_product_on_stock = document.querySelectorAll('.delete_product_on_stock');
 if(delete_product_on_stock) {
