@@ -68,6 +68,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(xssClean());
+app.use(helmet());
+app.use(cors());
 // configuration de la session
 app.use(session({
   secret: process.env.SECRET_SESSION,

@@ -18,3 +18,5 @@ const authenticateToken = (req, res, next) => {
         next();
     });
 }
+
+module.export = authenticateToken;
