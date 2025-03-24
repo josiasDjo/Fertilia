@@ -10,6 +10,10 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const session= require('express-session');
 const flash = require('connect-flash');
+const jwt = require('jsonwebtoken');
+const helmet = require('helmet');
+const xssClean = require('xss-clean');
+const rateLimit = require('express-rate-limit');
 
 //importer les modèles
 const Utilisateurs = require('./backend/models/Utilisateurs');
