@@ -36,6 +36,11 @@ const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 const app = express();
 const port = process.env.PORT || 5001;
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // maximum 100 requêtes par IP sur cette période
+});
+
 // Configuration du moteur de vues
 app.set('views', [
   path.join(__dirname, 'views'),
@@ -58,7 +63,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(bodyParser.json());
-
+app.use(xssClean());
 // configuration de la session
 app.use(session({
   secret: process.env.SECRET_SESSION,
@@ -81,6 +86,8 @@ app.use((req, res, next) => {
   console.log('✅ Middleware Flash exécuté');
   next();
 });
+app.use(limiter);
+
 // Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
