@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose le port utilisé par l'application
-EXPOSE 3000
+EXPOSE 5001
 
 # Commande pour lancer l'application (avec nodemon si nécessaire)
 CMD ["node", "app.js"]
