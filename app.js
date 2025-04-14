@@ -34,7 +34,7 @@ const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
-const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes');
+const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseurRoutes');
 const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 
 const app = express();
@@ -70,6 +70,7 @@ app.use(bodyParser.json());
 app.use(xssClean());
 app.use(helmet());
 app.use(cors());
+
 // configuration de la session
 app.use(session({
   secret: process.env.SECRET_SESSION,
