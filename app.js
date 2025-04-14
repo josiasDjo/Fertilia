@@ -34,7 +34,7 @@ const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
-const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseurRoutes');
+const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes.js');
 const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 
 const app = express();
