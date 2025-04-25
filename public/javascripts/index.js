@@ -189,6 +189,9 @@ document.getElementById('closeSignin').addEventListener('click', function() {
 document.getElementById('openSignup').addEventListener('click', function() {
     OpenModalSign('signup');
 })
+document.getElementById('closeSignup').addEventListener('click', function() {
+    closeModalSign('signup');
+})
 
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
