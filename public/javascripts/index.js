@@ -24,54 +24,46 @@ window.addEventListener('load', function() {
 });
 
 // Navbar show & hidden
+document.getElementById('showNav').addEventListener("click", function(){
+    navbarSet('open');
+})
+document.getElementById('hideNav').addEventListener("click", function(){
+    navbarSet('close');
+})
 
 function navbarSet(option) {
-    let show = document.getElementById('show');
-    let hiddenBox = document.getElementById('hiddenBox');
+    let show = document.getElementById('showNav');
+    let hiddenBox = document.getElementById('hideNav');
     let navbar = document.getElementById('navbar'); 
     let nav_part2 = document.getElementById('nav_part2')
     let nav_part3 = document.getElementById('nav_part3')
 
     if (option === 'open') {
-        
+        // alert('show nav')
         show.classList.remove('block');
         show.classList.add('hidden');
         hiddenBox.classList.remove('hidden');
         hiddenBox.classList.add('block');
-
-        navbar.classList.remove('h-16');
-        navbar.classList.remove('relative');
-        navbar.classList.add('h-96');
-        navbar.classList.add('md:h-96');
-        navbar.classList.add('absolute');
-        navbar.classList.add('top-0');
-
+        navbar.classList.remove("h-16", "relative");
+        navbar.classList.add("h-96", "md:h-96", "absolute", "top-0", "inset-0");
         nav_part2.classList.remove('hidden');
         nav_part2.classList.add('flex');
         nav_part3.classList.remove('hidden');
         nav_part3.classList.add('flex');
-
-
-        console.log('Nav Show', option);
+        // console.log('Nav Show', option);
     } else {
+        // alert('hide nav')
         show.classList.remove('hidden');
         show.classList.add('flex');
         hiddenBox.classList.remove('flex');
         hiddenBox.classList.add('hidden');
-
-        navbar.classList.remove('h-96');
-        navbar.classList.remove('md:h-96');
-        navbar.classList.remove('absolute');
-        navbar.classList.remove('top-0');
-        navbar.classList.add('h-16');
-        navbar.classList.add('relative');
-
+        navbar.classList.remove("h-96", "md:h-96", "absolute", "top-0");
+        navbar.classList.add("h-16", "relative");
         nav_part2.classList.remove('flex');
         nav_part2.classList.add('hidden');
         nav_part3.classList.remove('flex');
         nav_part3.classList.add('hidden');
-
-        console.log('Nav hidden', option);
+        // console.log('Nav hidden', option);
     }
 }
 //sidebar cliqued by default
@@ -186,7 +178,15 @@ function button_clicked(valeur) {
         
     }
 }
+
 // sign in & sign up pages set hidden or flex
+document.getElementById('openSignin').addEventListener('click', function() {
+    OpenModalSign('signin')
+})
+document.getElementById('closeSignin').addEventListener('click', function() {
+    closeModalSign('signin')
+})
+
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
@@ -198,8 +198,6 @@ function closeModalSign(valeur) {
         signin.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-        body.classList.remove = "fixed";
-        body.style.top = "";
 
         console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
