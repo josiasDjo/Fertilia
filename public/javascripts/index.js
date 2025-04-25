@@ -180,42 +180,46 @@ function button_clicked(valeur) {
 }
 
 // sign in & sign up pages set hidden or flex
-const openSignin = document.getElementsByClassName('openSignin')
-openSignin.forEach(btn, () => {
+const openSignin = document.querySelectorAll('.openSignin')
+openSignin.forEach((btn) => {
     btn.addEventListener('click', function() {
         OpenModalSign('signin')
     })
 })
-const closeSignin = document.getElementsByClassName('closeSignin').addEventListener('click', function() {
-    closeModalSign('signin')
+const closeSignin = document.querySelectorAll('.closeSignin')
+closeSignin.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        closeModalSign('signin')
+    })
 })
-const openSignup = document.getElementsByClassName('openSignup').addEventListener('click', function() {
-    OpenModalSign('signup');
+const openSignup = document.querySelectorAll('.openSignup')
+openSignup.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        OpenModalSign('signup');
+    })
 })
-const closeSignup = document.getElementsByClassName('closeSignup').addEventListener('click', function() {
-    closeModalSign('signup');
+const closeSignup = document.querySelectorAll('.closeSignup')
+closeSignup.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        closeModalSign('signup');
+    })
 })
 
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
-    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-
-        // console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-
-        // console.log('Sign up found Close button');
     }  else {
         console.log('Valeurs d\'entrée incorrectes');
     }
