@@ -232,13 +232,17 @@ function OpenModalSign(valeur) {
 
 // Afficher Ajouter un terrain comme modal
 const show_adding_field_id = document.getElementById('show_adding_field')
-show_adding_field_id.addEventListener('click', function() {
-    show_adding_field('open')
-})
+if(show_adding_field_id) {
+    show_adding_field_id.addEventListener('click', function() {
+        show_adding_field('open')
+    })
+}
 const hide_adding_field_id = document.getElementById('hide_adding_field')
-hide_adding_field_id.addEventListener('click', function() {
-    show_adding_field('close')
-})
+if(hide_adding_field_id) {
+    hide_adding_field_id.addEventListener('click', function() {
+        show_adding_field('close')
+    })
+}
 function show_adding_field(param) {
     const parent = document.getElementById('modals_addFields');
     const adding_field = document.getElementById('show_addField');
