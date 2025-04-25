@@ -436,6 +436,14 @@ function close_modify_product() {
         modals_addProduct.classList.remove('hidden');
     }
 }
+
+//Afficher paramètre et deconnexion
+const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
+if(showMoreOptionPofil) {
+    showMoreOptionPofil.addEventListener('click', function() {
+        alert('More options')
+    })
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
