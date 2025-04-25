@@ -234,12 +234,9 @@ function OpenModalSign(valeur) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         signin.classList.remove('hidden');
-        signin.classList.add('flex');
-        signin.classList.add("backdrop-blur-xl")
+        signin.classList.add("backdrop-blur-xl","flex")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-
-        // console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
@@ -247,10 +244,6 @@ function OpenModalSign(valeur) {
         signup.classList.add('flex');
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        // parent.classList.add("backdrop-blur-md");
-
-
-        console.log('Sign up found Open button');
     } else {
         console.log('Valeurs d\'entrée incorrectes');
     }
