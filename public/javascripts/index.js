@@ -313,9 +313,9 @@ const addMore_Product = document.getElementById('addMore_Product');
 if(addMore_Product) {
     addMore_Product.addEventListener('click', close_add_product);
 }
-const close_add_product = document.getElementById('close_add_product');
-if(close_add_product) {
-    close_add_product.addEventListener('click', close_add_product);
+const close_add_product_id = document.getElementById('close_add_product');
+if(close_add_product_id) {
+    close_add_product_id.addEventListener('click', close_add_product);
 }
 function close_add_product() {
     const add_product = document.getElementById('add_produt');
