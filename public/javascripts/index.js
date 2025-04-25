@@ -180,16 +180,16 @@ function button_clicked(valeur) {
 }
 
 // sign in & sign up pages set hidden or flex
-document.getElementsByClassName('openSignin').addEventListener('click', function() {
+const openSignin = document.getElementsByClassName('openSignin').addEventListener('click', function() {
     OpenModalSign('signin')
 })
-document.getElementsByClassName('closeSignin').addEventListener('click', function() {
+const closeSignin = document.getElementsByClassName('closeSignin').addEventListener('click', function() {
     closeModalSign('signin')
 })
-document.getElementsByClassName('openSignup').addEventListener('click', function() {
+const openSignup = document.getElementsByClassName('openSignup').addEventListener('click', function() {
     OpenModalSign('signup');
 })
-document.getElementsByClassName('closeSignup').addEventListener('click', function() {
+const closeSignup = document.getElementsByClassName('closeSignup').addEventListener('click', function() {
     closeModalSign('signup');
 })
 
