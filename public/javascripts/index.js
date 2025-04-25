@@ -1,27 +1,37 @@
-// loader set animation
-window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
+let ready = false;
+let loaded = false;
+
+// Timer de 2 secondes
+setTimeout(() => {
+    ready = true;
+    if (loaded) finishLoader();
+}, 2000);
+
+// Quand la page est chargée
+window.addEventListener('load', () => {
+    loaded = true;
+    if (ready) finishLoader();
+});
+
+function finishLoader() {
+    const loader = document.getElementById('loaderContainer');
     const content1 = document.getElementById('hero-header');
     const content2 = document.getElementById('modalsShow');
     const content3 = document.getElementById('main_su');
 
-    loader.classList.add('opacity-0');
-    if (loader && content1 && content2 && content3) {
-        setTimeout(() => {
-            loader.classList.remove('flex');
-            loader.classList.add('hidden');
-    
-            content1.classList.remove('opacity-0');
-            content2.classList.remove('opacity-0');
-            content3.classList.remove('opacity-0');
-        })
-    } else {
-        setTimeout(() => {
-            loader.classList.remove('flex');
-            loader.classList.add('hidden');
-        })
+    if (loader) loader.classList.add('opacity-0');
+
+    setTimeout(() => {
+    if (loader) {
+        loader.classList.remove('flex');
+        loader.classList.add('hidden');
     }
-});
+
+    [content1, content2, content3].forEach(content => {
+        if (content) content.classList.remove('opacity-0');
+    });
+  }, 500); // délai pour que l’animation de fade-out se termine
+}
 
 // Navbar show & hidden
 const showNav = document.getElementById('showNav')
