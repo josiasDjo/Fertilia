@@ -186,6 +186,9 @@ document.getElementById('openSignin').addEventListener('click', function() {
 document.getElementById('closeSignin').addEventListener('click', function() {
     closeModalSign('signin')
 })
+document.getElementById('openSignup').addEventListener('click', function() {
+    OpenModalSign('signup');
+})
 
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
@@ -199,14 +202,14 @@ function closeModalSign(valeur) {
         parent.classList.remove('flex');
         parent.classList.add('hidden');
 
-        console.log('Sign in found Close button');
+        // console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
 
-        console.log('Sign up found Close button');
+        // console.log('Sign up found Close button');
     }  else {
         console.log('Valeurs d\'entrée incorrectes');
     }
@@ -226,7 +229,7 @@ function OpenModalSign(valeur) {
         parent.classList.remove('hidden');
         parent.classList.add('flex');
 
-        console.log('Sign in found Open button');
+        // console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
