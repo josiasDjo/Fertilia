@@ -67,8 +67,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(cors());
 app.use(bodyParser.json());
-app.use(xssClean());
-app.use(helmet());
+// app.use(xssClean());
+// app.use(helmet());
 
 // configuration de la session
 app.use(session({
