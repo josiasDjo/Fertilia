@@ -24,12 +24,18 @@ window.addEventListener('load', function() {
 });
 
 // Navbar show & hidden
-document.getElementById('showNav').addEventListener("click", function(){
-    navbarSet('open');
-})
-document.getElementById('hideNav').addEventListener("click", function(){
-    navbarSet('close');
-})
+const showNav = document.getElementById('showNav')
+if(showNav){
+    showNav.addEventListener("click", function(){
+        navbarSet('open');
+    })
+}
+const hideNav = document.getElementById('hideNav')
+if(hideNav) {
+    hideNav.addEventListener("click", function(){
+        navbarSet('close');
+    })
+}
 
 function navbarSet(option) {
     let show = document.getElementById('showNav');
@@ -114,12 +120,10 @@ if (buttons) {
                     console.log(btn_id)
                     break;
                 case "field_management":
-                    console.log(btn_id);
                     field_management_cont.classList.remove('hidden');
                     field_management_cont.classList.add('flex');
                     break;
                 case "stock":
-                    console.log(btn_id)
                     stock_management.classList.remove('hidden');
                     stock_management.classList.add('flex');
                     break;
@@ -154,29 +158,6 @@ if (buttons) {
     })
 } else {
     console.log('SideBar buttons not found');
-}
-
-function button_clicked(valeur) {
-    // alert(`Width:  ${largeur}`);
-    const container_aside = document.getElementById('container_aside');
-    const dashboard = document.getElementById('dashboard');
-    const field_management = document.getElementById('field_management');
-    const stock = document.getElementById('stock');
-    const delivery = document.getElementById('delivery');
-    const settings = document.getElementById('settings');
-    const signout = document.getElementById('signout');
-
-    if (valeur === "dashboard" && dashboard && field_management && stock && delivery && settings && signout) {
-
-    } else if (valeur === "field_management" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "stock" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "delivery" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "settings" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    }
 }
 
 // sign in & sign up pages set hidden or flex
@@ -250,6 +231,14 @@ function OpenModalSign(valeur) {
 }
 
 // Afficher Ajouter un terrain comme modal
+const show_adding_field_id = document.getElementById('show_adding_field')
+show_adding_field_id.addEventListener('click', function() {
+    show_adding_field('open')
+})
+const hide_adding_field_id = document.getElementById('hide_adding_field')
+hide_adding_field_id.addEventListener('click', function() {
+    show_adding_field('close')
+})
 function show_adding_field(param) {
     const parent = document.getElementById('modals_addFields');
     const adding_field = document.getElementById('show_addField');
@@ -287,14 +276,12 @@ if (show_details) {
             }
 
         })
-        console.log('show_details : ', details);
     })
 } else {
-    console.log('show_details : ', show_details);
+    console.log('Button afficher les détails du terrain non trouvé');
 }
 
 // Stock config 
-
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
 if (show_hidden_history_stock) {
@@ -326,18 +313,22 @@ const addMore_Product = document.getElementById('addMore_Product');
 if(addMore_Product) {
     addMore_Product.addEventListener('click', close_add_product);
 }
+const close_add_product = document.getElementById('close_add_product');
+if(close_add_product) {
+    close_add_product.addEventListener('click', close_add_product);
+}
 function close_add_product() {
-    const add_produt = document.getElementById('add_produt');
+    const add_product = document.getElementById('add_produt');
     const modals_addProduct = document.getElementById('modals_addProduct');
 
-    if (modals_addProduct && add_produt && add_produt.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
-        add_produt.classList.remove('flex');
-        add_produt.classList.add('hidden');
+    if (modals_addProduct && add_product && add_product.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
+        add_product.classList.remove('flex');
+        add_product.classList.add('hidden');
         modals_addProduct.classList.remove('flex');
         modals_addProduct.classList.add('hidden');
     } else {
-        add_produt.classList.add('flex');
-        add_produt.classList.remove('hidden');
+        add_product.classList.add('flex');
+        add_product.classList.remove('hidden');
         modals_addProduct.classList.add('flex');
         modals_addProduct.classList.remove('hidden');
     }
@@ -499,6 +490,10 @@ if (flash_msg) {
 } else {
     console.log('flash_msg not found');
 }
+const closeFlashId = document.querySelectorAll('.closeFlash');
+closeFlashId.forEach((closeFlh) =>{
+    closeFlash()
+})
 function closeFlash() {
     const flash_msg = document.getElementById('flash_msg')
 
