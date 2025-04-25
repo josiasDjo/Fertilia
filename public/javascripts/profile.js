@@ -288,6 +288,12 @@ async function EntreeSortieHistory(produit,type_produit,quantite,quantite_init,u
     }
 }
 
+const signoutBtn = document.getElementById('signout')
+if(signoutBtn) {
+    signoutBtn.addEventListener('click', function(){
+        signout()
+    })
+}
 async function signout() {
     const etat = "Se deconnecter";
     const response = await fetch("/logout", {

@@ -23,16 +23,16 @@
         </div>
     <% } %>
 <% } %>
-  <section class="relative w-full opacity-0 transition-opacity duration-1000" id="hero-header">
-    <nav id="navbar" class="animate_nav w-full flex flex-col px-10 py-2 md:h-24 relaitve bg-black bg-opacity-90 text-white h-16 
-    lg:text-center lg:items-center lg:justify-center lg:w-full lg:h-28 lg:flex lg:flex-row lg:px-10 z-20">
+  <section class="w-full" id="hero-header">
+    <nav id="navbar" class="animate_nav w-full flex flex-col px-10 py-2 md:h-24 bg-black bg-opacity-90 text-white h-16 
+    lg:text-center lg:items-center lg:justify-center lg:w-full lg:h-28 lg:flex lg:flex-row lg:px-10 z-20 fixed top-0 inset-0">
 
-      <button onclick="navbarSet('close');" id="hiddenBox" class="hidden sm:h-12 sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
+      <button id="hideNav" class="hidden sm:h-12 sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
         <li class="list-none text-4xl">
           <i class="fa-solid fa-xmark"></i>
         </li>
       </button>
-      <button onclick="navbarSet('open');" id="show" class="flex lg:hidden sm:h-12 sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
+      <button id="showNav" class="flex lg:hidden sm:h-12 sm:h-12 md:p-2 md:w-24 md:h-24 sm:justify-center sm:content-center sm:align-center absolute top-4 right-7 z-10">
         <li class="list-none text-4xl lg:hidden">
           <i class="fa-solid fa-bars"></i>
         </li>
@@ -72,11 +72,11 @@
 
       </ul>   
       <ul id="nav_part3" class="lg:flex flex-row relative lg:absolute lg:right-0 lg:px-10 text-lg text-medium text-center items-center hidden">
-        <button class="pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50" onclick="OpenModalSign('signin');">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        <button id="openSignin" class="openSignin pr-4 backgroud_btn_h px-3 py-2 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">Se connecter <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
       </ul>
     </nav>
 
-    <div class="text-right px-7 py-6 flex flex-row relative lg:px-20" id="header">
+    <div class="text-right px-7 py-6 flex flex-row relative mt-28 lg:px-20" id="header">
       <div class="hidden lg:block lg:w-5/12"></div>
       <div class="relative lg:px-6 w-full sm:px-2 lg:w-7/12 flex flex-col lg:items-end">
         <div class="absolute top-2 right-2 w-16 place-items-end lg:w-full lg:mb-5 lg:relative">
@@ -90,7 +90,7 @@
               temps réel vos cultures et optimisez l'irrigation. Découvrez 
               comment la technologie peut <span class="backgroud_text_h font-medium">redonner vie à votre terre</span> et propulser votre agriculture vers de <span class="backgroud_text_h font-medium">nouveaux sommets.</span> <span class="text-lg"><i class="fas fa-quote-right"></i></span><br>
           </p>
-          <button class="w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" onclick="OpenModalSign('signup');">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
+          <button class="openSignup w-44 pr-4 backgroud_btn_h mt-2 px-3 py-2 text-lg rounded-lg" id="openSignup">Nous réjoindre <i class="fa-solid fa-arrow-right"></i></button> 
         </div>
       </div>
     </div>

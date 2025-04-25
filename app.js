@@ -10,6 +10,10 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const session= require('express-session');
 const flash = require('connect-flash');
+const jwt = require('jsonwebtoken');
+// const helmet = require('helmet');
+const xssClean = require('xss-clean');
+const rateLimit = require('express-rate-limit');
 
 //importer les modèles
 const Utilisateurs = require('./backend/models/Utilisateurs');
@@ -30,11 +34,16 @@ const RolesRouter = require('./backend/routes/RolesRoutes');
 const StocksRouter = require('./backend/routes/StocksRoutes');
 const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
-const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes');
+const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes.js');
 const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 
 const app = express();
 const port = process.env.PORT || 5001;
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // maximum 100 requêtes par IP sur cette période
+});
 
 // Configuration du moteur de vues
 app.set('views', [
@@ -56,8 +65,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
+// app.use(xssClean());
+// app.use(helmet());
 
 // configuration de la session
 app.use(session({
@@ -81,6 +92,8 @@ app.use((req, res, next) => {
   console.log('✅ Middleware Flash exécuté');
   next();
 });
+app.use(limiter);
+
 // Déclaration des routes
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);

@@ -1,77 +1,85 @@
-// loader set animation
-window.addEventListener('load', function() {
-    const loader = document.getElementById('loader');
+let ready = false;
+let loaded = false;
+
+// Timer de 2 secondes
+setTimeout(() => {
+    ready = true;
+    if (loaded) finishLoader();
+}, 2000);
+
+// Quand la page est chargée
+window.addEventListener('load', () => {
+    loaded = true;
+    if (ready) finishLoader();
+});
+
+function finishLoader() {
+    const loader = document.getElementById('loaderContainer');
     const content1 = document.getElementById('hero-header');
     const content2 = document.getElementById('modalsShow');
     const content3 = document.getElementById('main_su');
 
-    loader.classList.add('opacity-0');
-    if (loader && content1 && content2 && content3) {
-        setTimeout(() => {
-            loader.classList.remove('flex');
-            loader.classList.add('hidden');
-    
-            content1.classList.remove('opacity-0');
-            content2.classList.remove('opacity-0');
-            content3.classList.remove('opacity-0');
-        })
-    } else {
-        setTimeout(() => {
-            loader.classList.remove('flex');
-            loader.classList.add('hidden');
-        })
+    if (loader) loader.classList.add('opacity-0');
+
+    setTimeout(() => {
+    if (loader) {
+        loader.classList.remove('flex');
+        loader.classList.add('hidden');
     }
-});
+
+    [content1, content2, content3].forEach(content => {
+        if (content) content.classList.remove('opacity-0');
+    });
+  }, 500); // délai pour que l’animation de fade-out se termine
+}
 
 // Navbar show & hidden
+const showNav = document.getElementById('showNav')
+if(showNav){
+    showNav.addEventListener("click", function(){
+        navbarSet('open');
+    })
+}
+const hideNav = document.getElementById('hideNav')
+if(hideNav) {
+    hideNav.addEventListener("click", function(){
+        navbarSet('close');
+    })
+}
 
 function navbarSet(option) {
-    let show = document.getElementById('show');
-    let hiddenBox = document.getElementById('hiddenBox');
+    let show = document.getElementById('showNav');
+    let hiddenBox = document.getElementById('hideNav');
     let navbar = document.getElementById('navbar'); 
     let nav_part2 = document.getElementById('nav_part2')
     let nav_part3 = document.getElementById('nav_part3')
 
     if (option === 'open') {
-        
+        // alert('show nav')
         show.classList.remove('block');
         show.classList.add('hidden');
         hiddenBox.classList.remove('hidden');
         hiddenBox.classList.add('block');
-
-        navbar.classList.remove('h-16');
-        navbar.classList.remove('relative');
-        navbar.classList.add('h-96');
-        navbar.classList.add('md:h-96');
-        navbar.classList.add('absolute');
-        navbar.classList.add('top-0');
-
+        navbar.classList.remove("h-16", "relative");
+        navbar.classList.add("h-96", "md:h-96", "absolute", "top-0", "inset-0");
         nav_part2.classList.remove('hidden');
         nav_part2.classList.add('flex');
         nav_part3.classList.remove('hidden');
         nav_part3.classList.add('flex');
-
-
-        console.log('Nav Show', option);
+        // console.log('Nav Show', option);
     } else {
+        // alert('hide nav')
         show.classList.remove('hidden');
         show.classList.add('flex');
         hiddenBox.classList.remove('flex');
         hiddenBox.classList.add('hidden');
-
-        navbar.classList.remove('h-96');
-        navbar.classList.remove('md:h-96');
-        navbar.classList.remove('absolute');
-        navbar.classList.remove('top-0');
-        navbar.classList.add('h-16');
-        navbar.classList.add('relative');
-
+        navbar.classList.remove("h-96", "md:h-96", "absolute", "top-0");
+        navbar.classList.add("h-16", "relative");
         nav_part2.classList.remove('flex');
         nav_part2.classList.add('hidden');
         nav_part3.classList.remove('flex');
         nav_part3.classList.add('hidden');
-
-        console.log('Nav hidden', option);
+        // console.log('Nav hidden', option);
     }
 }
 //sidebar cliqued by default
@@ -122,12 +130,10 @@ if (buttons) {
                     console.log(btn_id)
                     break;
                 case "field_management":
-                    console.log(btn_id);
                     field_management_cont.classList.remove('hidden');
                     field_management_cont.classList.add('flex');
                     break;
                 case "stock":
-                    console.log(btn_id)
                     stock_management.classList.remove('hidden');
                     stock_management.classList.add('flex');
                     break;
@@ -164,51 +170,47 @@ if (buttons) {
     console.log('SideBar buttons not found');
 }
 
-function button_clicked(valeur) {
-    // alert(`Width:  ${largeur}`);
-    const container_aside = document.getElementById('container_aside');
-    const dashboard = document.getElementById('dashboard');
-    const field_management = document.getElementById('field_management');
-    const stock = document.getElementById('stock');
-    const delivery = document.getElementById('delivery');
-    const settings = document.getElementById('settings');
-    const signout = document.getElementById('signout');
-
-    if (valeur === "dashboard" && dashboard && field_management && stock && delivery && settings && signout) {
-
-    } else if (valeur === "field_management" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "stock" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "delivery" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    } else if (valeur === "settings" && container_aside && dashboard && field_management && stock && delivery && settings && signout) {
-        
-    }
-}
 // sign in & sign up pages set hidden or flex
+const openSignin = document.querySelectorAll('.openSignin')
+openSignin.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        OpenModalSign('signin')
+    })
+})
+const closeSignin = document.querySelectorAll('.closeSignin')
+closeSignin.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        closeModalSign('signin')
+    })
+})
+const openSignup = document.querySelectorAll('.openSignup')
+openSignup.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        OpenModalSign('signup');
+    })
+})
+const closeSignup = document.querySelectorAll('.closeSignup')
+closeSignup.forEach((btn) => {
+    btn.addEventListener('click', function() {
+        closeModalSign('signup');
+    })
+})
+
 function closeModalSign(valeur) {
     const signin = document.getElementById('signin');
     const signup = document.getElementById('signup');
     const parent = document.getElementById('modalsShow');
-    const body = document.getElementsByName('body');
 
     if (valeur === 'signin' && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-        body.classList.remove = "fixed";
-        body.style.top = "";
-
-        console.log('Sign in found Close button');
     } else if (valeur === 'signup' && signup && parent) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         parent.classList.remove('flex');
         parent.classList.add('hidden');
-
-        console.log('Sign up found Close button');
     }  else {
         console.log('Valeurs d\'entrée incorrectes');
     }
@@ -223,12 +225,9 @@ function OpenModalSign(valeur) {
         signup.classList.remove('flex');
         signup.classList.add('hidden');
         signin.classList.remove('hidden');
-        signin.classList.add('flex');
-        signin.classList.add("backdrop-blur-xl")
+        signin.classList.add("backdrop-blur-xl","flex")
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-
-        console.log('Sign in found Open button');
     } else if (valeur === 'signup' && signup && signin && parent) {
         signin.classList.remove('flex');
         signin.classList.add('hidden');
@@ -236,16 +235,24 @@ function OpenModalSign(valeur) {
         signup.classList.add('flex');
         parent.classList.remove('hidden');
         parent.classList.add('flex');
-        // parent.classList.add("backdrop-blur-md");
-
-
-        console.log('Sign up found Open button');
     } else {
         console.log('Valeurs d\'entrée incorrectes');
     }
 }
 
 // Afficher Ajouter un terrain comme modal
+const show_adding_field_id = document.getElementById('show_adding_field')
+if(show_adding_field_id) {
+    show_adding_field_id.addEventListener('click', function() {
+        show_adding_field('open')
+    })
+}
+const hide_adding_field_id = document.getElementById('hide_adding_field')
+if(hide_adding_field_id) {
+    hide_adding_field_id.addEventListener('click', function() {
+        show_adding_field('close')
+    })
+}
 function show_adding_field(param) {
     const parent = document.getElementById('modals_addFields');
     const adding_field = document.getElementById('show_addField');
@@ -283,14 +290,12 @@ if (show_details) {
             }
 
         })
-        console.log('show_details : ', details);
     })
 } else {
-    console.log('show_details : ', show_details);
+    console.log('Button afficher les détails du terrain non trouvé');
 }
 
 // Stock config 
-
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
 if (show_hidden_history_stock) {
@@ -322,18 +327,22 @@ const addMore_Product = document.getElementById('addMore_Product');
 if(addMore_Product) {
     addMore_Product.addEventListener('click', close_add_product);
 }
+const close_add_product_id = document.getElementById('close_add_product');
+if(close_add_product_id) {
+    close_add_product_id.addEventListener('click', close_add_product);
+}
 function close_add_product() {
-    const add_produt = document.getElementById('add_produt');
+    const add_product = document.getElementById('add_produt');
     const modals_addProduct = document.getElementById('modals_addProduct');
 
-    if (modals_addProduct && add_produt && add_produt.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
-        add_produt.classList.remove('flex');
-        add_produt.classList.add('hidden');
+    if (modals_addProduct && add_product && add_product.classList.contains('flex') && modals_addProduct.classList.contains('flex')) {
+        add_product.classList.remove('flex');
+        add_product.classList.add('hidden');
         modals_addProduct.classList.remove('flex');
         modals_addProduct.classList.add('hidden');
     } else {
-        add_produt.classList.add('flex');
-        add_produt.classList.remove('hidden');
+        add_product.classList.add('flex');
+        add_product.classList.remove('hidden');
         modals_addProduct.classList.add('flex');
         modals_addProduct.classList.remove('hidden');
     }
@@ -427,6 +436,14 @@ function close_modify_product() {
         modals_addProduct.classList.remove('hidden');
     }
 }
+
+//Afficher paramètre et deconnexion
+const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
+if(showMoreOptionPofil) {
+    showMoreOptionPofil.addEventListener('click', function() {
+        alert('More options')
+    })
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
@@ -495,6 +512,10 @@ if (flash_msg) {
 } else {
     console.log('flash_msg not found');
 }
+const closeFlashId = document.querySelectorAll('.closeFlash');
+closeFlashId.forEach((closeFlh) =>{
+    closeFlash()
+})
 function closeFlash() {
     const flash_msg = document.getElementById('flash_msg')
 

@@ -64,7 +64,7 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
 
 router.post('/logout', isAuthenticated, (req, res, next) => {
   const { element } = req.body;
-
+  res.sen
   req.session.destroy((err) => {
     if (err) {
       console.Log("Erreur lors de la déconnexion", err);
