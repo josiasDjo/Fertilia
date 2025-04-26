@@ -474,6 +474,7 @@ if(show_search_bar) {
 }
 const searchContainer = document.getElementById('show_search_bar');
 const searchInput = document.getElementById('search_bar_fields');
+const container_fields_action = document.getElementById('container_fields_action')
 
 searchContainer.addEventListener('click', (e) => {
     e.stopPropagation()
