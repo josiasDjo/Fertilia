@@ -301,9 +301,10 @@ if (show_details) {
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
-        const etatChamps = btn.getElementById('etatchamps').textContent
+        const etatChamps = btn.querySelector('#etatchamps').textContent
+        console.log('Text : ', etatChamps)
         if(etatChamps === "BON") {
-            btn.classList.add('background-color')
+            btn.classList.add('green_color_bg')
         } else if (etatChamps.textContent === "ATTENTION") {
             btn.classList.add('backgroud_btn_h')
         } else if (etatChamps.textContent === "CRITIQUE") {
