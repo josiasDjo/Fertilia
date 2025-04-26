@@ -1,13 +1,13 @@
 <div id="field_management_cont" class="w-full p-4 hidden flex-col">
     <h3 class="text-left font-medium">Gestion des terrains</h3>
     <div id="champs" class="w-full flex flex-wrap">
-        <div class="w-full flex flex-row justify-between">
+        <div class="w-full flex flex-row items-center">
             <button type="button" id="show_adding_field" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter un terrain <i class="fa-solid fa-plus"></i></i></button>
             <button type="button" id="filter" class="text-3xl hidden"><i class='bx bx-filter'></i></button>
-            <div class="rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-                <i class='bx bxs-envelope'></i>
-                <input type="email" placeholder="Votre Email" name="email" id="email_signin" class="ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
-            </div>
+            <ul class="h-12 rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="email" placeholder="Votre Email" name="email" id="email_signin" class="hidden ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+            </ul>
         </div>
         <div id="modals_addFields" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
         content-center hidden">
