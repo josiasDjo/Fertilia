@@ -479,6 +479,7 @@ const container_fields_action = document.getElementById('container_fields_action
 searchContainer.addEventListener('click', (e) => {
     e.stopPropagation()
     searchInput.classList.remove('hidden')
+    container_fields_action.classList.add('overflow-x-scroll')
     searchInput.focus()
 });
 
