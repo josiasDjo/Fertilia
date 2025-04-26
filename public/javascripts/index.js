@@ -442,6 +442,13 @@ const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
 if(showMoreOptionPofil) {
     showMoreOptionPofil.addEventListener('click', function() {
         alert('More options')
+        const more = document.getElementsById('moreoptionusers')
+        if(more) {
+            if(more.classList.contains('hidden')) {
+                more.classList.remove('hidden')
+                more.classList.add('flex')
+            }
+        }
     })
 }
 // système de notation
