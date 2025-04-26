@@ -487,8 +487,8 @@ document.addEventListener('click', () => {
     search_bar_fields.classList.add('hidden')
     label_add_field.classList.remove('hidden')
     label_add_field.classList.add('flex')
-    searchInput.classList.add('hidden'); // Cache à nouveau l'input
-    searchInput.blur(); // Retire le focus de l'input
+    searchInput.classList.add('hidden')
+    searchInput.blur()
 });
 
 // Télécharger le fichier pdf des champs
