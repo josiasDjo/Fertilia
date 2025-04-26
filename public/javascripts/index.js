@@ -476,9 +476,9 @@ const searchContainer = document.getElementById('show_search_bar');
 const searchInput = document.getElementById('search_bar_fields');
 
 searchContainer.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêche le clic de remonter au document
-    searchInput.classList.remove('hidden');
-    searchInput.focus();
+    e.stopPropagation()
+    searchInput.classList.remove('hidden')
+    searchInput.focus()
 });
 
 // Quand on clique ailleurs dans le document
