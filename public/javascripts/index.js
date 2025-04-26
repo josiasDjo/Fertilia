@@ -278,8 +278,13 @@ if (show_details) {
     show_details.forEach(details => {
 
         details.addEventListener('click', function() {
-            const container = this.closest('.field_card');
-            const child_name_detail = container.querySelector('#show_details_div');
+            const container = this.closest('.field_card')
+            const child_name_detail = container.querySelector('#show_details_div')
+            const allContainerDetails = document.querySelectorAll('.show_details_div')
+            allContainerDetails.forEach((all) => {
+                all.classList.remove('flex')
+                all.classList.add('hidden')
+            })
 
             if (child_name_detail.classList.contains('flex')) {
                 child_name_detail.classList.add('hidden');
