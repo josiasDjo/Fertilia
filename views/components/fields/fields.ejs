@@ -20,7 +20,13 @@
                     </button>
                 </div>
                 <div class="bg-gray-200 w-full h-4/12 my-3 relative z-10">
-                    <h2 class="font-bold text-xl"><%= champ.nom %></h2>
+                    <div class="w-full flex flex-row relative items-center justify-center">
+                        <h2 class="font-bold text-xl"><%= champ.nom %></h2>
+                        <p class="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic"><%= champ.type_culture %></span></p>
+                    </div>
+                    <div>
+
+                    </div>
                     <p><%= champ.surface %> hectare</p>
                 </div>
     
