@@ -1,9 +1,22 @@
 <div id="field_management_cont" class="w-full p-4 hidden flex-col">
     <h3 class="text-left font-medium">Gestion des terrains</h3>
     <div id="champs" class="w-full flex flex-wrap">
-        <div class="w-full flex flex-row justify-between">
-            <button type="button" id="show_adding_field" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter un terrain <i class="fa-solid fa-plus"></i></i></button>
+        <div id="container_fields_action" class="w-full flex flex-row items-center relative justify-between overflow-x-auto">
+            <button type="button" id="show_adding_field" class="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg green_color_text flex flex-row items-center justify-center">
+                <li id="label_add_field" class="flex mr-2">Ajouter un terrain</li> 
+                <i class="fa-solid fa-plus"></i></i>
+            </button>
             <button type="button" id="filter" class="text-3xl hidden"><i class='bx bx-filter'></i></button>
+            <ul class="flex flex-row items-center justify-center content-center">
+                <ul id="show_search_bar" class="h-12 w-14 cursor-pointer items-center justify-center flex relative rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Recherche" name="search" id="search_bar_fields" class="relative hidden ml-3 bg-white border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                </ul>
+                <button id="fileExports" type="button" class="flex flex-row h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg text-black text-xl items-center justify-center">
+                    <li class="hidden">Exporter</li>
+                    <i class="fa-solid fa-file-export"></i>
+                </button>
+            </ul>
         </div>
         <div id="modals_addFields" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
         content-center hidden">

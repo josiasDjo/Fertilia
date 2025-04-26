@@ -109,7 +109,7 @@ if (buttons) {
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
-                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex", "flex-col");
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
                     btn.classList.add("bg-white", "text-black");
                     if (child_name) {
                         child_name.classList.remove("flex");
@@ -152,11 +152,11 @@ if (buttons) {
             if (largeur < 1024) {
                 const child_name = this.querySelector('#btn_label');
 
-                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col", "items-center", "justify-center");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
-                    child_name.classList.remove('hidden');
-                    child_name.classList.add("flex", "text-white", "text-center");
+                    // child_name.classList.remove('hidden');
+                    // child_name.classList.add("flex", "text-white", "text-center");
                 } else {
                     alert("child_name not found")
                 }
@@ -278,23 +278,49 @@ if (show_details) {
     show_details.forEach(details => {
 
         details.addEventListener('click', function() {
-            const container = this.closest('.field_card');
-            const child_name_detail = container.querySelector('#show_details_div');
+            const container = this.closest('.field_card')
+            const child_name_detail = container.querySelector('#show_details_div')
+            const allContainerDetails = document.querySelectorAll('.show_details_div')
 
             if (child_name_detail.classList.contains('flex')) {
                 child_name_detail.classList.add('hidden');
                 child_name_detail.classList.remove("flex");
             } else {
+                allContainerDetails.forEach(all => {
+                    all.classList.remove('flex')
+                    all.classList.add('hidden')
+                })
                 child_name_detail.classList.remove('hidden');
                 child_name_detail.classList.add("flex");
             }
-
         })
     })
 } else {
     console.log('Button afficher les détails du terrain non trouvé');
 }
-
+const btnEtatFields = document.querySelectorAll('.btnEtatFields')
+if(btnEtatFields) {
+    btnEtatFields.forEach(btn => {
+        const etatChamps = btn.querySelector('#etatchamps').textContent
+        console.log('Text : ', etatChamps)
+        if(etatChamps === "BON") {
+            btn.classList.add('green_color_bg')
+        } else if (etatChamps.textContent === "ATTENTION") {
+            btn.classList.add('backgroud_btn_h')
+        } else if (etatChamps.textContent === "CRITIQUE") {
+            btn.classList.add('bg-red-500')
+        }
+    })
+}
+const lastUpdateDate = document.querySelectorAll('.lastUpdateDate')
+if(lastUpdateDate){
+    const dateNow = new Date()
+    const timeNow = dateNow.toLocaleString()
+    console.log('Date : ', timeNow)
+    lastUpdateDate.forEach(upd => {
+        upd.textContent = timeNow
+    })
+}
 // Stock config 
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
@@ -439,13 +465,68 @@ function close_modify_product() {
 
 //Afficher paramètre et deconnexion
 const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
+const more = document.getElementById('moreoptionusers')
 if(showMoreOptionPofil) {
     showMoreOptionPofil.addEventListener('click', function() {
-        alert('More options')
+        if(more) {
+            if(more.classList.contains('hidden')) {
+                more.classList.remove('hidden')
+                more.classList.add('flex')
+            } else if(more.classList.contains('flex')) {
+                more.classList.remove('flex')
+                more.classList.add('hidden')
+            } else {
+                console.log('Propriété non trouvé')
+            }
+        }
+    })
+}
+// Rechercher un terrain (Gestion des terrains interface)
+const show_search_bar = document.getElementById('show_search_bar')
+if(show_search_bar) {
+    show_search_bar.addEventListener('click', function() {
+        const search_bar_fields = document.getElementById('search_bar_fields')
+        const label_add_field = document.getElementById('label_add_field')
+        if(search_bar_fields){
+            search_bar_fields.classList.remove('hidden')
+            search_bar_fields.classList.add('flex')
+            label_add_field.classList.remove('flex')
+            label_add_field.classList.add('hidden')
+            show_search_bar.classList.remove("w-14")
+            show_search_bar.classList.add('w-auto')
+            search_bar_fields.focus()
+        }
+    })
+}
+const searchContainer = document.getElementById('show_search_bar');
+const searchInput = document.getElementById('search_bar_fields');
+const container_fields_action = document.getElementById('container_fields_action')
+
+searchContainer.addEventListener('click', (e) => {
+    e.stopPropagation()
+    searchInput.classList.remove('hidden')
+    // container_fields_action.classList.add('')
+    searchInput.focus()
+});
+
+// Quand on clique ailleurs dans le document
+document.addEventListener('click', () => {
+    search_bar_fields.classList.remove('flex')
+    search_bar_fields.classList.add('hidden')
+    label_add_field.classList.remove('hidden')
+    label_add_field.classList.add('flex')
+    searchInput.classList.add('hidden')
+    searchInput.blur()
+});
+
+// Télécharger le fichier pdf des champs
+const fileExports = document.getElementById('fileExports')
+if(fileExports) {
+    fileExports.addEventListener('click', function(){
+        alert('Télécharger le fichier des champs')
     })
 }
 // système de notation
-
 const stars = document.querySelectorAll('.star');
 
 // Ajout des écouteurs d'événements sur chaque étoile
@@ -508,13 +589,15 @@ if (flash_msg) {
         flash_msg.classList.add('hidden');
         flash_msg.classList.remove('opacity-100');            
         flash_msg.classList.add('opacity-0');
-    }, 5000);
+    }, 2000);
 } else {
     console.log('flash_msg not found');
 }
 const closeFlashId = document.querySelectorAll('.closeFlash');
 closeFlashId.forEach((closeFlh) =>{
-    closeFlash()
+    closeFlh.addEventListener('click', function() {
+        closeFlash()
+    })
 })
 function closeFlash() {
     const flash_msg = document.getElementById('flash_msg')
