@@ -298,15 +298,19 @@ if (show_details) {
 } else {
     console.log('Button afficher les détails du terrain non trouvé');
 }
-// document.addEventListener('click', () => {
-//     if(show_details) {
-//         const allContainerDetails = document.querySelectorAll('.show_details_div')
-//         allContainerDetails.forEach((all) => {
-//             all.classList.remove('flex')
-//             all.classList.add('hidden')
-//         })
-//     }
-// })
+const btnEtatFields = document.querySelectorAll('.btnEtatFields')
+if(btnEtatFields) {
+    btnEtatFields.forEach(btn => {
+        const etatChamps = btn.getElementById('etatchamps')
+        if(etatChamps.textContent === "BON") {
+            btn.classList.add('')
+        } else if (etatChamps.textContent === "BON") {
+            btn.classList.add('')
+        } else if (etatChamps.textContent === "BON") {
+            btn.classList.add('')
+        }
+    })
+}
 // Stock config 
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
