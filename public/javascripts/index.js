@@ -491,6 +491,13 @@ document.addEventListener('click', () => {
     searchInput.blur(); // Retire le focus de l'input
 });
 
+// Télécharger le fichier pdf des champs
+const fileExports = document.getElementById('fileExports')
+if(fileExports) {
+    fileExports.addEventListener('click', function(){
+        alert('Télécharger le fichier des champs')
+    })
+}
 // système de notation
 const stars = document.querySelectorAll('.star');
 
