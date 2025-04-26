@@ -19,7 +19,7 @@
                         <p class="px-3">Supprimer le terrain</p>
                     </button>
                 </div>
-                <div class="bg-gray-200 w-full h-4/12 my-3 relative z-10">
+                <div class="bg-gray-200 w-full h-4/12 my-2 relative z-10">
                     <div class="w-full flex flex-row relative items-center justify-center">
                         <h2 class="font-bold text-xl"><%= champ.nom %></h2>
                         <p class="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic"><%= champ.type_culture %></span></p>
@@ -30,7 +30,7 @@
                     <p><%= champ.surface %> hectare</p>
                 </div>
     
-                <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-3">
+                <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-2">
                     <div class="w-16 items-center justify-center flex flex-col m-2">
                         <div class="h-12 w-12 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex">100</div>
                         <p class="font-medium text-black text-sm">Température</p>
@@ -43,6 +43,9 @@
                         <div class="h-12 w-12 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex">100</div>
                         <p class="font-medium text-black text-sm">pH du sol</p>
                     </div>
+                </div>
+                <div class="w-full bg-red-500">
+                    <ul class="flex flex-row"><p>Capteurs Connectés : <span>10</span></p></ul>
                 </div>
                 <div class="w-full px-3">
                     <button id="" class="btnEtatFields w-full text-white rounded-xl my-5 p-2 border-opacity-30">Statut global : <span id="etatchamps" class="font-medium">BON</span></button>
