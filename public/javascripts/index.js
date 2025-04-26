@@ -109,7 +109,7 @@ if (buttons) {
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
-                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex");
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
                     btn.classList.add("bg-white", "text-black");
                     if (child_name) {
                         child_name.classList.remove("flex");
@@ -152,11 +152,11 @@ if (buttons) {
             if (largeur < 1024) {
                 const child_name = this.querySelector('#btn_label');
 
-                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col");
+                this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col", "items-center", "justify-center");
                 this.classList.remove("bg-white", "text-gray-700");
                 if (child_name) {
-                    child_name.classList.remove('hidden');
-                    child_name.classList.add("flex", "text-white", "text-center");
+                    // child_name.classList.remove('hidden');
+                    // child_name.classList.add("flex", "text-white", "text-center");
                 } else {
                     alert("child_name not found")
                 }
