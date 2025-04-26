@@ -4,10 +4,11 @@
         <div class="w-full flex flex-row items-center">
             <button type="button" id="show_adding_field" class="h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Ajouter un terrain <i class="fa-solid fa-plus"></i></i></button>
             <button type="button" id="filter" class="text-3xl hidden"><i class='bx bx-filter'></i></button>
-            <ul class="h-12 rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+            <ul class="h-12 w-14 cursor-pointer items-center justify-center flex rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="email" placeholder="Votre Email" name="email" id="email_signin" class="hidden ml-3 border-none ring-transparent focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
             </ul>
+            <button type="button" class="hidden h-12 m-2 p-2 px-4 rounded-lg shadow-lg text-lg green_color_text">Exporter<i class="fa-solid fa-plus"></i></i></button>
         </div>
         <div id="modals_addFields" class="w-full h-screen z-40 backdrop-blur fixed inset-0 justify-center items-center 
         content-center hidden">
