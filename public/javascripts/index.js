@@ -439,21 +439,17 @@ function close_modify_product() {
 
 //Afficher paramètre et deconnexion
 const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
-const more = document.getElementsById('moreoptionusers')
+const more = document.getElementById('moreoptionusers')
 if(showMoreOptionPofil) {
     showMoreOptionPofil.addEventListener('click', function() {
-        alert('More options')
         if(more) {
             if(more.classList.contains('hidden')) {
-                alert('hidden')
                 more.classList.remove('hidden')
                 more.classList.add('flex')
             } else if(more.classList.contains('flex')) {
-                alert('flex')
                 more.classList.remove('flex')
                 more.classList.add('hidden')
             } else {
-                alert('Propriété non trouvé')
                 console.log('Propriété non trouvé')
             }
         }
@@ -523,13 +519,15 @@ if (flash_msg) {
         flash_msg.classList.add('hidden');
         flash_msg.classList.remove('opacity-100');            
         flash_msg.classList.add('opacity-0');
-    }, 5000);
+    }, 2000);
 } else {
     console.log('flash_msg not found');
 }
 const closeFlashId = document.querySelectorAll('.closeFlash');
 closeFlashId.forEach((closeFlh) =>{
-    closeFlash()
+    closeFlh.addEventListener('click', function() {
+        closeFlash()
+    })
 })
 function closeFlash() {
     const flash_msg = document.getElementById('flash_msg')

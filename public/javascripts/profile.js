@@ -288,10 +288,12 @@ async function EntreeSortieHistory(produit,type_produit,quantite,quantite_init,u
     }
 }
 
-const signoutBtn = document.getElementById('signout')
+const signoutBtn = document.querySelectorAll('.signout')
 if(signoutBtn) {
-    signoutBtn.addEventListener('click', function(){
-        signout()
+    signoutBtn.forEach((btn) => {
+        btn.addEventListener('click', function(){
+            signout()
+        })
     })
 }
 async function signout() {
