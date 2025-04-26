@@ -312,6 +312,15 @@ if(btnEtatFields) {
         }
     })
 }
+const lastUpdateDate = document.querySelectorAll('.lastUpdateDate')
+if(lastUpdateDate){
+    const dateNow = new Date()
+    const timeNow = dateNow.toLocaleString()
+    console.log('Date : ', timeNow)
+    lastUpdateDate.forEach(upd => {
+        upd.textContent = timeNow
+    })
+}
 // Stock config 
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
