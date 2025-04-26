@@ -439,14 +439,22 @@ function close_modify_product() {
 
 //Afficher paramètre et deconnexion
 const showMoreOptionPofil = document.getElementById('showMoreOptionPofil')
+const more = document.getElementsById('moreoptionusers')
 if(showMoreOptionPofil) {
     showMoreOptionPofil.addEventListener('click', function() {
         alert('More options')
-        const more = document.getElementsById('moreoptionusers')
         if(more) {
             if(more.classList.contains('hidden')) {
+                alert('hidden')
                 more.classList.remove('hidden')
                 more.classList.add('flex')
+            } else if(more.classList.contains('flex')) {
+                alert('flex')
+                more.classList.remove('flex')
+                more.classList.add('hidden')
+            } else {
+                alert('Propriété non trouvé')
+                console.log('Propriété non trouvé')
             }
         }
     })
