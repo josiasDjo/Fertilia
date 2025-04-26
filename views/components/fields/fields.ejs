@@ -1,4 +1,4 @@
-<div id="container_fields" class="w-full mx-3 flex flex-wrap relative">
+<div id="container_fields" class="w-full mx-2 flex flex-wrap relative">
     <% if (MesChamps.length > 0) { %>
         <% MesChamps.forEach((champ) => { %>
             <div class="field_card w-full h-80 md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg flex flex-col relative">
@@ -27,7 +27,7 @@
                     <div>
 
                     </div>
-                    <p><%= champ.surface %> hectare</p>
+                    <p>Superficie : <%= champ.surface %> hectare</p>
                 </div>
     
                 <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-2">
