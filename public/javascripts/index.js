@@ -301,13 +301,13 @@ if (show_details) {
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
-        const etatChamps = btn.getElementById('etatchamps')
-        if(etatChamps.textContent === "BON") {
-            btn.classList.add('')
-        } else if (etatChamps.textContent === "BON") {
-            btn.classList.add('')
-        } else if (etatChamps.textContent === "BON") {
-            btn.classList.add('')
+        const etatChamps = btn.getElementById('etatchamps').textContent
+        if(etatChamps === "BON") {
+            btn.classList.add('background-color')
+        } else if (etatChamps.textContent === "ATTENTION") {
+            btn.classList.add('backgroud_btn_h')
+        } else if (etatChamps.textContent === "CRITIQUE") {
+            btn.classList.add('bg-red-500')
         }
     })
 }
