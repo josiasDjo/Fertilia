@@ -294,7 +294,15 @@ if (show_details) {
 } else {
     console.log('Button afficher les détails du terrain non trouvé');
 }
+document.addEventListener('click', () => {
+    if(show_details) {
+        const container = this.closest('.field_card')
+        const child_name_detail = container.querySelector('#show_details_div')
 
+        child_name_detail.classList.add('hidden')
+        child_name_detail.classList.hidden("flex")
+    }
+})
 // Stock config 
 // afficher l'historique des entrées et sorties
 const show_hidden_history_stock = document.getElementById('show_or_hidden_history_stock');
