@@ -109,7 +109,7 @@ if (buttons) {
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
-                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex", "flex-col");
+                    btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0","flex");
                     btn.classList.add("bg-white", "text-black");
                     if (child_name) {
                         child_name.classList.remove("flex");
