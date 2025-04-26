@@ -455,6 +455,37 @@ if(showMoreOptionPofil) {
         }
     })
 }
+// Rechercher un terrain (Gestion des terrains interface)
+const show_search_bar = document.getElementById('show_search_bar')
+if(show_search_bar) {
+    show_search_bar.addEventListener('click', function() {
+        const search_bar_fields = document.getElementById('search_bar_fields')
+        const label_add_field = document.getElementById('label_add_field')
+        if(search_bar_fields){
+            search_bar_fields.classList.remove('hidden')
+            search_bar_fields.classList.add('flex')
+            label_add_field.classList.remove('flex')
+            label_add_field.classList.add('hidden')
+            show_search_bar.classList.remove("w-14")
+            show_search_bar.classList.add('w-auto')
+        }
+    })
+}
+const field_management_cont = document.getElementById('field_management_cont')
+if(field_management_cont) {
+    show_search_bar.addEventListener('click', function() {
+        const search_bar_fields = document.getElementById('search_bar_fields')
+        const label_add_field = document.getElementById('label_add_field')
+        if(search_bar_fields){
+            search_bar_fields.classList.remove('hidden')
+            search_bar_fields.classList.add('flex')
+            label_add_field.classList.remove('flex')
+            label_add_field.classList.add('hidden')
+            show_search_bar.classList.remove("w-14")
+            show_search_bar.classList.add('w-auto')
+        }
+    })
+}
 // système de notation
 
 const stars = document.querySelectorAll('.star');
