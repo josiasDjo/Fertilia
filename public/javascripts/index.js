@@ -290,8 +290,6 @@ if (show_details) {
                     all.classList.remove('flex')
                     all.classList.add('hidden')
                 })
-            
-                
                 child_name_detail.classList.remove('hidden');
                 child_name_detail.classList.add("flex");
             }
