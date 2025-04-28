@@ -4,7 +4,7 @@ const sequelize = require('./index');
 const Utilisateur = require('./Utilisateurs');
 
 const Livraison = sequelize.define('table_livraisons', {
-    id_livraison: { type: DataTypes.INTEGER,  primaryKey: true, autoIncrement: true },
+    id_livraison: { type: DataTypes.STRING,  primaryKey: true },
     utilisateur_id: { type: DataTypes.INTEGER, allowNull: false },	
     acheteur: { type: DataTypes.INTEGER, allowNull: false },	
     produit: { type: DataTypes.STRING, allowNull: false },	
