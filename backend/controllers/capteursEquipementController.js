@@ -37,9 +37,21 @@ exports.getCapteur = async (req, res) => {
         const capteurExist = await CapteurEquipement.findOne({where: id_capteur})
         if(!capteurExist) return res.json({ success: false, message: 'Capteur introuvable'})
         if(capteurExist.id_utilisateurs != id_utilisateurs) return res.json({ success: false, message: 'Vous ne pouvez pas accéder à cet Element'})
+        
+        return res.json({ success: true, message: capteurExist})
     } catch(err) {
         const error = 'Erreur lors de la récupération du capteur'
         console.log(error, err)
         return res.json({ success: false, message: error})
     }
+}
+
+exports.updateCapteur = async (req, res) => {
+    try  {
+        const 
+    } catch(err) {
+        const error = 'Erreur lors de la modification du capteur'
+        console.log(error, err)
+        return res.json({ success: false, message: error})
+    } 
 }
