@@ -19,7 +19,8 @@ exports.addCapteur = async (req, res) => {
 exports.getCapteursChamps = async (req, res) => {
     try {
         const id_utilisateurs = req.session.users.id_user;
-        const is_champs = 
+        const is_champs = req.body.is_champs
+        const champsExist = await CapteurEquipement.findAll({ where: is_champs})
     } catch(err) {
         const error = 'Erreur lors de la récupération des capteurs'
         console.log(error, err)
