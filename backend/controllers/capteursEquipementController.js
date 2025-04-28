@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const CapteurEquipement = require('../models/capteurs_equipements')
 const { v4: uuidv4 } = require('uuid');
 
@@ -51,6 +52,7 @@ exports.updateCapteur = async (req, res) => {
         const id_capteur = req.body.id_capteur
         const capteurExist = await CapteurEquipement.findByPk(id_capteur)
         if(!capteurExist) return res.json({ success: false, message: 'Capteurs introuvable, réessayer plus tard'})
+        await CapteurEquipement.update(req.body, {where: id_capteur})
     } catch(err) {
         const error = 'Erreur lors de la modification du capteur'
         console.log(error, err)
