@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const faker = require('@faker-js/faker')
+const { faker } = require('@faker-js/faker')
 
 router.get('/sensor', (req, res) => {
     const sensors = Array.from({ length: 10 }, () => ({
