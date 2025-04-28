@@ -5,6 +5,8 @@ exports.addCapteur = async (req, res) => {
     try {
         const id_capteur = uuidv4()
         const { nom_capteur,type_capteur,valeur,is_champs,unit,longitude,latitude } = req.body;
+        const nomExiste = await Capteur.findOne({where: {nom_capteur}})
+        if(nomExiste) return res.json({ success: false,message: 'Ce nom de capteur existe déjà, merci d’en choisir un autre.'});
         await Capteur.create({nom_capteur,id_capteur,type_capteur,valeur,is_champs,unit,longitude,latitude})
         res.json({ success: true, message: 'Capteur ajouté'})
     } catch(err) {
