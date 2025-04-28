@@ -67,6 +67,8 @@ exports.deleteCapteur = async (req, res) => {
         const id_utilisateurs = req.session.users.id_user;
         const capteurExist = await CapteurEquipement.findByPk(id_capteur)
         if(!capteurExist) return res.json({ success: false, message: 'Capteur introuvable, réessayer plus tard'})
+        if(capteurExist.id_utilisateurs != id_utilisateurs) return res.json({ success: false, message: 'Vous ne pouvez pas supprimer cet élément'}) 
+        await CapteurEquipement.destroy({where: id_capteur})
     } catch(err) {
         const error = 'Erreur lors de la suppression du capteur'
         console.log(error, err)
