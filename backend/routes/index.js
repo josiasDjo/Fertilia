@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const champController = require('../controllers/champController');
+const v_champController = require('../controllers/v_cards_capteurs_champs');
 const stockController = require('../controllers/stockController');
 const entreeSortieController = require('../controllers/EntreeSortieController');
 
@@ -22,11 +22,10 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
   return res.redirect('/users/mon-profile');
 });
 router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
-  let champs_id;
   const getChamps = async () => {
     const users_id = req.session.users.id_user;
     req.users_id = users_id;
-    return await champController.getAllChamps(req);
+    return await v_champController.getAllCards(req);
   }
 
   const getStocks = async () => {
