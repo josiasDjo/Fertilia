@@ -21,6 +21,8 @@ exports.getCapteursChamps = async (req, res) => {
         const id_utilisateurs = req.session.users.id_user;
         const is_champs = req.body.is_champs
         const champsExist = await CapteurEquipement.findAll({ where: is_champs})
+        if(!champsExist) return res.json({ success: false, message: 'Données introuvables'})
+        return res.json({ success: true, message: champsExist})
     } catch(err) {
         const error = 'Erreur lors de la récupération des capteurs'
         console.log(error, err)
