@@ -22,6 +22,7 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
   return res.redirect('/users/mon-profile');
 });
 router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
+  let champs_id;
   const getChamps = async () => {
     const users_id = req.session.users.id_user;
     req.users_id = users_id;
