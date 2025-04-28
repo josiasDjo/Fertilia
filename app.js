@@ -103,6 +103,7 @@ app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
 app.use('/api/fournisseurs', FournisseurRoutes);
 app.use('/api/capteurs', CapteursRouter);
+app.use('api/equipement/capteurs', CapteursEquipementRouter)
 app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
