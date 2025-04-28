@@ -109,6 +109,7 @@ app.use('/api/role/users', RolesRouter);
 app.use('/user/mon-compte', StocksRouter);
 app.use('/api/fournisseurs', CmdFournisseurRoutes);
 app.use('/api/mon-compte/historique', EntreeSortieRoutes);
+app.use('/api/random', sensorApi)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

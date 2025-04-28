@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const faker = require('@faker-js/faker')
 
-router.get('api/sensor', (req, res) => {
+router.get('/sensor', (req, res) => {
     const sensors = Array.from({ length: 10 }, () => ({
         id: faker.string.uuid(),                           // UUID unique :contentReference[oaicite:2]{index=2}
         type: faker.helpers.arrayElement([
