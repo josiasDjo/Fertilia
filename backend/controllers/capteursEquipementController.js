@@ -48,7 +48,9 @@ exports.getCapteur = async (req, res) => {
 
 exports.updateCapteur = async (req, res) => {
     try  {
-        const 
+        const id_capteur = req.body.id_capteur
+        const capteurExist = await CapteurEquipement.findByPk(id_capteur)
+        if(!capteurExist) return res.json({ success: false, message: 'Capteurs introuvable, réessayer plus tard'})
     } catch(err) {
         const error = 'Erreur lors de la modification du capteur'
         console.log(error, err)
