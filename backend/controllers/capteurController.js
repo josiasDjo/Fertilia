@@ -25,6 +25,17 @@ exports.getCapteur = async (req, res) => {
     }
 }
 
+exports.getAllCapteurOfAfield = async (req, res) => {
+    try {
+        const id_champs = req.body.id_champs
+        const AllCapteurs = await Capteur.findAll({where: {id_capteur}})
+        return res.json({ success: true, AllCapteurs:AllCapteurs })
+    } catch(err){
+        console.log('Erreur lors de lé récupération des capteurs d\'un champs : ', err)
+        return res.json({success:false, message:'Erreur lors de lé récupération des capteurs d\'un champs'})
+    }
+}
+
 exports.updateCapteur = async (req, res) => {
     try {
         // const {id_capteur,type_capteur,valeur,is_champs,unit,longitude,latitude} = req.body;
@@ -38,3 +49,5 @@ exports.updateCapteur = async (req, res) => {
         res.json({ success: false, message: 'Erreur lors de la mise à jour du capteur' })
     }
 }
+
+exports.
