@@ -21,3 +21,5 @@ router.get('api/sensor', (req, res) => {
     
     res.json(sensors);
 })
+
+module.exports = router;

@@ -37,6 +37,9 @@ const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
 const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes.js');
 const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
 
+// test d'api
+const sensorApi = require('./backend/routes/sensorApiTest')
+
 const app = express();
 const port = process.env.PORT || 5001;
 
