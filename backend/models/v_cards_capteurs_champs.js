@@ -17,6 +17,14 @@ const Card = sequelize.define('v_champs_derniers_capteurs', {
     unit: { type: DataTypes.STRING, allowNull: true },	
     etat_connecte: { type: DataTypes.STRING, allowNull: true },	
     max_date: { type: DataTypes.DATE, allowNull: true },
+}, {
+    tableName: 'v_champs_derniers_capteurs',
+    timestamps: false, 
+    freezeTableName: true,     
+    createdAt: false,
+    updatedAt: false,
+    primaryKey: false,
+    id: false
 })
 
 module.exports = Card
