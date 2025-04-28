@@ -13,8 +13,8 @@ router.get('/sensor', (req, res) => {
         }).toFixed(1)),                                    // Nombre décimal :contentReference[oaicite:3]{index=3}
         unit: '°C',                                        // Exemple d’unité
         location: {
-          latitude: faker.address.latitude(),              // Latitude aléatoire :contentReference[oaicite:4]{index=4}
-          longitude: faker.address.longitude()             // Longitude aléatoire :contentReference[oaicite:5]{index=5}
+          latitude: faker.location.latitude(),              // Latitude aléatoire :contentReference[oaicite:4]{index=4}
+          longitude: faker.location.longitude()             // Longitude aléatoire :contentReference[oaicite:5]{index=5}
         },
         timestamp: faker.date.recent().toISOString()       // Date ISO récente
     }));

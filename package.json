@@ -29,6 +29,7 @@
     "passport-google-oauth20": "^2.0.0",
     "sequelize": "^6.37.5",
     "session": "^0.1.0",
+    "uuid": "^11.1.0",
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {

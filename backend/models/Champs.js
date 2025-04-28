@@ -3,7 +3,7 @@ const sequelize = require('./index');
 const Utilisateur = require('./Utilisateurs');
 
 const Champ = sequelize.define('table_champs', {
-    is_champs: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    is_champs: { type: DataTypes.STRING, primaryKey: true },
     utilisateur_id:	{ type: DataTypes.INTEGER, allowNull: false },
     nom: { type: DataTypes.STRING, allowNull: false },
     surface: { type: DataTypes.DECIMAL, allowNull: false },
