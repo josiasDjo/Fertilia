@@ -50,4 +50,14 @@ exports.updateCapteur = async (req, res) => {
     }
 }
 
-exports.
+exports.deleteCapteur = async (req, res) => {
+    try {
+        const id_capteur = req.body.id_capteur
+        const capteurExiste = await Capteur.findByPk(id_capteur)
+        if(!capteurExiste) return res.json({ success: false, message: 'Une erreur s\'est produite, réessayer plus tard !! '})
+        await Capteur.destroy({where: {id_capteur}})
+    } catch(err) {
+        console.log('Erreur lors de la suppression du capteur : ', err)
+        return res.json({ success: false, message: 'Erreur lors de la suppression du capteur'})
+    }
+}
