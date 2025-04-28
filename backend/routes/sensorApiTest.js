@@ -19,7 +19,7 @@ router.get('/sensor', (req, res) => {
         timestamp: faker.date.recent().toISOString()       // Date ISO récente
     }));
     
-    res.json(sensors);
+    return res.json(sensors);
 })
 
 module.exports = router;
