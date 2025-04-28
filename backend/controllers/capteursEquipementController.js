@@ -29,3 +29,13 @@ exports.getCapteursChamps = async (req, res) => {
         return res.json({ success: false, message: error})
     }
 }
+
+exports.getCapteur = async (req, res) => {
+    try {
+        const 
+    } catch(err) {
+        const error = 'Erreur lors de la récupération du capteur'
+        console.log(error, err)
+        return res.json({ success: false, message: error})
+    }
+}
