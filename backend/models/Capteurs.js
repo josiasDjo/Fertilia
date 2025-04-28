@@ -4,6 +4,7 @@ const Champ = require('./Champs');
 
 const Capteur = sequelize.define('table_capteurs', {
     id_capteur: { type: DataTypes.STRING,  primaryKey: true },
+    nom_capteur: { type: DataTypes.STRING, allowNull: false },
     champ_id: { type: DataTypes.INTEGER, allowNull: false }, 	
     type_capteur: { type: DataTypes.STRING, allowNull: false }, 	
     valeur: { type: DataTypes.DECIMAL, allowNull: false },
