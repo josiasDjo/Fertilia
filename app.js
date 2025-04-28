@@ -27,6 +27,7 @@ const previsions = require('./backend/models/Previsions');
 //importer les routes
 const indexRouter = require('./backend/routes/index');
 const CapteursRouter = require('./backend/routes/CapteursRoutes');
+const CapteursEquipementRouter = require('./backend/routes/capteursEquipement')
 const ChampsRouter = require('./backend/routes/ChampsRoutes');
 const LivraisonRouter = require('./backend/routes/LivraisonsRoutes');
 const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
