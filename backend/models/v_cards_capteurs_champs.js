@@ -2,7 +2,7 @@ const sequelize = require('./index')
 const { DataTypes } = require('sequelize')
 
 const Card = sequelize.define('v_champs_derniers_capteurs', {
-    is_champs: { type: DataTypes.STRING, allowNull: false },
+    is_champs: { type: DataTypes.STRING, allowNull: false, primaryKey: true },
     utilisateur_id:{ type: DataTypes.INTEGER, allowNull: false },
     nom: { type: DataTypes.STRING, allowNull: false },
     surface: { type: DataTypes.DECIMAL, allowNull: false },
@@ -23,7 +23,6 @@ const Card = sequelize.define('v_champs_derniers_capteurs', {
     freezeTableName: true,     
     createdAt: false,
     updatedAt: false,
-    primaryKey: false,
     id: false
 })
 
