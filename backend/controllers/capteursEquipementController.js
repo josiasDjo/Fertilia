@@ -33,7 +33,7 @@ exports.getCapteursChamps = async (req, res) => {
 exports.getCapteur = async (req, res) => {
     try {
         const id_utilisateurs = req.session.users.id_user;
-        const 
+        const id_capteur = req.body
     } catch(err) {
         const error = 'Erreur lors de la récupération du capteur'
         console.log(error, err)
