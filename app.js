@@ -27,6 +27,7 @@ const previsions = require('./backend/models/Previsions');
 //importer les routes
 const indexRouter = require('./backend/routes/index');
 const CapteursRouter = require('./backend/routes/CapteursRoutes');
+const CapteursEquipementRouter = require('./backend/routes/capteursEquipement')
 const ChampsRouter = require('./backend/routes/ChampsRoutes');
 const LivraisonRouter = require('./backend/routes/LivraisonsRoutes');
 const PrevisionsRouter = require('./backend/routes/PrevisionsRoutes');
@@ -36,6 +37,9 @@ const UtilisateursRoutes = require('./backend/routes/UtilisateursRoutes');
 const FournisseurRoutes = require('./backend/routes/FournisseurRoutes');
 const CmdFournisseurRoutes = require('./backend/routes/CommandeFournisseuRoutes.js');
 const EntreeSortieRoutes = require('./backend/routes/EntreeSortieRoutes.js');
+
+// test d'api
+const sensorApi = require('./backend/routes/sensorApiTest')
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -98,7 +102,8 @@ app.use(limiter);
 app.use('/', indexRouter);
 app.use('/api/utilisateurs', UtilisateursRoutes);
 app.use('/api/fournisseurs', FournisseurRoutes);
-// app.use('/api/capteurs', CapteursRouter);
+app.use('/api/capteurs', CapteursRouter);
+app.use('api/equipement/capteurs', CapteursEquipementRouter)
 app.use('/api/champs', ChampsRouter);
 // app.use('/api/livraison', LivraisonRouter);
 // app.use('/api/prevision', PrevisionsRouter);
@@ -106,6 +111,7 @@ app.use('/api/role/users', RolesRouter);
 app.use('/user/mon-compte', StocksRouter);
 app.use('/api/fournisseurs', CmdFournisseurRoutes);
 app.use('/api/mon-compte/historique', EntreeSortieRoutes);
+app.use('/api/random', sensorApi)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

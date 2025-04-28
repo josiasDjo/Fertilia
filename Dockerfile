@@ -4,7 +4,7 @@ FROM node:22
 # Répertoire de travail dans le container
 WORKDIR /app
 
-# Copie des fichiers de dépendances
+# Copie des fichiers de dépendances okay
 COPY package*.json ./
 
 # Installation des dépendances
