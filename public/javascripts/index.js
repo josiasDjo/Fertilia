@@ -100,14 +100,11 @@ if (buttons) {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
-            const show_field_details = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-            show_field_details.classList.remove('flex')
-            show_field_details.classList.add('hidden')
 
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
@@ -146,9 +143,6 @@ if (buttons) {
                 case "settings":
                     console.log(btn_id)
                     break;
-                case "field_details_show":
-                    alert('Field' + btn_id)
-                    console.log(btn_id)
                 default:
                     console.log('Aucun id de button trouvé');
                     break;
@@ -305,74 +299,26 @@ if (show_details) {
     console.log('Button afficher les détails du terrain non trouvé');
 }
 
-// Afficher le détails d'un terrain dans une nouvelle interface
-//sidebar find which button was clicked
-const buttons_show_details_field = document.querySelectorAll(".field_details_show");
-if (buttons) {
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            // Réinitialiser tous les boutons et les contenneur
+// Afficher l'interface pour montrer le détails du terrain souhaiter
+const field_details_show = document.querySelectorAll('.field_details_show')
+if(field_details_show) {
+    field_details_show.forEach(btn => {
+        btn.addEventListener('click', function(){
+            // alert('field_details_show')
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
-            const show_field_details = document.getElementById('details_field')
+            const field_sho_detail = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-            show_field_details.classList.remove('flex')
-            show_field_details.classList.add('hidden')
-            // buttons.forEach(btn => {
-            //     const child_name = this.querySelector('#btn_label');
-            //     if (largeur < 1024) {
-            //         btn.classList.remove("bg-black", "text-white", "transform", "-translate-y-10", "absolute", "bottom-0");
-            //         btn.classList.add("bg-white", "text-black");
-            //         if (child_name) {
-            //             child_name.classList.remove("flex");
-            //             child_name.classList.add('hidden');
-            //         } else {
-            //             alert("child_name not found")
-            //         }
-            //     } else {
-            //         btn.classList.remove("blue_color_btn", "text-white");
-            //         btn.classList.add("bg-white", "text-gray-700");
-            //     }
-            // });
             
-            const btn_id = this.id;
-
-            switch(btn_id) {
-                case "field_details_show":
-                    alert('Field' + btn_id)
-                    console.log(btn_id)
-                default:
-                    console.log('Aucun id de button trouvé');
-                    break;
-            }
-
-            // Activer le bouton cliqué
-            // if (largeur < 1024) {
-            //     const child_name = this.querySelector('#btn_label');
-
-            //     this.classList.add("bg-black", "text-white", "rounded-tr-lg", "rounded-tl-lg", "transform", "-translate-y-3", "flex", "flex-col", "items-center", "justify-center");
-            //     this.classList.remove("bg-white", "text-gray-700");
-            //     if (child_name) {
-            //         // child_name.classList.remove('hidden');
-            //         // child_name.classList.add("flex", "text-white", "text-center");
-            //     } else {
-            //         alert("child_name not found")
-            //     }
-            // } else {
-            //     this.classList.add("blue_color_btn", "text-white", "hover:text-black");
-            //     this.classList.remove("bg-white", "text-gray-700");
-            // }
-        });
+            field_details_show.classList.remove('hidden')
+            field_details_show.classList.add('flex')
+        })
     })
-} else {
-    console.log('SideBar buttons not found');
 }
-
-
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
