@@ -100,12 +100,15 @@ if (buttons) {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
+            const field_show_detail = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-
+            field_show_detail.classList.remove('flex')
+            field_show_detail.classList.add('hidden')
+            
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -307,15 +310,15 @@ if(field_details_show) {
             // alert('field_details_show')
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
-            const field_sho_detail = document.getElementById('details_field')
+            const field_show_detail = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-            
-            field_details_show.classList.remove('hidden')
-            field_details_show.classList.add('flex')
+
+            field_show_detail.classList.remove('hidden')
+            field_show_detail.classList.add('flex')
         })
     })
 }
