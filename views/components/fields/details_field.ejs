@@ -1,4 +1,14 @@
 <div id="details_field" class="details_field w-full p-4 hidden flex-col">
-    <h3><span>Terrain : </span><p><%= champ.nom %></p></h3>
-    <p>Détails field</p>
+    <h3 class="flex flex-row items-center flex"><span class="italic text-sm mr-2 justify-center flex">Terrain : </span><p id="nameFieldDetails" class="font-bold text-xl mx-2"></p> <label>(ID : <span id="id_field_details"></span>)</label></h3>
+    <!-- <p>Détails field</p> -->
+    <div class="w-full flex flex-row items-center relative justify-between overflow-x-auto my-3 p-2">
+        <button type="button" id="show_adding_field" class="h-12 p-2 px-4 rounded-lg shadow-lg text-sm md:text-lg green_color_text flex flex-row items-center justify-center">
+            <li id="label_add_field" class="flex mr-2">Ajouter un Capteur</li> 
+            <i class="fa-solid fa-plus"></i></i>
+        </button>
+    </div>
+
+    <div id="formAddField" class="">
+
+    </div>
 </div>

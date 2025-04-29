@@ -21,7 +21,8 @@
                 </div>
                 <div class="bg-gray-200 w-full h-4/12 my-2 relative z-10">
                     <div class="w-full flex flex-row relative items-center justify-center">
-                        <h2 class="font-bold text-xl"><%= champ.nom %></h2>
+                        <h2 id="field_name" class="font-bold text-xl"><%= champ.nom %></h2>
+                        <span id="id_fields_list" class="hidden"><%= champ.is_champs %></span>
                         <p class="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic"><%= champ.type_culture %></span></p>
                     </div>
                     <div>
