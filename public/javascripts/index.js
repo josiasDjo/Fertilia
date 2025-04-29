@@ -352,6 +352,7 @@ if(btnEtatFields) {
 const showFormAddField = document.getElementById('showFormAddField')
 if(showFormAddField) {
     showFormAddField.addEventListener('click', function(){
+        alert('showFormAddField')
         const formAddField = document.getElementById('formAddField')
 
         if(formAddField && formAddField.contains('hidden')) {
@@ -364,6 +365,8 @@ if(showFormAddField) {
             console.log('Valeur incorrect')
         }
     })
+} else {
+    console.log('Valeur incorrect')
 }
 
 const lastUpdateDate = document.querySelectorAll('.lastUpdateDate')
