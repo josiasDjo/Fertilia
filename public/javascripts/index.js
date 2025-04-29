@@ -108,7 +108,7 @@ if (buttons) {
             stock_management.classList.add('hidden');
             field_show_detail.classList.remove('flex')
             field_show_detail.classList.add('hidden')
-            
+
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
                 if (largeur < 1024) {
@@ -308,6 +308,8 @@ if(field_details_show) {
     field_details_show.forEach(btn => {
         btn.addEventListener('click', function(){
             // alert('field_details_show')
+            const show_details = document.querySelectorAll('.btn_show_option');
+
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
             const field_show_detail = document.getElementById('details_field')
@@ -319,6 +321,8 @@ if(field_details_show) {
 
             field_show_detail.classList.remove('hidden')
             field_show_detail.classList.add('flex')
+
+            show_details.click()
         })
     })
 }
