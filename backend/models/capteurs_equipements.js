@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize')
 const Champs = require('./Champs')
 const Utilisateur = require('./Utilisateurs')
 
-const Capteurs_equipment = sequelize.define('table_capteurs_equipement', {
+const Capteurs_equipment = sequelize.define('table_capteurs_equipements', {
     id_capteur: { type: DataTypes.STRING, primaryKey: true },
     nom_capteur: { type: DataTypes.STRING, allowNull: false }, 	
     type_capteur: { type: DataTypes.STRING, allowNull: false }, 	
