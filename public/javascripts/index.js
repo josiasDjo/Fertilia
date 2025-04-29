@@ -352,7 +352,17 @@ if(btnEtatFields) {
 const showFormAddField = document.getElementById('showFormAddField')
 if(showFormAddField) {
     showFormAddField.addEventListener('click', function(){
-        
+        const formAddField = document.getElementById('formAddField')
+
+        if(formAddField && formAddField.contains('hidden')) {
+            formAddField.classList.remove('hidden')
+            formAddField.classList.add('flex')
+        } else if(formAddField && formAddField.contains('flex')){
+            formAddField.classList.remove('flex')
+            formAddField.classList.add('hidden')
+        } else {
+            console.log('Valeur incorrect')
+        }
     })
 }
 
