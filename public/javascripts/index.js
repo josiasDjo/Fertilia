@@ -349,6 +349,13 @@ if(btnEtatFields) {
         }
     })
 }
+const showFormAddField = document.getElementById('showFormAddField')
+if(showFormAddField) {
+    showFormAddField.addEventListener('click', function(){
+        
+    })
+}
+
 const lastUpdateDate = document.querySelectorAll('.lastUpdateDate')
 if(lastUpdateDate){
     const dateNow = new Date()
