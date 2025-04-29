@@ -100,11 +100,14 @@ if (buttons) {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
+            const show_field_details = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
+            show_field_details.classList.remove('flex')
+            show_field_details.classList.add('hidden')
 
             buttons.forEach(btn => {
                 const child_name = this.querySelector('#btn_label');
@@ -311,12 +314,14 @@ if (buttons) {
             // Réinitialiser tous les boutons et les contenneur
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
+            const show_field_details = document.getElementById('details_field')
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
             stock_management.classList.remove('flex');
             stock_management.classList.add('hidden');
-
+            show_field_details.classList.remove('flex')
+            show_field_details.classList.add('hidden')
             // buttons.forEach(btn => {
             //     const child_name = this.querySelector('#btn_label');
             //     if (largeur < 1024) {
