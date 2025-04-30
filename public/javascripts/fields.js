@@ -95,7 +95,7 @@ if(field_details_show) {
             field_show_detail.classList.remove('hidden')
             field_show_detail.classList.add('flex')
 
-            show_details.click
+            show_details.click()
         })
     })
 }
