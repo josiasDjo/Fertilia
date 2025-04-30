@@ -91,14 +91,7 @@ if(field_details_show) {
         })
     })
 }
-//fermer l'interface d'ajout de capteur
-document.addEventListener('click', () => {
-    if(search_bar_fields && label_add_field && searchInput){
-        const field_show_detail = document.getElementById('details_field')
-        field_show_detail.classList.remove('hidden')
-        field_show_detail.classList.add('flex')
-    }
-});
+
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
@@ -122,7 +115,7 @@ if(showFormAddField) {
         if(formAddField && formAddField.classList.contains('hidden')) {
             formAddField.classList.remove('hidden')
             formAddField.classList.add('flex')
-        } else if(formAddField && formAddField.contains('flex')){
+        } else if(formAddField && formAddField.classList.contains('flex')){
             formAddField.classList.remove('flex')
             formAddField.classList.add('hidden')
         } else {
@@ -132,6 +125,33 @@ if(showFormAddField) {
 } else {
     console.log('Valeur incorrect')
 }
+//fermer l'interface d'ajout de capteur
+const closeAddFieldSenor = document.getElementById('closeAddFieldSenor')
+if(closeAddFieldSenor){
+    closeAddFieldSenor.addEventListener('click', function(){
+        CloseAddSensor()
+    })
+}
+function CloseAddSensor(){
+    const formAddField = document.getElementById('formAddField')
+
+    if(formAddField && formAddField.classList.contains('flex')){
+        formAddField.classList.remove('flex')
+        formAddField.classList.add('hidden')
+    } else {
+        console.log('Valeur incorrect')
+    }
+}
+// document.addEventListener('click', function() {
+//     const formAddField = document.getElementById('formAddField')
+
+//     if(formAddField && formAddField.classList.contains('flex')){
+//         formAddField.classList.remove('flex')
+//         formAddField.classList.add('hidden')
+//     } else {
+//         console.log('Valeur incorrect')
+//     }
+// });
 
 // Rechercher un terrain (Gestion des terrains interface)
 const show_search_bar = document.getElementById('show_search_bar')
