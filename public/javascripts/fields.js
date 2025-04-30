@@ -73,6 +73,7 @@ if(field_details_show) {
             const id_field_details = document.getElementById('id_field_details')
             const responsableTerrainDetails = document.getElementById('responsableTerrainDetails')
             const typeCultureTerrainDetails = document.getElementById('typeCultureTerrainDetails')
+            const superficieTerrainDetails = document.getElementById('superficieTerrainDetails')
 
             const parent_field_card = this.closest('.field_card')
             const field_name = parent_field_card.querySelector('#field_name').textContent
@@ -82,6 +83,7 @@ if(field_details_show) {
             id_field_details.textContent = id_fields_list
             typeCultureTerrainDetails.textContent = parent_field_card.querySelector('#cultureType').textContent
             responsableTerrainDetails.textContent = parent_field_card.querySelector('#nomPrenomProprio').textContent
+            superficieTerrainDetails.textContent = parent_field_card.querySelector('#superficieChamps').textContent
             // console.log(`Nom : ${NomProprio}`)
 
             field_management_cont.classList.remove('flex');
