@@ -3,43 +3,21 @@
         <thead class="">
             <tr>
                 <th class="hidden">N</th>
-                <th class="text-center"><i class="fa-solid fa-circle-dot"></i></th>
-                <th>Nom du produit</th>
-                <th>Catégorie</th>
-                <th>Quantité</th>
-                <th>Emplacement</th>
-                <th>Fournisseur / Marque </th>
-                <th>Action</th>
+                <th>Mesure</th>
+                <th>Valeur actuelle</th>
+                <th>Unité</th>
+                <th>Historique rapide</th>
+                <th>Seuil d’alerte</th>
             </tr>
         </thead>
         <tbody class="">
-            <% if (MonStocks && MonStocks.length > 0) { %>
-                <% MonStocks.forEach((stock) => { %>
                     <tr>
-                        <td class="hidden"><%= stock.id_stock %></td>
-                        <td class="flex flex-col">
-                            <button type="button" id="" class="edit_product_on_stock text-xl border-none"><i class='bx bx-edit-alt'></i></button>
-                            <button type="button" id="" class="delete_product_on_stock text-xl text-red-500 border-none"><i class='bx bxs-trash'></i></button>
-                            <p class="hidden" id="id_product_modify"><%= stock.id_stock %></p>
-                        </td>
-                        <td><%= stock.produit %></td>
-                        <td><%= stock.type_produit %></td>
-                        <td><%= stock.quantite %> <%= stock.unite %></td>
-                        <td><%= stock.emplacement%></td>
-                        <td><%= stock.fournisseur %></td>
-                        <td>
-                            <button id="sortir_produit" type="button" class="sortir_produit bg-red-500 px-3 py-2 m-3 rounded-lg flex flex-row text-center justify-center items-center">
-                                <span class="flex m-3"><i class="fa-solid fa-up-right-from-square"></i></span>
-                                <span class="hidden lg:flex">Sortir du stock</span>
-                            </button>
-                        </td>
+                        <td class="">Température sol</td>
+                        <td>21,5</td>
+                        <td>°C</td>
+                        <td>mini-graphique</td>
+                        <td>5–35 °C</td>
                     </tr>
-                <% }) %>
-            <% } else { %>
-                <tr class="text-center">
-                    <td colspan="6" class="text-center text-red-500">Aucun élément pour le moment</td>
-                </tr>
-            <% } %>
         </tbody>
     </table>
 </div>
