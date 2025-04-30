@@ -77,13 +77,13 @@ if(field_details_show) {
             const parent_field_card = this.closest('.field_card')
             const field_name = parent_field_card.querySelector('#field_name').textContent
             const id_fields_list = parent_field_card.querySelector('#id_fields_list').textContent
-            const NomProprio = parent_field_card.querySelector('#NomProprio').textContent
-            const PrenomProprio = parent_field_card.querySelector('#PrenomProprio').textContent
+            const NomProprio = parent_field_card.querySelector('#nomPrenomProprio').textContent
+            // const PrenomProprio = parent_field_card.querySelector('#PrenomProprio').textContent
 
             nameFieldDetails.textContent = field_name
             id_field_details.textContent = id_fields_list
             typeCultureTerrainDetails.textContent = parent_field_card.querySelector('#cultureType').textContent
-            console.log(`Nom : ${NomProprio} Prenom : ${PrenomProprio}`)
+            console.log(`Nom : ${NomProprio} Prenom }`)
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
