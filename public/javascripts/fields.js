@@ -98,7 +98,13 @@ if(field_details_show) {
         })
     })
 }
-
+// Revenir à la page de champs avec les informations générales 
+const gobackGeneralField = document.getElementById('gobackGeneralField')
+if(gobackGeneralField) {
+    gobackGeneralField.addEventListener('click', function(){
+        alert('Go Back')
+    })
+}
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
