@@ -77,7 +77,7 @@ if(field_details_show) {
             const id_fields_list = parent_field_card.querySelector('#id_fields_list').textContent
             nameFieldDetails.textContent = field_name
             id_field_details.textContent = id_fields_list
-            console.log('Data : ', field_name)
+            // console.log('Data : ', field_name)
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
@@ -91,6 +91,14 @@ if(field_details_show) {
         })
     })
 }
+//fermer l'interface d'ajout de capteur
+document.addEventListener('click', () => {
+    if(search_bar_fields && label_add_field && searchInput){
+        const field_show_detail = document.getElementById('details_field')
+        field_show_detail.classList.remove('hidden')
+        field_show_detail.classList.add('flex')
+    }
+});
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
@@ -108,7 +116,7 @@ if(btnEtatFields) {
 const showFormAddField = document.getElementById('showFormAddField')
 if(showFormAddField) {
     showFormAddField.addEventListener('click', function(){
-        alert('showFormAddField')
+        // alert('showFormAddField')
         const formAddField = document.getElementById('formAddField')
 
         if(formAddField && formAddField.classList.contains('hidden')) {

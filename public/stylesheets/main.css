@@ -41,6 +41,9 @@
 .backgroud_btn_h{
   background-color: rgb(255, 181, 42);
 }
+.border_btn_h{
+  border: 1px solid rgb(255, 181, 42);
+}
 .green_color_text {
   color: #009444;
 }
