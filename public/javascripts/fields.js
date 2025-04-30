@@ -64,7 +64,8 @@ if(field_details_show) {
     field_details_show.forEach(btn => {
         btn.addEventListener('click', function(){
             // alert('field_details_show')
-            const show_details = document.querySelectorAll('.btn_show_option');
+            const parentBtn = this.closest('.field_card')
+            const show_details = parentBtn.querySelector('.btn_show_option');
 
             const field_management_cont = document.getElementById('field_management_cont');
             const stock_management = document.getElementById('stock_management');
