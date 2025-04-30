@@ -124,3 +124,49 @@ if(showFormAddField) {
 } else {
     console.log('Valeur incorrect')
 }
+
+// Rechercher un terrain (Gestion des terrains interface)
+const show_search_bar = document.getElementById('show_search_bar')
+if(show_search_bar) {
+    show_search_bar.addEventListener('click', function() {
+        const search_bar_fields = document.getElementById('search_bar_fields')
+        const label_add_field = document.getElementById('label_add_field')
+        if(search_bar_fields){
+            search_bar_fields.classList.remove('hidden')
+            search_bar_fields.classList.add('flex')
+            label_add_field.classList.remove('flex')
+            label_add_field.classList.add('hidden')
+            show_search_bar.classList.remove("w-14")
+            show_search_bar.classList.add('w-auto')
+            search_bar_fields.focus()
+        }
+    })
+}
+const searchContainer = document.getElementById('show_search_bar');
+const searchInput = document.getElementById('search_bar_fields');
+const container_fields_action = document.getElementById('container_fields_action')
+
+searchContainer.addEventListener('click', (e) => {
+    e.stopPropagation()
+    searchInput.classList.remove('hidden')
+    // container_fields_action.classList.add('')
+    searchInput.focus()
+});
+
+// Quand on clique ailleurs dans le document
+document.addEventListener('click', () => {
+    search_bar_fields.classList.remove('flex')
+    search_bar_fields.classList.add('hidden')
+    label_add_field.classList.remove('hidden')
+    label_add_field.classList.add('flex')
+    searchInput.classList.add('hidden')
+    searchInput.blur()
+});
+
+// Télécharger le fichier pdf des champs
+const fileExports = document.getElementById('fileExports')
+if(fileExports) {
+    fileExports.addEventListener('click', function(){
+        alert('Télécharger le fichier des champs')
+    })
+}
