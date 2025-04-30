@@ -106,13 +106,12 @@ if(gobackGeneralField) {
         const field_management_cont = document.getElementById('field_management_cont');
         const field_show_detail = document.getElementById('details_field')
 
-        field_management_cont.classList.remove('flex');
-        field_management_cont.classList.add('hidden');
+        field_show_detail.classList.remove('flex')
+        field_show_detail.classList.add('hidden')
+        field_management_cont.classList.remove('hidden');
+        field_management_cont.classList.add('flex');
         // stock_management.classList.remove('flex');
         // stock_management.classList.add('hidden');
-
-        field_show_detail.classList.remove('hidden')
-        field_show_detail.classList.add('flex')
     })
 }
 const btnEtatFields = document.querySelectorAll('.btnEtatFields')
