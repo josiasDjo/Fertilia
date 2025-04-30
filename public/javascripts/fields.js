@@ -82,7 +82,7 @@ if(field_details_show) {
             id_field_details.textContent = id_fields_list
             responsableTerrainDetails.textContent = parent_field_card.querySelector('#nomPrenomProprio').textContent
             typeCultureTerrainDetails.textContent = parent_field_card.querySelector('#cultureType').textContent
-            // console.log('Data : ', field_name)
+            console.log('Data : ', responsableTerrainDetails.textContent)
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
