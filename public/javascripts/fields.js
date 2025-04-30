@@ -95,7 +95,7 @@ const btnEtatFields = document.querySelectorAll('.btnEtatFields')
 if(btnEtatFields) {
     btnEtatFields.forEach(btn => {
         const etatChamps = btn.querySelector('#etatchamps').textContent
-        console.log('Text : ', etatChamps)
+        // console.log('Text : ', etatChamps)
         if(etatChamps === "BON") {
             btn.classList.add('green_color_bg')
         } else if (etatChamps.textContent === "ATTENTION") {
@@ -111,7 +111,7 @@ if(showFormAddField) {
         alert('showFormAddField')
         const formAddField = document.getElementById('formAddField')
 
-        if(formAddField && formAddField.contains('hidden')) {
+        if(formAddField && formAddField.classList.contains('hidden')) {
             formAddField.classList.remove('hidden')
             formAddField.classList.add('flex')
         } else if(formAddField && formAddField.contains('flex')){
@@ -127,10 +127,10 @@ if(showFormAddField) {
 
 // Rechercher un terrain (Gestion des terrains interface)
 const show_search_bar = document.getElementById('show_search_bar')
+const label_add_field = document.getElementById('label_add_field')
 if(show_search_bar) {
     show_search_bar.addEventListener('click', function() {
         const search_bar_fields = document.getElementById('search_bar_fields')
-        const label_add_field = document.getElementById('label_add_field')
         if(search_bar_fields){
             search_bar_fields.classList.remove('hidden')
             search_bar_fields.classList.add('flex')
@@ -155,12 +155,14 @@ searchContainer.addEventListener('click', (e) => {
 
 // Quand on clique ailleurs dans le document
 document.addEventListener('click', () => {
-    search_bar_fields.classList.remove('flex')
-    search_bar_fields.classList.add('hidden')
-    label_add_field.classList.remove('hidden')
-    label_add_field.classList.add('flex')
-    searchInput.classList.add('hidden')
-    searchInput.blur()
+    if(search_bar_fields && label_add_field && searchInput){
+        search_bar_fields.classList.remove('flex')
+        search_bar_fields.classList.add('hidden')
+        label_add_field.classList.remove('hidden')
+        label_add_field.classList.add('flex')
+        searchInput.classList.add('hidden')
+        searchInput.blur()
+    }
 });
 
 // Télécharger le fichier pdf des champs
