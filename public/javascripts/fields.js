@@ -83,7 +83,7 @@ if(field_details_show) {
             nameFieldDetails.textContent = field_name
             id_field_details.textContent = id_fields_list
             typeCultureTerrainDetails.textContent = parent_field_card.querySelector('#cultureType').textContent
-            console.log(`Nom : ${NomProprio} Prenom }`)
+            console.log(`Nom : ${NomProprio}`)
 
             field_management_cont.classList.remove('flex');
             field_management_cont.classList.add('hidden');
