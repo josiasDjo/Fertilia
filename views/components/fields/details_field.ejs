@@ -9,46 +9,31 @@
     </div>
 
     <div class="w-full justify-center items-center flex relative">
-        <div id="formAddField" class="w-96 h-96 bg-red-500 relative hidden">
-            <form id="ajouter-capteur" class="flex flex-col">
-                <label>Nom du capteur :</label>
-                <input type="text" name="nom" required>
-            
-                <label>Type de capteur :</label>
-                <select name="type" required>
+        <div id="formAddField" class="w-96 h-auto bg-gray-200 shadow-lg relative hidden">
+            <form id="ajouter-capteur" class="flex flex-col w-full px-4 py-8">
+                <input type="text" name="nom" placeholder="Nom du capteur :" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <select name="type" aria-placeholder="Type de capteur :" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                     <option value="Température">Température</option>
                     <option value="Humidité">Humidité</option>
                     <option value="pH">pH</option>
                     <option value="Luminosité">Luminosité</option>
                 </select>
+                <input type="text" name="modele" placeholder="Modèle :" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <input type="text" name="numero_serie" placeholder="Numéro de série :" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <input type="text" name="latitude" placeholder="Latitude" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
+                <input type="text" name="longitude" placeholder="Longitude" class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
             
-                <label>Modèle :</label>
-                <input type="text" name="modele" required>
+                <label class="text-left italic">Date d'installation :</label>
+                <input type="date" name="date_installation" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
             
-                <label>Numéro de série :</label>
-                <input type="text" name="numero_serie" required>
-            
-                <label>Champ associé :</label>
-                <select name="champ_id" required>
-                <!-- Options dynamiques : Liste des champs -->
-                </select>
-            
-                <label>Emplacement sur carte :</label>
-                <input type="text" name="latitude" placeholder="Latitude">
-                <input type="text" name="longitude" placeholder="Longitude">
-            
-                <label>Date d'installation :</label>
-                <input type="date" name="date_installation" required>
-            
-                <label>Statut :</label>
-                <select name="statut" required>
+                <label class="text-left italic">Statut :</label>
+                <select name="statut" required class="w-full rounded-3xl p-2 px-4 border-2 border-solid border-black border-opacity-10 mb-3 shadow-lg focus:outline-none focus:ring-2 focus:ring-bg-yellow-400 focus:ring-opacity-50">
                     <option value="actif">Actif</option>
                     <option value="en maintenance">En maintenance</option>
                     <option value="retiré">Retiré</option>
                 </select>
-        
-                <button type="submit">Ajouter le capteur</button>
-                <button type="button">Annuler</button>
+                <button type="submit" class="backgroud_btn_h text-white rounded-3xl my-2 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Ajouter le capteur</button>
+                <button type="button" class="backgroud_btn_h text-white rounded-3xl my-2 p-2 border-2 border-solid border-yellow-500 border-opacity-30">Annuler</button>
             </form>              
         </div>
     </div>
