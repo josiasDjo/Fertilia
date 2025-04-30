@@ -71,12 +71,15 @@ if(field_details_show) {
             const field_show_detail = document.getElementById('details_field')
             const nameFieldDetails = document.getElementById('nameFieldDetails')
             const id_field_details = document.getElementById('id_field_details')
+            const responsableTerrainDetails = parent_field_card.querySelector('#responsableTerrainDetails')
 
             const parent_field_card = this.closest('.field_card')
             const field_name = parent_field_card.querySelector('#field_name').textContent
             const id_fields_list = parent_field_card.querySelector('#id_fields_list').textContent
+
             nameFieldDetails.textContent = field_name
             id_field_details.textContent = id_fields_list
+            responsableTerrainDetails.textContent = parent_field_card.querySelector('#nomPrenomProprio').textContent
             // console.log('Data : ', field_name)
 
             field_management_cont.classList.remove('flex');
