@@ -71,7 +71,8 @@ if(field_details_show) {
             const field_show_detail = document.getElementById('details_field')
             const nameFieldDetails = document.getElementById('nameFieldDetails')
             const id_field_details = document.getElementById('id_field_details')
-            const responsableTerrainDetails = parent_field_card.querySelector('#responsableTerrainDetails')
+            const responsableTerrainDetails = document.getElementById('responsableTerrainDetails')
+            const typeCultureTerrainDetails = document.getElementById('typeCultureTerrainDetails')
 
             const parent_field_card = this.closest('.field_card')
             const field_name = parent_field_card.querySelector('#field_name').textContent
@@ -80,6 +81,7 @@ if(field_details_show) {
             nameFieldDetails.textContent = field_name
             id_field_details.textContent = id_fields_list
             responsableTerrainDetails.textContent = parent_field_card.querySelector('#nomPrenomProprio').textContent
+            typeCultureTerrainDetails.textContent = parent_field_card.querySelector('#cultureType').textContent
             // console.log('Data : ', field_name)
 
             field_management_cont.classList.remove('flex');
