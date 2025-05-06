@@ -19,6 +19,7 @@ exports.createChamp = async (req, res) => {
 exports.getAllChamps = async (req, res) => {
     try {
         const utilisateur_id = req.users.id_user;
+        console.log(utilisateur_id)
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
         return champs;
     } catch (err) {
