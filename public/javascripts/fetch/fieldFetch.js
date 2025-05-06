@@ -1,3 +1,5 @@
 function getFields(sort = "all") {
-    const 
+    const response = {
+        
+    }
 }
