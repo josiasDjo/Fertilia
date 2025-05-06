@@ -7,7 +7,7 @@ exports.createChamp = async (req, res) => {
         const is_champs = uuidv4();
         // nom, surface, type_culture, etat, longitude, latitude
         const { nom, surface, type_culture, etat, longitude, latitude  } = req.body;
-        const champ = await Champ.create({ is_champs, utilisateur_id, nom, surface, type_culture, etat, longitude, latitude   });
+        await Champ.create({ is_champs, utilisateur_id, nom, surface, type_culture, etat, longitude, latitude   });
         console.log('Champ Ajouté');
         res.json({ success: true, message: 'Nouvel champ ajouté avec succès'});
     } catch (err) {

@@ -101,7 +101,7 @@ if (buttons) {
                 case "field_management":
                     field_management_cont.classList.remove('hidden');
                     field_management_cont.classList.add('flex');
-                    
+                    getFields();
                     break;
                 case "stock":
                     stock_management.classList.remove('hidden');
