@@ -52,7 +52,7 @@ router.get('/users/mon-profile', isAuthenticated, async (req, res, next) => {
       prenom: req.session.users.prenom,
       email: req.session.users.email,
       role_id: req.session.users.role_id,
-      // MesChamps: champs,
+      MesChamps: champs,
       MonStocks: stocks,
       MonHistoriqueES: historyAction,
     });
