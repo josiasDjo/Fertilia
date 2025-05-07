@@ -3,6 +3,7 @@ const Utilisateur = require('../models/Utilisateurs');
 const bcrypt = require("bcrypt");
 const { where } = require('sequelize');
 const jwtSign = require('../middlewares/authenticateWithJsonToken')
+const jwt = require('jsonwebtoken')
 
 exports.createUtilisateur = async (req, res) => {
     try {
@@ -69,18 +70,18 @@ exports.getUtilisateur = async (req, res) => {
 
         const token = jwt.sign(
             {
-                user_id: userSign.user_id,
-                nom: userSign.nom,
-                prenom: userSign.prenom,
-                email: userSign.email, 
-                role_id: userSign.role_id
+                user_id: utilisateur.id_utilisateurs,
+                nom: utilisateur.nom,
+                prenom: utilisateur.prenom,
+                email: utilisateur.email, 
+                role_id: utilisateur.role_id
             }, process.env.JWT_SECRET,
             {
                 expiresIn: '1h'
             }
         )
 
-        console.log('Connexion Reussie !!')
+        console.log('Connexion Reussie !!', token)
         if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
