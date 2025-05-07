@@ -2,6 +2,7 @@ const passport = require('passport');
 const Utilisateur = require('../models/Utilisateurs');
 const bcrypt = require("bcrypt");
 const { where } = require('sequelize');
+const jwtSign = require('../middlewares/authenticateWithJsonToken')
 
 exports.createUtilisateur = async (req, res) => {
     try {
@@ -24,6 +25,7 @@ exports.createUtilisateur = async (req, res) => {
             email: nouvelUtilisateur.email,
             role_id: nouvelUtilisateur.role_id
         }
+        const SignUserToken = jwtSign()
         const firstName = nouvelUtilisateur.prenom;
         console.log(`Nouvel utilisateur ajouter avec succès }`);
         return res.json({ success: true, message : 'Enregistrement réussi, Bienvenu ! ', firstName });
