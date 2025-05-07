@@ -1,4 +1,5 @@
 const Champ = require('../models/Champs');
+const authenticateToken = require('../middlewares/authenticateToken')
 const { v4: uuidv4 } = require('uuid');
 
 exports.createChamp = async (req, res) => {
@@ -18,7 +19,7 @@ exports.createChamp = async (req, res) => {
 
 exports.getAllChamps = async (req, res) => {
     try {
-        const utilisateur_id = req.users.id_user;
+        const utilisateur_id = req.user.user_id;
         console.log(utilisateur_id)
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
         return champs;
