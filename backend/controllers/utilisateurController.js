@@ -2,7 +2,7 @@ const passport = require('passport');
 const Utilisateur = require('../models/Utilisateurs');
 const bcrypt = require("bcrypt");
 const { where } = require('sequelize');
-const jwtSign = require('../middlewares/authenticateWithJsonToken')
+// const jwtSign = require('../middlewares/authenticateWithJsonToken')
 const jwt = require('jsonwebtoken')
 
 exports.createUtilisateur = async (req, res) => {
