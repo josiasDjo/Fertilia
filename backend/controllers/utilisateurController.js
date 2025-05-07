@@ -25,6 +25,13 @@ exports.createUtilisateur = async (req, res) => {
             email: nouvelUtilisateur.email,
             role_id: nouvelUtilisateur.role_id
         }
+        const userSign = {
+            user_id: nouvelUtilisateur.id_utilisateurs,
+            nom: nouvelUtilisateur.nom,
+            prenom: nouvelUtilisateur.prenom,
+            email: nouvelUtilisateur.email,
+            role_id: nouvelUtilisateur.role_id
+        }
         const SignUserToken = jwtSign()
         const firstName = nouvelUtilisateur.prenom;
         console.log(`Nouvel utilisateur ajouter avec succès }`);
