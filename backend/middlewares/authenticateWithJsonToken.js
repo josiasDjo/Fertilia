@@ -2,14 +2,14 @@ const jwt = require('jsonwebtoken')
 
 const token = jwt.sign(
     {
-        user_id: user_id,
-        nom: nom,
-        prenom: prenom,
-        email: email, 
-        role_id: role_id
+        user_id: userSign.user_id,
+        nom: userSign.nom,
+        prenom: userSign.prenom,
+        email: userSign.email, 
+        role_id: userSign.role_id
     }, process.env.JWT_SECRET,
     {
-        expiresIn: '14j'
+        expiresIn: '1h'
     }
 )
 console.log('Token : ', token)

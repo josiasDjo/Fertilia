@@ -67,14 +67,18 @@ exports.getUtilisateur = async (req, res) => {
             role_id: utilisateur.role_id
         }
 
-        const userSign = {
-            user_id: utilisateur.id_utilisateurs,
-            nom: utilisateur.nom,
-            prenom: utilisateur.prenom,
-            email: utilisateur.email,
-            role_id: utilisateur.role_id
-        }
-        const SignUserToken = jwtSign(userSign)
+        const token = jwt.sign(
+            {
+                user_id: userSign.user_id,
+                nom: userSign.nom,
+                prenom: userSign.prenom,
+                email: userSign.email, 
+                role_id: userSign.role_id
+            }, process.env.JWT_SECRET,
+            {
+                expiresIn: '1h'
+            }
+        )
 
         console.log('Connexion Reussie !!')
         if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
