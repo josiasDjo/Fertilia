@@ -12,5 +12,5 @@ const token = jwt.sign(
         expiresIn: '14j'
     }
 )
-
+console.log('Token : ', token)
 module.exports = token
