@@ -33,7 +33,7 @@ exports.createUtilisateur = async (req, res) => {
             role_id: nouvelUtilisateur.role_id
         }
         const SignUserToken = jwtSign(userSign)
-        
+
         const firstName = nouvelUtilisateur.prenom;
         console.log(`Nouvel utilisateur ajouter avec succès }`);
         return res.json({ success: true, message : 'Enregistrement réussi, Bienvenu ! ', firstName });
@@ -66,6 +66,16 @@ exports.getUtilisateur = async (req, res) => {
             email: utilisateur.email,
             role_id: utilisateur.role_id
         }
+
+        const userSign = {
+            user_id: utilisateur.id_utilisateurs,
+            nom: utilisateur.nom,
+            prenom: utilisateur.prenom,
+            email: utilisateur.email,
+            role_id: utilisateur.role_id
+        }
+        const SignUserToken = jwtSign(userSign)
+
         console.log('Connexion Reussie !!')
         if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
     } catch (err) {
