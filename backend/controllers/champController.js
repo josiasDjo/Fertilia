@@ -22,7 +22,7 @@ exports.getAllChamps = async (req, res) => {
         const utilisateur_id = req.user.user_id;
         console.log(utilisateur_id)
         const champs = await Champ.findAll({where: {utilisateur_id: utilisateur_id}});
-        return champs;
+        return res.json({ success: true, message: champs});
     } catch (err) {
         console.log('Erreur lors de la récupération des champs', err);
         return {
