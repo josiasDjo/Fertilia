@@ -25,10 +25,10 @@ exports.getAllChamps = async (req, res) => {
         return res.json({ success: true, message: champs});
     } catch (err) {
         console.log('Erreur lors de la récupération des champs', err);
-        return {
+        return res.json({
             success: false,
             message: 'Erreur lors de la récupération des champs',
-        }
+        })
     }
 };
 
