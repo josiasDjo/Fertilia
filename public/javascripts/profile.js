@@ -18,6 +18,8 @@ if (conn_sub) {
             if (data.success) {
                 message_error.innerText = data.message;
                 message_error.style.color = "green";
+                localStorage.setItem('token', data.auth)
+                console.log(`Local storage token : ${data.auth}`)
                 window.location.href = "/users/mon-profile/flash";
             } else {
                 message_error.innerText = data.message;

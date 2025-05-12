@@ -197,12 +197,14 @@ const searchContainer = document.getElementById('show_search_bar');
 const searchInput = document.getElementById('search_bar_fields');
 const container_fields_action = document.getElementById('container_fields_action')
 
-searchContainer.addEventListener('click', (e) => {
-    e.stopPropagation()
-    searchInput.classList.remove('hidden')
-    // container_fields_action.classList.add('')
-    searchInput.focus()
-});
+if(searchContainer) {
+    searchContainer.addEventListener('click', (e) => {
+        e.stopPropagation()
+        searchInput.classList.remove('hidden')
+        // container_fields_action.classList.add('')
+        searchInput.focus()
+    });
+}
 
 // Quand on clique ailleurs dans le document
 document.addEventListener('click', () => {

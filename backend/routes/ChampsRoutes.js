@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const champController = require('../controllers/champController');
-const isAuthenticated  = require('../middlewares/isAuthenticated');
+const { isAuthenticated }  = require('../middlewares/isAuthenticated');
 const authenticateToken = require('../middlewares/authenticateToken')
 
 router.post('/nouveau-champ', authenticateToken, champController.createChamp);

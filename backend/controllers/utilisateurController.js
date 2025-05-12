@@ -77,12 +77,12 @@ exports.getUtilisateur = async (req, res) => {
                 role_id: utilisateur.role_id
             }, process.env.JWT_SECRET,
             {
-                expiresIn: '1h'
+                expiresIn: '24h'
             }
         )
 
         console.log('Connexion Reussie !!', token)
-        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! '});
+        if (utilisateur.role_id === 1) return res.json({ success: true, message: 'Connexion Reussie !! ', auth: token});
     } catch (err) {
         console.log(`Erreur lors de la récupération de l\'utilisateur, ${err} `);
         res.status(500).json({ success: false, error: 'Erreur lors de la récupération de l\'utilisateur', err });
