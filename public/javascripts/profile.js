@@ -61,7 +61,7 @@ if (inscri_sub) {
             if (data.success) {
                 message_error_in.innerText = data.message;
                 message_error_in.style.color = "green";
-                window.location.href = '/users/mon-profile/flash';
+                window.location.href = '/users/mon-profile/flash'
             } else {
                 message_error_in.innerText = data.message;
                 message_error_in.style.color = "red";

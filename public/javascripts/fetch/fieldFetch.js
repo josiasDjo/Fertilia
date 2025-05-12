@@ -5,10 +5,14 @@ async function getFields(sort = "all") {
         headers: { "Content-Type": "application/json" },
     })
     const data = await response.json()
-    console.log('Data : ', data)
+    // console.log('Data : ', data.message)
+
     if(data.success) {
-        for(let i = 0; i < data.length; i++) {
-            console.log(data[i])
-        }
+        // console.log('Data : ', data.message)
+        console.log('Data : ')
+    } else {
+        console.log('Data error : ')
+
+        // console.log('Erreur : ',data.message)
     }
 }
