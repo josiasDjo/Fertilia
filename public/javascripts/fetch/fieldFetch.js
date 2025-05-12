@@ -11,7 +11,7 @@ async function getFields(sort = "all") {
         // console.log('Data : ', data.message)
         console.log('Data : ')
     } else {
-        console.log('Data error : ')
+        console.log('Data error : ', data.message)
 
         // console.log('Erreur : ',data.message)
     }
