@@ -23,9 +23,9 @@ router.get('/users/mon-profile/flash', isAuthenticated, (req, res, next) => {
 });
 router.get('/users/mon-profile', isAuthenticated,  async (req, res, next) => {
   const getChamps = async () => {
-    const users_id = req.session.users.id_user;
-    req.users_id = users_id;
-    return await v_champController.getAllCards(req);
+    // const users_id = req.session.users.id_user;
+    // req.users_id = users_id;
+    // return await v_champController.getAllCards(req);
   }
 
   const getStocks = async () => {
