@@ -38,37 +38,37 @@ async function getFields(sort = "all") {
                     </div>
                     <div class="bg-gray-200 w-full h-4/12 my-2 relative z-10">
                         <div class="w-full flex flex-row relative items-center justify-center">
-                            <h2 id="field_name" class="font-bold text-xl">champ.nom</h2>
-                            <span id="id_fields_list" class="hidden">champ.is_champs</span>
-                            <span id="nomPrenomProprio" class="hidden">champ.nom_utilisateur champ.prenom</span>
-                            <span id="EmailProprio" class="hidden">champ.email</span>
-                            <span id="superficieChamps" class="hidden">champ.surface</span>
-                            <p class="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic"> champ.type_culture</span></p>
+                            <h2 id="field_name" class="font-bold text-xl">${champ.nom}</h2>
+                            <span id="id_fields_list" class="hidden">${champ.is_champs}</span>
+                            <span id="nomPrenomProprio" class="hidden">${champ.nom_utilisateur} ${champ.prenom}</span>
+                            <span id="EmailProprio" class="hidden">${champ.email}</span>
+                            <span id="superficieChamps" class="hidden">${champ.surface}</span>
+                            <p class="italic ml-3">Type : <span id="cultureType" class="font-medium not-italic">${champ.type_culture}</span></p>
                         </div>
                         <div>
         
                         </div>
-                        <p>Superficie : champ.surface hectare</p>
+                        <p>Superficie : ${champ.surface} hectare</p>
                     </div>
         
                     <div id="graphic" class="w-full h-7/12 relative justify-center items-center flex my-2">
                         <div class="w-16 items-center justify-center flex flex-col m-2">
-                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">champ.valeur</p></div>
+                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">${champ.valeur}</p></div>
                             <p class="font-medium text-black text-sm">Température</p>
                         </div>
                         <div class="w-16 items-center justify-center flex flex-col m-2">
-                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">champ.valeur</p></div>
+                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">${champ.valeur}</p></div>
                             <p class="font-medium text-black text-sm">Humidité</p>
                         </div>                        
                         <div class="w-16 items-center justify-center flex flex-col m-2">
-                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">champ.valeur</p></div>
+                            <div class="h-14 w-14 rounded-full border-4 border-solid border-gray-800 text-center items-center justify-center flex"><p class="text-sm font-bold">${champ.valeur}</p></div>
                             <p class="font-medium text-black text-sm">pH du sol</p>
                         </div>
                     </div>
                     <div class="w-full items-center justify-center flex">
                         <ul class="flex flex-row"><p class="text-sm">Capteurs Connectés : <span class="green_color_text font-bold">10</span> / Hors ligne : <span class="font-bold text-red-500">2</span></p></ul>
                     </div>
-                    <p class="text-xs italic text-left m-3">Dernière mise à jour : <span class="lastUpdateDate"> champ.max_date</span></p>
+                    <p class="text-xs italic text-left m-3">Dernière mise à jour : <span class="lastUpdateDate">${champ.max_date}</span></p>
                     <div class="w-full px-3">
                         <button id="" class="btnEtatFields w-full text-white rounded-xl p-2 border-opacity-30">Statut global : <span id="etatchamps" class="font-medium">BON</span></button>
                     </div>
