@@ -17,7 +17,7 @@ async function getFields(sort = "all") {
         if(container_fields) {         
             data.message.forEach(champ => {
                 const fields_cards = document.getElementById("fields_cards")
-                container_fields.innerHTML = ` 
+                fields_cards.innerHTML = ` 
                     <div class="field_card w-full h-auto md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg flex flex-col relative">
                     <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
                         <button type="button" id="show_details" class="btn_show_option h-full w-full text-xl text-center justify-center items-center flex"><i class="fa-solid fa-ellipsis-vertical"></i></button>
@@ -74,7 +74,7 @@ async function getFields(sort = "all") {
                     </div>
                 </div>
             `   
-            container_fields.appendChild()             
+            container_fields.appendChild(fields_cards)             
             });
         }
     } else {
