@@ -12,10 +12,11 @@ async function getFields(sort = "all") {
     const data = await response.json()
 
     if(data.success) {
-        if(container_fields) {
+        const container_fields = document.getElementById("container_fields")
+
+        if(container_fields) {         
             data.message.forEach(champ => {
-                const container_fields = document.getElementById("container_fields")
-            //     console.log('Data')
+                fields_cards
                 container_fields.innerHTML = ` 
                     <div class="field_card w-full h-auto md:w-64 lg:h-72 lg:w-72 mx-2 my-10 lg:m-3 bg-gray-200 shadow-lg rounded-lg flex flex-col relative">
                     <div class="backdrop-blur bg-white h-10 w-10 absolute top-2 right-2 z-30 rounded-lg py-2 text-center justify-center items-center flex">
