@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
     process.env.DB_PASSWORD,
     {
         host: process.env.DB_HOST,
-        dialect: 'mysql', // Indique que l'on utilise MySQL
+        dialect: 'mariadb', // Indique que l'on utilise MySQL
         logging: false, // Désactive les logs SQL dans la console
         pool: {
             max: 20,  // Nombre maximum de connexions simultanées
